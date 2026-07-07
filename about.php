@@ -45,9 +45,9 @@ render_nav('about');
         </p>
 
         <div class="about-grid">
-          <div class="about-item"><div class="ai-label">Name</div><div class="ai-val"><?= env('PORTFOLIO_NAME', 'Your Name Here') ?></div></div>
-          <div class="about-item"><div class="ai-label">Location</div><div class="ai-val"><?= env('PORTFOLIO_CITY', 'Your City, India') ?></div></div>
-          <div class="about-item"><div class="ai-label">Email</div><div class="ai-val"><?= env('PORTFOLIO_EMAIL', 'your@email.com') ?></div></div>
+          <div class="about-item"><div class="ai-label">Name</div><div class="ai-val"><?= env('PORTFOLIO_NAME', 'Arun Sah') ?></div></div>
+          <div class="about-item"><div class="ai-label">Location</div><div class="ai-val"><?= env('PORTFOLIO_CITY', 'India') ?></div></div>
+          <div class="about-item"><div class="ai-label">Email</div><div class="ai-val"><?= env('PORTFOLIO_EMAIL', 'arunkumar90853@gmail.com') ?></div></div>
           <div class="about-item"><div class="ai-label">Status</div><div class="ai-val open">Open to Work</div></div>
           <div class="about-item"><div class="ai-label">Experience</div><div class="ai-val">3+ Years</div></div>
           <div class="about-item"><div class="ai-label">Freelance</div><div class="ai-val">Yes, available</div></div>

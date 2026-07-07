@@ -1,194 +1,114 @@
+<<<<<<< HEAD
 # Arun's Portfolio Website
+=======
+# 🌐 Arun Sah's Portfolio
+>>>>>>> 9b89f33 (updated file)
 
-A personal portfolio website for a freelance **web developer**, **video editor**, and **blog writer** based in India. Built with plain PHP, Vanilla CSS, and Vanilla JavaScript — no frameworks, no build tools. Runs directly on XAMPP / Apache.
+A premium, responsive portfolio website built to showcase my freelance work and establish a professional social presence as a **Web Developer**, **Software Developer**, **Video Editor**, and **Technical Writer** based in India.
 
----
-
-## 🚀 Features
-
-- ⚡ **Dark / Light theme** — toggle persisted via `localStorage`
-- 🖱️ **Custom animated cursor** — dot + ring follower
-- 🎠 **Horizontal slideshow carousels** with prev/next arrows and dot pagination
-- 🌀 **Scroll-reveal animations** — elements fade and slide in on scroll
-- 🔁 **Infinite marquee strip** — seamless looping skill tags
-- ⌨️ **Typing animation** in hero section cycling through roles
-- 📊 **Animated proficiency bars** for skills (About page)
-- 📬 **PHP contact forms** — "Hire Me" brief form and general message form with server-side validation
-- 📱 **Fully responsive** — hamburger menu for mobile, fluid grids
-- 🔝 **Scroll-to-top** button
-- 🔍 **SEO-ready** — unique `<title>`, `<meta description>`, semantic HTML on every page
+Built using native technologies: plain PHP 8+, Vanilla CSS, and Vanilla JavaScript. It is designed to run directly on Apache (via XAMPP) without requiring heavy dependencies, build processes, or frameworks.
 
 ---
 
-## 📁 File Structure
+## 🚀 Key Features
+
+- 🌓 **Dynamic Theme Toggle** — Seamless Dark/Light mode switcher with persistence via `localStorage`.
+- 🖱️ **Interactive Custom Cursor** — Smooth fluid cursor follower dot and ring.
+- Carousel component for project layouts with dots & arrow pagination.
+- 🌀 **Scroll-Reveal Animations** — Fluid fade-in and slide-in transition effects on scroll.
+- 🔁 **Marquee Strip** — Infinite looping marquee highlighting technical capabilities.
+- ⌨️ **Dynamic Typing Hero** — Micro-animated typing effect cycling through professional roles.
+- 📊 **Animated Skill Proficiency Bars** — Dynamic visual bars representing skill levels.
+- 📬 **PHP Contact Forms** — A general contact form and "Hire Me" brief form with server-side validation.
+- 🤖 **Interactive AI Twin** — A client-side simulated AI twin that chats with visitors, answering questions about my experience, tech stack, and freelance services.
+- 🔍 **SEO & Accessibility Optimised** — Semantic tags, distinct pages titles, meta-descriptions, and structured head elements.
+
+---
+
+## 📁 Project Structure
 
 ```
 portfolio/
-├── index.php       # Home / Hero page
-├── about.php       # About, skills proficiency, hobbies
-├── work.php        # Projects & video work (tabbed carousel)
-├── blogs.php       # Blog posts grid
-├── contact.php     # Hire Me form + Contact form
-├── layout.php      # Shared header (render_head, render_nav) and footer
-├── data.php        # Shared PHP data arrays ($skills, $testimonials, $services, $hobbies)
-├── style.css       # All styles — design tokens, components, responsive
-├── script.js       # All JS — cursor, theme toggle, carousels, scroll-reveal, etc.
-└── README.md       # This file
+├── index.php         # Home / Hero page & dynamic summaries
+├── about.php         # Bio, experience info grid, and hobby cards
+├── work.php          # Interactive, tabbed project showcase (Web, Software, Video Editing)
+├── blogs.php         # Articles grid with categorization and search keywords
+├── contact.php       # Hire Me & standard contact form submissions
+├── layout.php        # Core header/footer shell, navigation, and .env parser
+├── data.php          # Centralized data model arrays (skills, hobbies, reviews)
+├── style.css         # Styling system (css variables, design tokens, and components)
+├── script.js         # Interactive triggers (carousel, cursor, animations)
+├── ai.php            # AI Twin chatbot interface
+├── ai-style.css      # Chat interface styling
+├── ai-script.js      # Chat logic & automated keyword responder
+└── README.md         # This readme file
 ```
 
 ---
 
-## 📄 Pages
+## 🛠️ Technology Stack
 
-| Page | File | Description |
-|------|------|-------------|
-| **Home** | `index.php` | Hero, marquee strip, skills teaser, testimonials, CTA |
-| **About** | `about.php` | Bio, info grid, proficiency bars, hobbies |
-| **Work** | `work.php` | Tabbed carousel: Web Projects / Software / Video Work |
-| **Blog** | `blogs.php` | Blog posts grid with category, date, excerpt |
-| **Contact** | `contact.php` | Hire Me brief form + general contact form, contact links |
-
----
-
-## 🛠️ Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Backend | PHP 8+ (no framework, plain `require` includes) |
-| Styling | Vanilla CSS with CSS custom properties (design tokens) |
-| Scripting | Vanilla JavaScript (no jQuery or libraries) |
-| Database | None (static data in `data.php`) |
-| Server | Apache via XAMPP |
+| Layer | Technical Details |
+|---|---|
+| **Backend** | PHP 8.0+ (No framework dependencies; modular components via `require`) |
+| **Frontend** | Vanilla JavaScript (ES6+), Vanilla CSS (Flexbox, Grid, Custom Properties) |
+| **Local Environment** | Apache / MySQL via XAMPP |
+| **API / Services** | Localized `.env` configuration, client-side data binding |
 
 ---
 
-## 🎨 Design System
+## ⚙️ Configuration & Environment Settings
 
-### Color Palette
+All personal info and links are dynamically configured via a `.env` file at the project root:
 
-| Token | Color | Usage |
-|-------|-------|-------|
-| `--sky` | `#4B9FD6` | Web Dev, UI/UX cards, primary accents |
-| `--amber` | `#F4A935` | Software Dev, Blog Writing cards |
-| `--coral` | `#E8573B` | Video Editing cards, danger states |
-| `--sage` | `#5A8A6F` | Database & Backend cards |
+### 1. Set Up Environment Variables
+Create a file named `.env` in the root folder (using `.env.example` as a starting point) and add your details:
 
-### Theme
-- **Dark mode first** with a light mode toggle
-- Glassmorphism cards with subtle border highlights
-- Smooth gradient backgrounds on project thumbnails
-- Micro-animations: hover lifts, card glows, pulsing availability badge
+```env
+PORTFOLIO_NAME="Arun Sah"
+PORTFOLIO_CITY="India"
+PORTFOLIO_EMAIL="arunkumar90853@gmail.com"
+PORTFOLIO_WHATSAPP="+91 XXXXX XXXXX"
+PORTFOLIO_WHATSAPP_URL="https://wa.me/91XXXXXXXXXX"
+PORTFOLIO_GITHUB_URL="https://github.com/Lamsterla"
+PORTFOLIO_LINKEDIN_URL="https://www.linkedin.com/in/arun-sah-7b7246313"
+PORTFOLIO_INSTAGRAM_URL="https://www.instagram.com/sah_arun_kumar"
+```
 
----
-
-## ⚙️ Skills & Services (from `data.php`)
-
-### Skills
-- Web Development — HTML, CSS, JavaScript, PHP, MySQL, React
-- Software Development — Python, C++, Node.js, APIs, Git, Linux
-- Video Editing — Premiere Pro, After Effects, DaVinci, CapCut
-- Blog Writing — Technical Writing, SEO, Tutorials, Dev Guides
-- UI / UX Design — Figma, Wireframes, Prototypes
-- Database & Backend — MySQL, MongoDB, REST APIs, Laravel basics
-
-### Services & Starting Prices
-| Service | Starting Price |
-|---------|---------------|
-| Web Development | ₹5,000 |
-| Software Development | ₹8,000 |
-| Video Editing | ₹2,000 |
-| Blog Writing | ₹500/post |
+### 2. Add Personal Assets
+- **Resume**: Save your PDF file as `assets/resume.pdf` to make the **Download Resume** button functional.
+- **Hero Image**: Replace the placeholder `<div class="photo-placeholder">` in `index.php` with:
+  ```html
+  <img src="assets/photo.jpg" alt="Arun Sah">
+  ```
+- **About Page Image**: Uncomment the image tag in `about.php`:
+  ```html
+  <img src="assets/about.jpg" alt="Arun Sah">
+  ```
 
 ---
 
-## 📦 How to Run Locally
+## 💻 Running the Site Locally
 
-### Prerequisites
-- [XAMPP](https://www.apachefriends.org/) (or any PHP-enabled local server)
-- PHP 8.0 or higher
-
-### Steps
-
-1. **Clone or download** this project into your XAMPP `htdocs` folder:
-   ```
+1. Install and start [XAMPP](https://www.apachefriends.org/).
+2. Clone or copy this repository into your XAMPP's `htdocs` folder:
+   ```bash
    C:\xampp\htdocs\portfolio\
    ```
-
-2. **Start Apache** from the XAMPP Control Panel.
-
-3. **Open in browser:**
+3. Open your browser and navigate to:
    ```
    http://localhost/portfolio/
    ```
-
-That's it — no database setup, no `npm install`, no build step required.
-
----
-
-## 🔧 Customisation Guide
-
-All personal data is centralised for easy editing:
-
-### 1. Update your info
-Edit the placeholder values across the files:
-
-| What to change | Where |
-|---------------|-------|
-| Your name | `index.php` line 31, `about.php` line 48 |
-| Your city | `index.php` line 40, `about.php` line 49, `layout.php` line 105 |
-| Your email | `about.php` line 50, `layout.php` line 102, `contact.php` line 41 |
-| Your WhatsApp | `layout.php` line 103, `contact.php` line 42 |
-| Social links | `layout.php` lines 70–74 |
-
-### 2. Add your photo
-Replace the placeholder `<div class="photo-placeholder">` in `index.php` with:
-```html
-<img src="assets/photo.jpg" alt="Your Name">
-```
-And in `about.php`, uncomment:
-```html
-<!-- <img src="assets/about.jpg" alt="About me"> -->
-```
-
-### 3. Add your resume
-Place your resume PDF at `assets/resume.pdf`. The download link in `about.php` is already wired up.
-
-### 4. Update projects and blog posts
-Edit the `$webProjects`, `$softProjects`, `$videos` arrays in `work.php` and the `$blogs` array in `blogs.php`.
-
-### 5. Update skills and testimonials
-Edit `data.php` — all `$skills`, `$testimonials`, `$services`, and `$hobbies` are defined there.
+4. Verify that the server resolves the local path and imports configurations correctly.
 
 ---
 
-## 📬 Contact Form
+## 👤 Author & Social Presence
 
-The contact forms in `contact.php` use PHP `$_POST` handling with `htmlspecialchars` input sanitisation. Currently they display a success message on submission.
+If you'd like to get in touch or check out my work across platforms, connect with me here:
 
-To send actual emails, replace the success block in `contact.php` with PHP `mail()` or a service like [PHPMailer](https://github.com/PHPMailer/PHPMailer):
-
-```php
-mail($to, $subject, $message, "From: $email");
-```
-
----
-
-## 📸 Screenshots
-
-> Add screenshots of your live site here once deployed.
-
----
-
-## 📜 License
-
-This project is for personal portfolio use. Feel free to use it as a template — credit appreciated but not required.
-
----
-
-## 👤 Author
-
-**Your Name**
-- 📧 your@email.com
-- 💼 [LinkedIn](https://linkedin.com)
-- 🐙 [GitHub](https://github.com)
-- 📍 Your City, India
+- 📧 **Email**: [arunkumar90853@gmail.com](mailto:arunkumar90853@gmail.com)
+- 💼 **LinkedIn**: [Arun Sah on LinkedIn](https://www.linkedin.com/in/arun-sah-7b7246313)
+- 🐙 **GitHub**: [@Lamsterla on GitHub](https://github.com/Lamsterla)
+- 📸 **Instagram**: [@sah_arun_kumar](https://www.instagram.com/sah_arun_kumar)
+- 📍 **Location**: India

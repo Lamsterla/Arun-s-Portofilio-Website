@@ -74,11 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       keywords: /(contact|email|phone|whatsapp|linkedin|github|reach|address|location|city)/i,
       reply: "<h4>How to connect:</h4><ul>" +
-             "<li>📧 <strong>Email:</strong> <a href='mailto:your@email.com'>your@email.com</a></li>" +
-             "<li>💬 <strong>WhatsApp:</strong> <a href='https://wa.me/91XXXXXXXXXX' target='_blank'>Chat Now</a></li>" +
-             "<li>💼 <strong>LinkedIn:</strong> <a href='https://linkedin.com' target='_blank'>Connect on LinkedIn</a></li>" +
-             "<li>🐙 <strong>GitHub:</strong> <a href='https://github.com' target='_blank'>View repositories</a></li>" +
-             "<li>📍 <strong>Location:</strong> Your City, India</li>" +
+             `<li>📧 <strong>Email:</strong> <a href='mailto:${window.PORTFOLIO_CONFIG?.email || 'arunkumar90853@gmail.com'}'>${window.PORTFOLIO_CONFIG?.email || 'arunkumar90853@gmail.com'}</a></li>` +
+             `<li>💬 <strong>WhatsApp:</strong> <a href='${window.PORTFOLIO_CONFIG?.whatsapp_url || 'https://wa.me/91XXXXXXXXXX'}' target='_blank'>Chat Now</a></li>` +
+             `<li>💼 <strong>LinkedIn:</strong> <a href='${window.PORTFOLIO_CONFIG?.linkedin_url || 'https://www.linkedin.com/in/arun-sah-7b7246313'}' target='_blank'>Connect on LinkedIn</a></li>` +
+             `<li>🐙 <strong>GitHub:</strong> <a href='${window.PORTFOLIO_CONFIG?.github_url || 'https://github.com/Lamsterla'}' target='_blank'>View repositories</a></li>` +
+             `<li>📍 <strong>Location:</strong> ${window.PORTFOLIO_CONFIG?.city || 'India'}</li>` +
              "</ul>"
     },
     {

@@ -97,11 +97,11 @@ function render_footer(): void {
         <div class="nav-logo">Dev<span class="dot">.</span>Portfolio</div>
         <p>Building thoughtful digital experiences with clean code and real attention to detail. Open to freelance projects.</p>
         <div class="footer-socials">
-          <a class="social-link" href="<?= env('PORTFOLIO_GITHUB_URL', 'https://github.com') ?>" target="_blank" rel="noopener noreferrer" title="GitHub">&#128025;</a>
-          <a class="social-link" href="<?= env('PORTFOLIO_LINKEDIN_URL', 'https://linkedin.com') ?>" target="_blank" rel="noopener noreferrer" title="LinkedIn">&#128188;</a>
+          <a class="social-link" href="<?= env('PORTFOLIO_GITHUB_URL', 'https://github.com/Lamsterla') ?>" target="_blank" rel="noopener noreferrer" title="GitHub">&#128025;</a>
+          <a class="social-link" href="<?= env('PORTFOLIO_LINKEDIN_URL', 'https://www.linkedin.com/in/arun-sah-7b7246313') ?>" target="_blank" rel="noopener noreferrer" title="LinkedIn">&#128188;</a>
           <a class="social-link" href="#" title="Twitter">&#128038;</a>
           <a class="social-link" href="#" title="YouTube">&#128250;</a>
-          <a class="social-link" href="<?= env('PORTFOLIO_INSTAGRAM_URL', 'https://instagram.com') ?>" target="_blank" rel="noopener noreferrer" title="Instagram">&#128247;</a>
+          <a class="social-link" href="<?= env('PORTFOLIO_INSTAGRAM_URL', 'https://www.instagram.com/sah_arun_kumar') ?>" target="_blank" rel="noopener noreferrer" title="Instagram">&#128247;</a>
         </div>
       </div>
 
@@ -129,10 +129,10 @@ function render_footer(): void {
       <div class="footer-col">
         <h5>Contact</h5>
         <ul>
-          <li><a href="mailto:<?= env('PORTFOLIO_EMAIL', 'your@email.com') ?>"><?= env('PORTFOLIO_EMAIL', 'your@email.com') ?></a></li>
+          <li><a href="mailto:<?= env('PORTFOLIO_EMAIL', 'arunkumar90853@gmail.com') ?>"><?= env('PORTFOLIO_EMAIL', 'arunkumar90853@gmail.com') ?></a></li>
           <li><a href="<?= env('PORTFOLIO_WHATSAPP_URL', 'https://wa.me/91XXXXXXXXXX') ?>" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-          <li><a href="<?= env('PORTFOLIO_LINKEDIN_URL', 'https://linkedin.com') ?>" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="#"><?= env('PORTFOLIO_CITY', 'Your City, India') ?></a></li>
+          <li><a href="<?= env('PORTFOLIO_LINKEDIN_URL', 'https://www.linkedin.com/in/arun-sah-7b7246313') ?>" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="#"><?= env('PORTFOLIO_CITY', 'India') ?></a></li>
         </ul>
       </div>
     </div>

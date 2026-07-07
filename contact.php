@@ -38,11 +38,11 @@ render_head('Contact — Dev.Portfolio', 'Get in touch to start a project or jus
 render_nav('contact');
 
 $contacts = [
-    ['&#128140;','Email',     env('PORTFOLIO_EMAIL', 'your@email.com'),              'mailto:' . env('PORTFOLIO_EMAIL', 'your@email.com')],
+    ['&#128140;','Email',     env('PORTFOLIO_EMAIL', 'arunkumar90853@gmail.com'),              'mailto:' . env('PORTFOLIO_EMAIL', 'arunkumar90853@gmail.com')],
     ['&#128241;','WhatsApp',  env('PORTFOLIO_WHATSAPP', '+91 XXXXX XXXXX'),          env('PORTFOLIO_WHATSAPP_URL', 'https://wa.me/91XXXXXXXXXX')],
-    ['&#128188;','LinkedIn',  preg_replace('#^https?://(www\.)?#', '', env('PORTFOLIO_LINKEDIN_URL', 'linkedin.com')), env('PORTFOLIO_LINKEDIN_URL', 'https://linkedin.com')],
-    ['&#128025;','GitHub',    preg_replace('#^https?://(www\.)?#', '', env('PORTFOLIO_GITHUB_URL', 'github.com')),     env('PORTFOLIO_GITHUB_URL', 'https://github.com')],
-    ['&#128205;','Location',  env('PORTFOLIO_CITY', 'Your City, India'),            '#'],
+    ['&#128188;','LinkedIn',  preg_replace('#^https?://(www\.)?#', '', env('PORTFOLIO_LINKEDIN_URL', 'linkedin.com/in/arun-sah-7b7246313')), env('PORTFOLIO_LINKEDIN_URL', 'https://www.linkedin.com/in/arun-sah-7b7246313')],
+    ['&#128025;','GitHub',    preg_replace('#^https?://(www\.)?#', '', env('PORTFOLIO_GITHUB_URL', 'github.com/Lamsterla')),     env('PORTFOLIO_GITHUB_URL', 'https://github.com/Lamsterla')],
+    ['&#128205;','Location',  env('PORTFOLIO_CITY', 'India'),            '#'],
 ];
 ?>
 

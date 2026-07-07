@@ -182,14 +182,14 @@ render_nav('ai');
                 <span>Start a new project</span>
               </div>
             </a>
-            <a href="mailto:your@email.com" class="quick-action-btn">
+            <a href="mailto:<?= env('PORTFOLIO_EMAIL', 'arunkumar90853@gmail.com') ?>" class="quick-action-btn">
               <span class="btn-icon">📧</span>
               <div class="btn-text">
                 <strong>Email Direct</strong>
-                <span>your@email.com</span>
+                <span><?= env('PORTFOLIO_EMAIL', 'arunkumar90853@gmail.com') ?></span>
               </div>
             </a>
-            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener" class="quick-action-btn">
+            <a href="<?= env('PORTFOLIO_WHATSAPP_URL', 'https://wa.me/91XXXXXXXXXX') ?>" target="_blank" rel="noopener" class="quick-action-btn">
               <span class="btn-icon">💬</span>
               <div class="btn-text">
                 <strong>WhatsApp Chat</strong>
@@ -205,6 +205,15 @@ render_nav('ai');
 </div>
 
 <!-- AI Scripts -->
+<script>
+  window.PORTFOLIO_CONFIG = {
+    email: <?= json_encode(env('PORTFOLIO_EMAIL', 'arunkumar90853@gmail.com')) ?>,
+    whatsapp_url: <?= json_encode(env('PORTFOLIO_WHATSAPP_URL', 'https://wa.me/91XXXXXXXXXX')) ?>,
+    linkedin_url: <?= json_encode(env('PORTFOLIO_LINKEDIN_URL', 'https://www.linkedin.com/in/arun-sah-7b7246313')) ?>,
+    github_url: <?= json_encode(env('PORTFOLIO_GITHUB_URL', 'https://github.com/Lamsterla')) ?>,
+    city: <?= json_encode(env('PORTFOLIO_CITY', 'India')) ?>
+  };
+</script>
 <script src="ai-script.js"></script>
 
 <?php

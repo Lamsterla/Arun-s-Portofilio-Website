@@ -37,7 +37,7 @@ render_nav('home');
         </p>
 
         <p class="hero-bio">
-          A developer, editor and writer based in <strong><?= env('PORTFOLIO_CITY', 'Your City, India') ?></strong> — I take projects
+          A developer, editor and writer based in <strong><?= env('PORTFOLIO_CITY', 'India') ?></strong> — I take projects
           from idea to execution and care about the details that make the difference.
         </p>
 
@@ -60,7 +60,7 @@ render_nav('home');
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
             </a>
-            <a href="mailto:<?= env('PORTFOLIO_EMAIL', 'your@email.com') ?>" class="connect-btn gmail" title="Gmail">
+            <a href="mailto:<?= env('PORTFOLIO_EMAIL', 'arunkumar90853@gmail.com') ?>" class="connect-btn gmail" title="Gmail">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M24 5.457v13.909c0 .904-.732 1.634-1.634 1.634h-2.23V9.431L12 14.771 3.864 9.43v11.57H1.634A1.637 1.637 0 010 19.366V5.457c0-1.124 1.25-1.787 2.179-1.155L12 11.196l9.821-6.894A1.378 1.378 0 0124 5.457z"/>
               </svg>
