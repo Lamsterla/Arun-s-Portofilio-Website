@@ -1,0 +1,10 @@
+# Environment Variables (Contains sensitive information)
+.env
+
+# XAMPP / Local Server logs & configs
+*.log
+.DS_Store
+
+# IDE configs
+.idea/
+.vscode/
