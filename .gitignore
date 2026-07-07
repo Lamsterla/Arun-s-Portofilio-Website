@@ -1,5 +1,6 @@
 # Environment Variables (Contains sensitive information)
 .env
+.env.example
 
 # XAMPP / Local Server logs & configs
 *.log
