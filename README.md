@@ -1,4 +1,4 @@
-# Dev.Portfolio
+# Arun's Portfolio Website
 
 A personal portfolio website for a freelance **web developer**, **video editor**, and **blog writer** based in India. Built with plain PHP, Vanilla CSS, and Vanilla JavaScript — no frameworks, no build tools. Runs directly on XAMPP / Apache.
 
