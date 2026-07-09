@@ -43,7 +43,7 @@ function render_head(string $title, string $desc = 'Portfolio of a web developer
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="<?= htmlspecialchars($desc) ?>" />
   <title><?= htmlspecialchars($title) ?></title>
-  <link rel="stylesheet" href="style.css?v=1.2" />
+  <link rel="stylesheet" href="style.css?v=1.4" />
   <script>
     (function(){
       var t = localStorage.getItem('portfolio-theme') || 'dark';
@@ -52,6 +52,49 @@ function render_head(string $title, string $desc = 'Portfolio of a web developer
   </script>
 </head>
 <body>
+<script>
+  (function() {
+    var isReload = false;
+    if (window.performance && window.performance.getEntriesByType) {
+      var navs = window.performance.getEntriesByType('navigation');
+      if (navs.length > 0 && navs[0].type === 'reload') {
+        isReload = true;
+      }
+    } else if (window.performance && window.performance.navigation) {
+      if (window.performance.navigation.type === 1) { // 1 = TYPE_RELOAD
+        isReload = true;
+      }
+    }
+    if (isReload) {
+      sessionStorage.removeItem('portfolio-loaded');
+    }
+    if (sessionStorage.getItem('portfolio-loaded')) {
+      document.write('<style>#preloader { display: none !important; }</style>');
+    }
+  })();
+</script>
+<!-- Preloader -->
+<div id="preloader" class="loading">
+  <div class="wheel-and-hamster">
+    <div class="wheel"></div>
+    <div class="hamster">
+      <div class="hamster__body">
+        <div class="hamster__head">
+          <div class="hamster__ear"></div>
+          <div class="hamster__eye"></div>
+          <div class="hamster__nose"></div>
+        </div>
+        <div class="hamster__limb hamster__limb--fr"></div>
+        <div class="hamster__limb hamster__limb--fl"></div>
+        <div class="hamster__limb hamster__limb--br"></div>
+        <div class="hamster__limb hamster__limb--bl"></div>
+        <div class="hamster__tail"></div>
+      </div>
+    </div>
+    <div class="spoke"></div>
+  </div>
+</div>
+
 <div id="cursor-dot"></div>
 <div id="cursor-ring"></div>
 <?php
@@ -145,7 +188,7 @@ function render_footer(): void {
 </footer>
 
 <button id="scroll-top" aria-label="Back to top">&#8593;</button>
-<script src="script.js"></script>
+<script src="script.js?v=1.2"></script>
 </body>
 </html>
 <?php

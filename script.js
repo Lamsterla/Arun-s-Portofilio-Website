@@ -5,6 +5,7 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
+  initPreloader();
   initCustomCursor();
   initThemeToggle();
   initNavbar();
@@ -20,6 +21,39 @@ document.addEventListener('DOMContentLoaded', () => {
   initStatCounters();
   initMagneticButtons();
 });
+
+// =============================================
+// PRELOADER (Page Loading Animation)
+// =============================================
+function initPreloader() {
+  const preloader = document.getElementById('preloader');
+  if (!preloader) return;
+
+  const startTime = Date.now();
+  const minDuration = 2000; // Minimum duration in ms to show the animation (2 seconds)
+
+  const fadeOut = () => {
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(0, minDuration - elapsed);
+
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+      sessionStorage.setItem('portfolio-loaded', 'true');
+    }, remaining);
+  };
+
+  if (document.readyState === 'complete') {
+    fadeOut();
+  } else {
+    window.addEventListener('load', fadeOut);
+  }
+
+  // Fallback in case load event takes too long or hangs
+  setTimeout(() => {
+    preloader.classList.add('fade-out');
+    sessionStorage.setItem('portfolio-loaded', 'true');
+  }, 4000);
+}
 
 // =============================================
 // CUSTOM CURSOR
