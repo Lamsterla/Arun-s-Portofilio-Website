@@ -1,6 +1,8 @@
 # Environment Variables (Contains sensitive information)
 .env
 .env.example
+photo/arun.jpeg
+
 
 # XAMPP / Local Server logs & configs
 *.log

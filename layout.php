@@ -142,8 +142,8 @@ function render_footer(): void {
         <div class="footer-socials">
           <a class="social-link" href="<?= env('PORTFOLIO_GITHUB_URL', 'https://github.com/Lamsterla') ?>" target="_blank" rel="noopener noreferrer" title="GitHub">&#128025;</a>
           <a class="social-link" href="<?= env('PORTFOLIO_LINKEDIN_URL', 'https://www.linkedin.com/in/arun-sah-7b7246313') ?>" target="_blank" rel="noopener noreferrer" title="LinkedIn">&#128188;</a>
-          <a class="social-link" href="#" title="Twitter">&#128038;</a>
-          <a class="social-link" href="#" title="YouTube">&#128250;</a>
+          <a class="social-link" href="<?= env('PORTFOLIO_TWITTER_URL', '#') ?>" target="_blank" rel="noopener noreferrer" title="Twitter">&#128038;</a>
+          <a class="social-link" href="<?= env('PORTFOLIO_YOUTUBE_URL', '#') ?>" target="_blank" rel="noopener noreferrer" title="YouTube">&#128250;</a>
           <a class="social-link" href="<?= env('PORTFOLIO_INSTAGRAM_URL', 'https://www.instagram.com/sah_arun_kumar') ?>" target="_blank" rel="noopener noreferrer" title="Instagram">&#128247;</a>
         </div>
       </div>
