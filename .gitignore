@@ -2,6 +2,7 @@
 .env
 .env.example
 photo/arun.jpeg
+photo/2.jpeg
 
 
 # XAMPP / Local Server logs & configs
