@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
              "<li><strong>Web Development:</strong> Custom sites, React apps, PHP backends — From ₹5,000</li>" +
              "<li><strong>Software Development:</strong> Custom automation, Python bots, CLI tools — From ₹8,000</li>" +
              "<li><strong>Video Editing:</strong> YouTube videos, cinematic reels, promotional ads — From ₹2,000</li>" +
-             "<li><strong>Blog Writing:</strong> SEO-optimized technical tutorials & articles — From ₹500/post</li>" +
+             "<li><strong>Content Writing:</strong> SEO-optimized technical tutorials & articles — From ₹500/post</li>" +
              "</ul><p style='margin-top:8px;'>Have a specific project? Drop a message on the <a href='contact.php'>Contact Page</a> for a custom quote!</p>"
     },
     {

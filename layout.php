@@ -165,7 +165,7 @@ function render_footer(): void {
           <li><a href="contact.php">Web Development</a></li>
           <li><a href="contact.php">Software Dev</a></li>
           <li><a href="contact.php">Video Editing</a></li>
-          <li><a href="contact.php">Blog Writing</a></li>
+          <li><a href="contact.php">Content Writing</a></li>
         </ul>
       </div>
 

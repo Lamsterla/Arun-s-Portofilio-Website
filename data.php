@@ -33,7 +33,7 @@ $skills = [
     ],
     [
         'icon'   => '&#9998;',
-        'title'  => 'Blog Writing',
+        'title'  => 'Content Writing',
         'desc'   => 'Clear, well-researched technical blogs, tutorials and SEO articles that help developers.',
         'tags'   => ['Technical Writing', 'SEO', 'Tutorials', 'Reviews', 'Dev Guides'],
         'line'   => 'var(--amber)',
@@ -70,7 +70,7 @@ $services = [
     ['&#128187;','Web Development',  'Custom sites, web apps, dashboards','From &#8377;5,000'],
     ['&#9881;',  'Software Dev',     'Desktop tools, bots, automation',    'From &#8377;8,000'],
     ['&#9654;',  'Video Editing',    'YouTube, reels, brand promos',        'From &#8377;2,000'],
-    ['&#9998;',  'Blog Writing',     'SEO articles & technical posts',      'From &#8377;500/post'],
+    ['&#9998;',  'Content Writing',     'SEO articles & technical posts',      'From &#8377;500/post'],
 ];
 
 $hobbies = [

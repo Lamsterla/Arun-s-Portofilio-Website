@@ -75,7 +75,7 @@ render_nav('about');
         <?php
         $bars = [
           'PHP / MySQL'=>88,'JavaScript'=>85,'Python'=>80,'HTML & CSS'=>92,
-          'Video Editing'=>78,'Blog Writing'=>85,'React / Node.js'=>70,'UI / UX Design'=>75
+          'Video Editing'=>78,'Content Writing'=>85,'React / Node.js'=>70,'UI / UX Design'=>75
         ];
         foreach ($bars as $name => $pct): ?>
         <div class="prof-item">

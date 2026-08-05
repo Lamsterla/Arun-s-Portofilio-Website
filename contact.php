@@ -112,7 +112,7 @@ $contacts = [
                   <option value="web">Web Development</option>
                   <option value="software">Software Development</option>
                   <option value="video">Video Editing</option>
-                  <option value="blog">Blog Writing</option>
+                  <option value="content">Content Writing</option>
                   <option value="other">Other</option>
                 </select>
               </div>

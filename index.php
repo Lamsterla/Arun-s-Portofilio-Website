@@ -91,7 +91,7 @@ render_nav('home');
 <div class="marquee-wrap">
   <div class="marquee-track">
     <?php
-    $items = ['Web Development','Video Editing','PHP &amp; MySQL','Python','UI Design','Blog Writing','React','Node.js','After Effects','Figma','Premiere Pro','Software Dev'];
+    $items = ['Web Development','Video Editing','PHP &amp; MySQL','Python','UI Design','Content Writing','React','Node.js','After Effects','Figma','Premiere Pro','Software Dev'];
     // Duplicate for seamless loop
     $all = array_merge($items, $items);
     foreach ($all as $item) {
