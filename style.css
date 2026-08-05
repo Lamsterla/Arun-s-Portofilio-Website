@@ -700,7 +700,7 @@ body:not(:hover) #cursor-ring { opacity: 0; }
 .hero-photo-frame:hover {
   border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
 }
-.hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+.hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
 .photo-placeholder {
   width: 100%; height: 100%;
@@ -781,7 +781,7 @@ body:not(:hover) #cursor-ring { opacity: 0; }
 .about-photo-frame:hover {
   border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
 }
-.about-photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+.about-photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
 .about-photo-placeholder {
   width: 100%; height: 100%;

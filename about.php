@@ -18,11 +18,7 @@ render_nav('about');
 
       <div class="about-photo-col reveal from-left">
         <div class="about-photo-frame">
-          <div class="about-photo-placeholder">
-            <span style="font-size:2.5rem;opacity:0.25;">&#128247;</span>
-            <p>Your photo here</p>
-          </div>
-          <!-- <img src="assets/about.jpg" alt="About me"> -->
+          <img src="photo/arun.jpeg" alt="Your Name">
         </div>
         <div class="about-exp-box">
           <div class="exp-num">3+</div>
