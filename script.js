@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initHamburger();
   initTyping();
+  initScrollProgress();
   initReveal();
+  initScrollParallax();
   initProficiencyBars();
   initPortfolioTabs();
   initPortfolioSliders();
@@ -187,23 +189,104 @@ function initTyping() {
 }
 
 // =============================================
-// REVEAL ON SCROLL
+// SCROLL PROGRESS BAR
+// =============================================
+function initScrollProgress() {
+  let bar = document.getElementById('scroll-progress');
+  if (!bar) {
+    bar = document.createElement('div');
+    bar.id = 'scroll-progress';
+    document.body.prepend(bar);
+  }
+
+  const updateProgress = () => {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (totalHeight <= 0) {
+      bar.style.width = '0%';
+      return;
+    }
+    const progress = Math.min(100, Math.max(0, (window.scrollY / totalHeight) * 100));
+    bar.style.width = progress.toFixed(2) + '%';
+  };
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress, { passive: true });
+  updateProgress();
+}
+
+// =============================================
+// REVEAL ON SCROLL & AUTO STAGGER
 // =============================================
 function initReveal() {
   const els = document.querySelectorAll('.reveal');
   if (!els.length) return;
 
-  const io = new IntersectionObserver(
-    entries => entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        io.unobserve(e.target);
+  // Auto stagger grid/list items with elegant wave delay if no explicit d1-d8 class is present
+  const containers = document.querySelectorAll('.skill-grid, .portfolio-grid, .services-list, .hobbies-grid, .testimonials-grid, .blog-grid, .about-stats-grid');
+  containers.forEach(container => {
+    const children = container.querySelectorAll('.reveal');
+    children.forEach((child, idx) => {
+      if (!Array.from(child.classList).some(c => /^d[1-8]$/.test(c))) {
+        child.style.transitionDelay = `${(idx * 0.09).toFixed(2)}s`;
       }
-    }),
-    { threshold: 0.08, rootMargin: '0px 0px -36px 0px' }
+    });
+  });
+
+  const io = new IntersectionObserver(
+    entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -50px 0px' }
   );
 
   els.forEach(el => io.observe(el));
+}
+
+// =============================================
+// PARALLAX & SCROLL DYNAMICS (Smooth LERP Physics Engine)
+// =============================================
+function initScrollParallax() {
+  const parallaxTargets = document.querySelectorAll('.hero-blob-1, .hero-blob-2, .hero-availability, .avail-banner, .about-photo-frame');
+  if (!parallaxTargets.length) return;
+
+  let currentY = window.scrollY;
+  let targetY = window.scrollY;
+  let running = false;
+
+  const updateParallax = () => {
+    currentY += (targetY - currentY) * 0.08; // LERP smoothing factor
+    
+    if (Math.abs(targetY - currentY) > 0.05) {
+      if (currentY < 1800) {
+        parallaxTargets.forEach((el, i) => {
+          const speed = (i % 2 === 0 ? 0.04 : -0.03);
+          const rotate = (i % 2 === 0 ? 0.005 : -0.005);
+          el.style.transform = `translate3d(0, ${(currentY * speed).toFixed(2)}px, 0) rotate(${(currentY * rotate).toFixed(2)}deg)`;
+        });
+      }
+      requestAnimationFrame(updateParallax);
+    } else {
+      running = false;
+    }
+  };
+
+  const onScroll = () => {
+    targetY = window.scrollY;
+    if (!running) {
+      running = true;
+      requestAnimationFrame(updateParallax);
+    }
+  };
+
+  if (window.innerWidth > 768) {
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
 }
 
 // =============================================

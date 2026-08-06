@@ -105,7 +105,7 @@ function render_nav(string $active = 'home'): void {
 <nav id="navbar">
   <div class="container">
     <div class="nav-inner">
-      <a href="index.php" class="nav-logo">Dev<span class="dot">.</span>Portfolio</a>
+      <a href="index.php" class="nav-logo">Portfolio</a>
 
       <ul class="nav-links" id="navLinks">
         <li><a href="index.php"        class="nav-link <?= $active==='home'   ?'active':'' ?>">Home</a></li>

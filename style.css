@@ -396,6 +396,7 @@ body:not(:hover) #cursor-ring { opacity: 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .nav-logo {
@@ -411,6 +412,14 @@ body:not(:hover) #cursor-ring { opacity: 0; }
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+@media (min-width: 701px) {
+  .nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .nav-link {
   padding: 7px 14px;
@@ -1791,47 +1800,124 @@ footer {
 .footer-bottom p { font-size: 0.8rem; color: var(--muted); }
 
 /* ============================================================
-   SCROLL TO TOP
+   SCROLL TO TOP (Brand New Floating Glow & Micro-Physics)
    ============================================================ */
 #scroll-top {
   position: fixed;
   bottom: 28px; right: 28px;
-  width: 42px; height: 42px;
-  border-radius: 60% 40% 55% 45% / 45% 60% 40% 55%;
-  background: var(--coral);
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--coral), var(--plum));
   color: #fff;
-  border: none;
-  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 1.1rem;
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 6px 20px rgba(232,87,59,0.45);
-  transition: var(--transition);
+  box-shadow: 0 8px 24px rgba(232, 87, 59, 0.4), 0 0 15px rgba(232, 87, 59, 0.2);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s ease;
   opacity: 0;
+  transform: scale(0.6) translateY(20px);
   pointer-events: none;
   z-index: 500;
+  backdrop-filter: blur(8px);
 }
-#scroll-top.show { opacity: 1; pointer-events: all; }
+#scroll-top.show {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: all;
+}
 #scroll-top:hover {
-  transform: translateY(-4px) rotate(5deg);
-  border-radius: 50%;
+  transform: scale(1.15) translateY(-5px) rotate(360deg);
+  box-shadow: 0 12px 30px rgba(232, 87, 59, 0.6), 0 0 25px rgba(124, 92, 255, 0.4);
 }
 
 /* ============================================================
-   REVEAL ANIMATIONS
+   SCROLL PROGRESS BAR (Brand New Glowing Shimmer)
    ============================================================ */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--coral) 0%, var(--amber) 30%, var(--plum) 70%, var(--sky) 100%);
+  background-size: 200% 100%;
+  animation: scrollProgressGlow 3s linear infinite;
+  z-index: 99999;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: 0 0 14px rgba(232, 87, 59, 0.6), 0 0 24px rgba(124, 92, 255, 0.3);
+  transition: width 0.08s cubic-bezier(0.1, 0.9, 0.2, 1);
+  pointer-events: none;
+}
+
+@keyframes scrollProgressGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================================================
+   REVEAL ANIMATIONS (Brand New 3D Spatial Depth & Physics Reveal)
+   ============================================================ */
+:root {
+  --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-3d-spring: cubic-bezier(0.22, 1.2, 0.36, 1);
+}
+
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+  transform: perspective(1200px) rotateX(16deg) translateY(54px) scale(0.93);
+  filter: blur(8px);
+  backface-visibility: hidden;
+  transform-origin: center top;
+  will-change: transform, opacity, filter;
+  transition: opacity 0.85s var(--ease-reveal), 
+              transform 0.85s var(--ease-3d-spring), 
+              filter 0.85s var(--ease-reveal);
 }
-.reveal.from-left  { transform: translateX(-32px); }
-.reveal.from-right { transform: translateX(32px); }
-.reveal.visible { opacity: 1 !important; transform: none !important; }
 
-.reveal.d2 { transition-delay: 0.1s; }
-.reveal.d3 { transition-delay: 0.2s; }
-.reveal.d4 { transition-delay: 0.3s; }
-.reveal.d5 { transition-delay: 0.4s; }
+.reveal.from-left {
+  transform: perspective(1200px) rotateY(18deg) rotateZ(-2deg) translateX(-65px) translateY(20px) scale(0.92);
+  filter: blur(8px);
+  transform-origin: left center;
+}
+
+.reveal.from-right {
+  transform: perspective(1200px) rotateY(-18deg) rotateZ(2deg) translateX(65px) translateY(20px) scale(0.92);
+  filter: blur(8px);
+  transform-origin: right center;
+}
+
+.reveal.scale-up,
+.reveal.zoom-in {
+  transform: perspective(1200px) scale(0.82) translateY(45px);
+  filter: blur(12px);
+  transform-origin: center center;
+}
+
+.reveal.rotate-in {
+  transform: perspective(1200px) rotate3d(0.3, 0.8, -0.2, 22deg) translateY(60px) scale(0.91);
+  filter: blur(8px);
+  transform-origin: center center;
+}
+
+.reveal.visible {
+  opacity: 1 !important;
+  transform: perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(0) translateX(0) scale(1) !important;
+  filter: blur(0px) !important;
+}
+
+.reveal.d1 { transition-delay: 0.07s; }
+.reveal.d2 { transition-delay: 0.14s; }
+.reveal.d3 { transition-delay: 0.21s; }
+.reveal.d4 { transition-delay: 0.28s; }
+.reveal.d5 { transition-delay: 0.35s; }
+.reveal.d6 { transition-delay: 0.42s; }
+.reveal.d7 { transition-delay: 0.49s; }
+.reveal.d8 { transition-delay: 0.56s; }
 
 /* ============================================================
    MARQUEE (optional — for skill logos)
@@ -2189,6 +2275,7 @@ footer {
     display: none;
     position: absolute;
     top: 100%; left: 0; right: 0;
+    transform: none;
     background: var(--nav-bg);
     backdrop-filter: blur(18px);
     flex-direction: column;

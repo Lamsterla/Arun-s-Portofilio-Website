@@ -5,7 +5,7 @@
 require 'layout.php';
 require 'data.php';
 
-render_head('Dev.Portfolio — Web Developer & Freelancer');
+render_head('Portfolio — Web Developer & Freelancer');
 render_nav('home');
 ?>
 
