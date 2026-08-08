@@ -244,6 +244,43 @@ render_nav('home');
           </div>
         </div>
       </div>
+
+      <!-- Web Project 2 -->
+      <?php 
+      $p = $webProjects[1]; 
+      $index = 1;
+      ?>
+      <div class="project-card reveal d4" data-type="web" data-index="<?= $index ?>" style="cursor: pointer;">
+        <div class="proj-thumb" style="background:<?= $p['bg'] ?>">
+          <span><?= $p['label'] ?></span>
+          <div class="proj-thumb-overlay">
+            <button class="btn btn-primary btn-sm view-details-btn">Details</button>
+            <?php if (!empty($p['live'])): ?>
+              <a href="<?= $p['live'] ?>" target="_blank" class="btn btn-ghost btn-sm" onclick="event.stopPropagation();">Live</a>
+            <?php endif; ?>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat"><?= $p['cat'] ?></div>
+          <h3><?= $p['title'] ?></h3>
+          <p><?= $p['desc'] ?></p>
+          <div class="proj-tech">
+            <?php foreach ($p['tech'] as $t): ?><span class="tech-tag"><?= $t ?></span><?php endforeach; ?>
+          </div>
+          <div class="proj-links">
+            <button class="proj-link view-details-link" style="background:none;border:none;padding:0;cursor:pointer;font-family:inherit;">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              View details
+            </button>
+            <?php if (!empty($p['github'])): ?>
+            <a href="<?= $p['github'] ?>" class="proj-link" target="_blank" onclick="event.stopPropagation();">
+              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div style="text-align: center; margin-top: 50px;" class="reveal">

@@ -917,11 +917,21 @@ body:not(:hover) #cursor-ring { opacity: 0; }
   background: var(--ico-bg, rgba(232,87,59,0.1));
   border: 1px solid var(--ico-border, rgba(232,87,59,0.18));
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  color: var(--card-line, var(--coral));
   flex-shrink: 0;
-  transition: border-radius 0.4s var(--ease);
+  transition: border-radius 0.4s var(--ease), transform 0.3s ease, background 0.3s ease;
 }
-.skill-card:hover .skill-ico { border-radius: var(--r-sm); }
+.skill-ico svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  display: block;
+}
+.skill-card:hover .skill-ico {
+  border-radius: var(--r-sm);
+  transform: scale(1.06);
+}
 
 .skill-card h3 {
   font-family: var(--font-display);
@@ -1625,7 +1635,20 @@ body:not(:hover) #cursor-ring { opacity: 0; }
   border-color: var(--border2);
   transform: translateX(5px);
 }
-.svc-ico { font-size: 1.5rem; flex-shrink: 0; }
+.svc-ico {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--coral);
+}
+.svc-ico svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  display: block;
+}
 .svc-info { flex-grow: 1; }
 .svc-info h4 {
   font-family: var(--font-display);
@@ -1734,8 +1757,30 @@ body:not(:hover) #cursor-ring { opacity: 0; }
   border-radius: var(--r-md);
   transition: var(--transition);
 }
-.contact-item:hover { border-color: var(--coral); transform: translateX(5px); }
-.ci-icon { font-size: 1.35rem; flex-shrink: 0; }
+.ci-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--r-sm);
+  background: rgba(232,87,59,0.08);
+  border: 1px solid rgba(232,87,59,0.18);
+  color: var(--coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+.ci-icon svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+.contact-item:hover .ci-icon {
+  background: var(--coral);
+  color: #fff;
+  border-color: var(--coral);
+  transform: scale(1.05);
+}
 .ci-txt { flex-grow: 1; }
 .ci-txt strong { display: block; font-size: 0.875rem; color: var(--heading); }
 .ci-txt span { font-family: var(--font-hand); font-size: 0.92rem; color: var(--muted); }
@@ -1772,10 +1817,17 @@ footer {
   border: 1px solid var(--border);
   display: flex; align-items: center; justify-content: center;
   font-size: 0.95rem;
+  color: var(--muted);
   transition: var(--transition);
+}
+.social-link svg {
+  width: 15px;
+  height: 15px;
+  display: block;
 }
 .social-link:hover {
   background: var(--coral);
+  color: #fff;
   border-color: var(--coral);
   transform: translateY(-2px) rotate(8deg);
   border-radius: 50%;
