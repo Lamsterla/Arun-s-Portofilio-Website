@@ -2309,9 +2309,9 @@ footer {
 
 @media (max-width: 960px) {
   .hero-inner      { grid-template-columns: 1fr; gap: 44px; }
-  .hero-visual     { display: none; }
+  .hero-visual     { display: block; max-width: 320px; margin: 0 auto; width: 100%; }
   .about-inner     { grid-template-columns: 1fr; gap: 44px; }
-  .about-photo-col { display: none; }
+  .about-photo-col { display: block; max-width: 340px; margin: 0 auto; width: 100%; }
   .hire-inner      { grid-template-columns: 1fr; gap: 44px; }
   .contact-inner   { grid-template-columns: 1fr; gap: 44px; }
   .blogs-grid      { grid-template-columns: 1fr 1fr; }
