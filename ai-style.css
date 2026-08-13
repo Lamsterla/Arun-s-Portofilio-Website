@@ -668,7 +668,8 @@
 
 @media (max-width: 1200px) {
   .ai-grid {
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 280px 1fr;
+    gap: 20px;
   }
   .ai-sidebar-right {
     display: none; /* Hide right sidebar on tablets */
@@ -676,19 +677,66 @@
 }
 
 @media (max-width: 900px) {
+  .ai-app-wrapper {
+    padding: 80px 14px 20px 14px;
+    align-items: stretch;
+  }
   .ai-grid {
     grid-template-columns: 1fr;
     height: auto;
+    gap: 16px;
   }
   .ai-sidebar-left {
     display: none; /* Hide left sidebar on mobile */
   }
-  .ai-app-wrapper {
-    padding-top: 80px;
-    padding-bottom: 20px;
-  }
   .ai-chat-container {
-    height: calc(100vh - 120px);
-    min-height: 500px;
+    height: calc(100dvh - 120px);
+    min-height: 520px;
+    border-radius: 14px;
+  }
+  .chat-header {
+    padding: 16px 18px;
+  }
+  .chat-messages {
+    padding: 16px 14px;
+  }
+  .chat-suggestions-wrapper {
+    padding: 10px 14px;
+  }
+  .chat-suggestions {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .chat-suggestions::-webkit-scrollbar {
+    display: none;
+  }
+  .suggest-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+  .chat-input-area {
+    padding: 12px 14px 18px 14px;
+  }
+  .chat-form input {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .msg-bubble {
+    font-size: 0.88rem;
+    padding: 11px 14px;
+    max-width: 88%;
+  }
+  .msg-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
   }
 }
