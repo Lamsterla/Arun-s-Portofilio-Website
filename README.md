@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio website! This project serves as my digital portfolio, showcasing my work, technical skills, and services as a **Web Developer**, **Software Developer**, **Video Editor**, and **Technical Writer**.
 
-The website is designed with a modern, responsive interface using pure PHP, Vanilla CSS, and Vanilla JavaScript without relying on any frontend frameworks or build tools.
+The website is designed with a modern, responsive interface using pure HTML5, Vanilla CSS, and Vanilla JavaScript without relying on any frontend frameworks or build tools.
 
 ---
 
@@ -30,13 +30,6 @@ The website is designed with a modern, responsive interface using pure PHP, Vani
 - Vanilla CSS3
 - Vanilla JavaScript (ES6)
 
-### Backend
-- PHP
-
-### Development Environment
-- XAMPP
-- Apache Server
-
 ---
 
 ## 📂 Project Structure
@@ -44,22 +37,20 @@ The website is designed with a modern, responsive interface using pure PHP, Vani
 ```
 portfolio/
 │
-├── index.php
-├── about.php
-├── work.php
-├── blogs.php
-├── contact.php
-├── layout.php
-├── ai.php
+├── index.html
+├── about.html
+├── work.html
+├── blogs.html
+├── contact.html
+├── ai.html
 │
 ├── style.css
 ├── script.js
 ├── ai-style.css
 ├── ai-script.js
 │
-├── data.php
+├── data.json
 ├── README.md
-
 ```
 
 

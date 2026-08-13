@@ -310,7 +310,7 @@ function initProficiencyBars() {
 }
 
 // =============================================
-// PORTFOLIO TABS (work.php)
+// PORTFOLIO TABS (work.html)
 // =============================================
 function initPortfolioTabs() {
   const tabs   = document.querySelectorAll('.ptab');
@@ -435,7 +435,7 @@ function setupSlider(panel) {
 }
 
 // =============================================
-// PROJECT DETAIL MODAL (work.php)
+// PROJECT DETAIL MODAL (work.html)
 // =============================================
 function initProjectModal() {
   const modal = document.getElementById('projectModal');
@@ -624,6 +624,38 @@ function initFormValidation() {
     form.querySelectorAll('input[required], textarea[required], select[required]').forEach(field => {
       field.addEventListener('blur',  () => validateField(field));
       field.addEventListener('input', () => clearFieldErr(field));
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let isValid = true;
+      form.querySelectorAll('input[required], textarea[required], select[required]').forEach(field => {
+        if (!field.value.trim() || (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim()))) {
+          validateField(field);
+          isValid = false;
+        }
+      });
+
+      if (isValid) {
+        const nameField = form.querySelector('input[name="name"], input[name="cname"]');
+        const senderName = nameField ? nameField.value.trim() : 'Friend';
+        const msg = id === 'hireForm' 
+          ? `Thank you, ${senderName}. Your brief has been received. I'll respond within 24 hours.`
+          : `Message received, ${senderName}. I'll get back to you soon!`;
+
+        // Check if notice already exists, else insert
+        let notice = form.parentNode.querySelector('.form-notice');
+        if (!notice) {
+          notice = document.createElement('div');
+          notice.className = 'form-notice';
+          form.parentNode.insertBefore(notice, form);
+        }
+        notice.innerHTML = '&#10003; ' + msg;
+        notice.style.display = 'block';
+
+        showToast(msg);
+        form.reset();
+      }
     });
   });
 }

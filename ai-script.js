@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       keywords: /(availab|free|busy|schedule|hire|work with)/i,
-      reply: "Arun is <strong>currently available</strong> and accepting new freelance projects! He is looking for web development, software automation, and video editing work. You can submit a project brief directly via the <a href='contact.php' class='ai-accent-link'>Contact Page</a>."
+      reply: "Arun is <strong>currently available</strong> and accepting new freelance projects! He is looking for web development, software automation, and video editing work. You can submit a project brief directly via the <a href='contact.html' class='ai-accent-link'>Contact Page</a>."
     },
     {
       keywords: /(price|pricing|rate|cost|fees|charge|how much)/i,
@@ -30,21 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
              "<li><strong>Software Development:</strong> Custom automation, Python bots, CLI tools — From ₹8,000</li>" +
              "<li><strong>Video Editing:</strong> YouTube videos, cinematic reels, promotional ads — From ₹2,000</li>" +
              "<li><strong>Content Writing:</strong> SEO-optimized technical tutorials & articles — From ₹500/post</li>" +
-             "</ul><p style='margin-top:8px;'>Have a specific project? Drop a message on the <a href='contact.php'>Contact Page</a> for a custom quote!</p>"
+             "</ul><p style='margin-top:8px;'>Have a specific project? Drop a message on the <a href='contact.html'>Contact Page</a> for a custom quote!</p>"
     },
     {
       keywords: /(web|website|front|back|fullstack|react|php|mysql)/i,
       reply: "<h4>Featured Web Projects:</h4>" +
-             "<div class='msg-bubble-card'><strong>Antivirus Dashboard</strong><p>Real-time threat monitoring using PHP, Python, and MySQL.</p><a href='work.php'>View Project</a></div>" +
-             "<div class='msg-bubble-card'><strong>E-Commerce Platform</strong><p>Full-stack online shop with cart, checkout, and admin panel.</p><a href='work.php'>View Project</a></div>" +
-             "<div class='msg-bubble-card'><strong>Analytics Dashboard</strong><p>Interactive data visualization with Chart.js.</p><a href='work.php'>View Project</a></div>"
+             "<div class='msg-bubble-card'><strong>Antivirus Dashboard</strong><p>Real-time threat monitoring using PHP, Python, and MySQL.</p><a href='work.html'>View Project</a></div>" +
+             "<div class='msg-bubble-card'><strong>E-Commerce Platform</strong><p>Full-stack online shop with cart, checkout, and admin panel.</p><a href='work.html'>View Project</a></div>" +
+             "<div class='msg-bubble-card'><strong>Analytics Dashboard</strong><p>Interactive data visualization with Chart.js.</p><a href='work.html'>View Project</a></div>"
     },
     {
       keywords: /(software|python|bot|scrap|automation|cli)/i,
       reply: "<h4>Software & Automation Projects:</h4>" +
-             "<div class='msg-bubble-card'><strong>Python Scraper & Bot</strong><p>Automated web scraping and notification system built with Selenium.</p><a href='work.php'>View Details</a></div>" +
-             "<div class='msg-bubble-card'><strong>Dev Toolbox CLI</strong><p>A Command Line interface tool in Python to automate developer workflows.</p><a href='work.php'>View Details</a></div>" +
-             "<div class='msg-bubble-card'><strong>REST API Backend</strong><p>Modular Node.js/Express API with JWT authentication.</p><a href='work.php'>View Details</a></div>"
+             "<div class='msg-bubble-card'><strong>Python Scraper & Bot</strong><p>Automated web scraping and notification system built with Selenium.</p><a href='work.html'>View Details</a></div>" +
+             "<div class='msg-bubble-card'><strong>Dev Toolbox CLI</strong><p>A Command Line interface tool in Python to automate developer workflows.</p><a href='work.html'>View Details</a></div>" +
+             "<div class='msg-bubble-card'><strong>REST API Backend</strong><p>Modular Node.js/Express API with JWT authentication.</p><a href='work.html'>View Details</a></div>"
     },
     {
       keywords: /(video|edit|premiere|effects|youtube|reel|short|clip)/i,
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
              "<li><strong>YouTube Channel Reels</strong> — pacing, retention, motion graphics (50k+ views)</li>" +
              "<li><strong>Brand Promo Ads</strong> — high-impact 30s product promos</li>" +
              "<li><strong>Cinematic Travel Reels</strong> — sound design, J-cuts, color grading</li>" +
-             "</ul><p>Primary tools: <em>Adobe Premiere Pro, After Effects, DaVinci Resolve</em>. See samples on the <a href='work.php'>Work Page</a>.</p>"
+             "</ul><p>Primary tools: <em>Adobe Premiere Pro, After Effects, DaVinci Resolve</em>. See samples on the <a href='work.html'>Work Page</a>.</p>"
     },
     {
       keywords: /(blog|write|article|seo|tutorial|guide)/i,
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
              "<li><strong>Building Modern PHP Apps</strong> — PHP architecture & Composer workflows</li>" +
              "<li><strong>Automating Workflows with Python</strong> — saving hours with automation</li>" +
              "<li><strong>Web Security Every Developer Must Know</strong> — SQLi, XSS, and CSRF protection</li>" +
-             "</ul><p>Check out the full list on the <a href='blogs.php'>Blog Page</a>.</p>"
+             "</ul><p>Check out the full list on the <a href='blogs.html'>Blog Page</a>.</p>"
     },
     {
       keywords: /(stack|tech|tool|language|code|program)/i,
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       keywords: /(experience|background|cv|resume|who are you|about)/i,
-      reply: "Arun is a self-driven developer and creator with <strong>3+ years of experience</strong>. He bridges the gap between clean code and high-quality digital content, taking projects from idea to execution. You can download his full resume on the <a href='about.php'>About Page</a>."
+      reply: "Arun is a self-driven developer and creator with <strong>3+ years of experience</strong>. He bridges the gap between clean code and high-quality digital content, taking projects from idea to execution. You can download his full resume on the <a href='about.html'>About Page</a>."
     }
   ];
 

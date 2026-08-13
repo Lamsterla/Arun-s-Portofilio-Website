@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of a web developer, video editor and blog writer." />
+  <title>Portfolio — Web Developer &amp; Freelancer</title>
+  <link rel="stylesheet" href="style.css?v=1.4" />
+  <script>
+    (function(){
+      var t = localStorage.getItem('portfolio-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+<script>
+  (function() {
+    var isReload = false;
+    if (window.performance && window.performance.getEntriesByType) {
+      var navs = window.performance.getEntriesByType('navigation');
+      if (navs.length > 0 && navs[0].type === 'reload') {
+        isReload = true;
+      }
+    } else if (window.performance && window.performance.navigation) {
+      if (window.performance.navigation.type === 1) { // 1 = TYPE_RELOAD
+        isReload = true;
+      }
+    }
+    if (isReload) {
+      sessionStorage.removeItem('portfolio-loaded');
+    }
+    if (sessionStorage.getItem('portfolio-loaded')) {
+      document.write('<style>#preloader { display: none !important; }</style>');
+    }
+  })();
+</script>
+<!-- Preloader -->
+<div id="preloader" class="loading">
+  <div class="wheel-and-hamster">
+    <div class="wheel"></div>
+    <div class="hamster">
+      <div class="hamster__body">
+        <div class="hamster__head">
+          <div class="hamster__ear"></div>
+          <div class="hamster__eye"></div>
+          <div class="hamster__nose"></div>
+        </div>
+        <div class="hamster__limb hamster__limb--fr"></div>
+        <div class="hamster__limb hamster__limb--fl"></div>
+        <div class="hamster__limb hamster__limb--br"></div>
+        <div class="hamster__limb hamster__limb--bl"></div>
+        <div class="hamster__tail"></div>
+      </div>
+    </div>
+    <div class="spoke"></div>
+  </div>
+</div>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Dev<span class="dot">.</span>Portfolio</a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html"   class="nav-link active">Home</a></li>
+        <li><a href="about.html"   class="nav-link">About</a></li>
+        <li><a href="work.html"    class="nav-link">Work</a></li>
+        <li><a href="blogs.html"   class="nav-link">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-hire btn-sm">Hire Me</a>
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <span class="icon-sun">&#9728;</span>
+          <span class="icon-moon">&#9790;</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ======================================================
+     HERO
+     ====================================================== -->
+<section id="hero">
+  <div class="hero-backdrop">
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+  </div>
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-content">
+        <div class="hero-availability">
+          <span class="avail-pulse"></span>
+          Open to freelance work
+        </div>
+
+        <span class="hero-eyebrow">Hello, I'm</span>
+        <h1 class="hero-name">
+          Arun Sah<br>
+          <span class="name-accent">Here</span>
+        </h1>
+
+        <p class="hero-tagline">
+          I work as a&nbsp;<span class="typed" id="typedText"></span><span class="caret"></span>
+        </p>
+
+        <p class="hero-bio">
+          A developer, editor and writer based in <strong>Navi Mumbai, India</strong> — I take projects
+          from idea to execution and care about the details that make the difference.
+        </p>
+
+        <div class="hero-actions">
+          <a href="work.html"    class="btn btn-primary">View my work</a>
+          <a href="contact.html" class="btn btn-hire">Hire me</a>
+          <a href="about.html"   class="btn btn-ghost">About me</a>
+        </div>
+
+        <div class="hero-connect">
+          <h3 class="connect-title">📫 Connect With Me</h3>
+          <div class="connect-links">
+            <a href="https://github.com/Lamsterla" class="connect-btn github" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/arun-sah-7b7246313" class="connect-btn linkedin" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="mailto:arunkumar90853@gmail.com" class="connect-btn gmail" title="Gmail">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 5.457v13.909c0 .904-.732 1.634-1.634 1.634h-2.23V9.431L12 14.771 3.864 9.43v11.57H1.634A1.637 1.637 0 010 19.366V5.457c0-1.124 1.25-1.787 2.179-1.155L12 11.196l9.821-6.894A1.378 1.378 0 0124 5.457z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/sah_arun_kumar" class="connect-btn instagram" target="_blank" rel="noopener noreferrer" title="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 0.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal from-right">
+        <div class="hero-photo-frame">
+          <img src="photo/2.jpeg" alt="Arun Sah">
+        </div>
+        <div class="photo-corner">3+<br>Years</div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     MARQUEE STRIP
+     ====================================================== -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Web Development <span>✦</span></span>
+    <span class="marquee-item">Video Editing <span>✦</span></span>
+    <span class="marquee-item">PHP &amp; MySQL <span>✦</span></span>
+    <span class="marquee-item">Python <span>✦</span></span>
+    <span class="marquee-item">UI Design <span>✦</span></span>
+    <span class="marquee-item">Content Writing <span>✦</span></span>
+    <span class="marquee-item">React <span>✦</span></span>
+    <span class="marquee-item">Node.js <span>✦</span></span>
+    <span class="marquee-item">After Effects <span>✦</span></span>
+    <span class="marquee-item">Figma <span>✦</span></span>
+    <span class="marquee-item">Premiere Pro <span>✦</span></span>
+    <span class="marquee-item">Software Dev <span>✦</span></span>
+    <span class="marquee-item">Web Development <span>✦</span></span>
+    <span class="marquee-item">Video Editing <span>✦</span></span>
+    <span class="marquee-item">PHP &amp; MySQL <span>✦</span></span>
+    <span class="marquee-item">Python <span>✦</span></span>
+    <span class="marquee-item">UI Design <span>✦</span></span>
+    <span class="marquee-item">Content Writing <span>✦</span></span>
+    <span class="marquee-item">React <span>✦</span></span>
+    <span class="marquee-item">Node.js <span>✦</span></span>
+    <span class="marquee-item">After Effects <span>✦</span></span>
+    <span class="marquee-item">Figma <span>✦</span></span>
+    <span class="marquee-item">Premiere Pro <span>✦</span></span>
+    <span class="marquee-item">Software Dev <span>✦</span></span>
+  </div>
+</div>
+
+<!-- ======================================================
+     SKILLS TEASER
+     ====================================================== -->
+<section class="section section--alt" id="skills">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="label">What I Do</span>
+      <h2 class="section-title">My <span class="em">expertise</span></h2>
+      <span class="rule rule-center"></span>
+      <p class="section-sub" style="margin-top:18px;">
+        A range of skills built through real projects, not just tutorials.
+      </p>
+    </div>
+
+    <div class="skills-layout">
+      <div class="skill-card reveal d1" style="--card-line:var(--sky);--ico-bg:rgba(75,159,214,0.1);--ico-border:rgba(75,159,214,0.2)">
+        <div class="skill-head">
+          <div class="skill-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <h3>Web Development</h3>
+        </div>
+        <p>Building responsive, performant websites and web apps — from pixel-perfect front-ends to robust back-ends.</p>
+        <div class="skill-chips">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">PHP</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">React</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal d2" style="--card-line:var(--amber);--ico-bg:rgba(244,169,53,0.1);--ico-border:rgba(244,169,53,0.2)">
+        <div class="skill-head">
+          <div class="skill-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
+          <h3>Software Development</h3>
+        </div>
+        <p>Writing clean, efficient code for desktop tools, CLI utilities, bots and automation — solving real problems.</p>
+        <div class="skill-chips">
+          <span class="chip">Python</span>
+          <span class="chip">C++</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">APIs</span>
+          <span class="chip">Git</span>
+          <span class="chip">Linux</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal d3" style="--card-line:var(--coral);--ico-bg:rgba(232,87,59,0.1);--ico-border:rgba(232,87,59,0.2)">
+        <div class="skill-head">
+          <div class="skill-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+          <h3>Video Editing</h3>
+        </div>
+        <p>Crafting cinematic cuts, branded YouTube content, short-form reels and polished promo videos.</p>
+        <div class="skill-chips">
+          <span class="chip">Premiere Pro</span>
+          <span class="chip">After Effects</span>
+          <span class="chip">DaVinci</span>
+          <span class="chip">CapCut</span>
+          <span class="chip">Color Grading</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal d4" style="--card-line:var(--amber);--ico-bg:rgba(244,169,53,0.08);--ico-border:rgba(244,169,53,0.18)">
+        <div class="skill-head">
+          <div class="skill-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <h3>Content Writing</h3>
+        </div>
+        <p>Clear, well-researched technical blogs, tutorials and SEO articles that help developers.</p>
+        <div class="skill-chips">
+          <span class="chip">Technical Writing</span>
+          <span class="chip">SEO</span>
+          <span class="chip">Tutorials</span>
+          <span class="chip">Reviews</span>
+          <span class="chip">Dev Guides</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal d5" style="--card-line:var(--sky);--ico-bg:rgba(75,159,214,0.08);--ico-border:rgba(75,159,214,0.18)">
+        <div class="skill-head">
+          <div class="skill-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+          <h3>UI / UX Design</h3>
+        </div>
+        <p>Designing clean, purposeful interfaces. I care about how it looks and how it feels to use.</p>
+        <div class="skill-chips">
+          <span class="chip">Figma</span>
+          <span class="chip">Wireframes</span>
+          <span class="chip">Prototypes</span>
+          <span class="chip">Design Systems</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal d5" style="--card-line:var(--sage);--ico-bg:rgba(90,138,111,0.1);--ico-border:rgba(90,138,111,0.2)">
+        <div class="skill-head">
+          <div class="skill-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+          <h3>Database &amp; Backend</h3>
+        </div>
+        <p>Designing schemas, writing optimised queries and building APIs that are fast, secure and maintainable.</p>
+        <div class="skill-chips">
+          <span class="chip">MySQL</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip">PHP</span>
+          <span class="chip">Laravel basics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     FEATURED PROJECTS
+     ====================================================== -->
+<section class="section" id="featured-projects">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="label">My Portfolio</span>
+      <h2 class="section-title">Featured <span class="em">Projects</span></h2>
+      <span class="rule rule-center"></span>
+      <p class="section-sub" style="margin-top:18px;">
+        A handpicked selection of my best work across web development, software creation, and video editing.
+      </p>
+    </div>
+
+    <div class="portfolio-grid" style="margin-top: 40px;">
+      <!-- Web Project -->
+      <div class="project-card reveal d1" data-type="web" data-index="0" style="cursor: pointer;">
+        <div class="proj-thumb" style="background:linear-gradient(145deg,#1a2840,#243558)">
+          <span>&#128737;</span>
+          <div class="proj-thumb-overlay">
+            <button class="btn btn-primary btn-sm view-details-btn">Details</button>
+            <a href="https://github.com/Lamsterla" target="_blank" class="btn btn-ghost btn-sm" onclick="event.stopPropagation();">Live</a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Security</div>
+          <h3>Antivirus Dashboard</h3>
+          <p>Real-time threat monitoring with scan logs, agent management and live status reporting.</p>
+          <div class="proj-tech">
+            <span class="tech-tag">PHP</span><span class="tech-tag">Python</span><span class="tech-tag">MySQL</span><span class="tech-tag">JavaScript</span>
+          </div>
+          <div class="proj-links">
+            <button class="proj-link view-details-link" style="background:none;border:none;padding:0;cursor:pointer;font-family:inherit;">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              View details
+            </button>
+            <a href="https://github.com/Lamsterla" class="proj-link" target="_blank" onclick="event.stopPropagation();">
+              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Software Project -->
+      <div class="project-card reveal d2" data-type="software" data-index="0" style="cursor: pointer;">
+        <div class="proj-thumb" style="background:linear-gradient(145deg,#221830,#2e2040)">
+          <span>&#129302;</span>
+          <div class="proj-thumb-overlay">
+            <button class="btn btn-primary btn-sm view-details-btn">Details</button>
+            <a href="https://github.com/Lamsterla" target="_blank" class="btn btn-ghost btn-sm" onclick="event.stopPropagation();">Code</a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Automation</div>
+          <h3>Python Scraper &amp; Bot</h3>
+          <p>Automated scraper and notification bot for data collection, scheduling and reporting.</p>
+          <div class="proj-tech">
+            <span class="tech-tag">Python</span><span class="tech-tag">Selenium</span><span class="tech-tag">BeautifulSoup</span><span class="tech-tag">API</span>
+          </div>
+          <div class="proj-links">
+            <button class="proj-link view-details-link" style="background:none;border:none;padding:0;cursor:pointer;font-family:inherit;">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              View details
+            </button>
+            <a href="https://github.com/Lamsterla" class="proj-link" target="_blank" onclick="event.stopPropagation();">
+              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Project -->
+      <div class="video-slide-card project-card reveal d3" data-type="video" data-index="0" style="cursor: pointer;">
+        <div class="vslide-thumb" style="background:linear-gradient(160deg,#281840,#382050)">
+          <div class="play-ring">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+          <span class="vslide-cat">YouTube</span>
+        </div>
+        <div class="vslide-body">
+          <h3>YouTube Channel Reel</h3>
+          <p>Long-form and short-form edits for a tech education channel — 50k+ views.</p>
+          <div class="proj-tech">
+            <span class="tool-chip">Premiere Pro</span><span class="tool-chip">After Effects</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Web Project 2 -->
+      <div class="project-card reveal d4" data-type="web" data-index="1" style="cursor: pointer;">
+        <div class="proj-thumb" style="background:linear-gradient(145deg,#1e2840,#2a3555)">
+          <span>&#128722;</span>
+          <div class="proj-thumb-overlay">
+            <button class="btn btn-primary btn-sm view-details-btn">Details</button>
+            <a href="https://github.com/Lamsterla" target="_blank" class="btn btn-ghost btn-sm" onclick="event.stopPropagation();">Live</a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">E-Commerce</div>
+          <h3>Online Store Platform</h3>
+          <p>Full-stack shop with product management, cart, checkout flow and admin control panel.</p>
+          <div class="proj-tech">
+            <span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span><span class="tech-tag">JavaScript</span><span class="tech-tag">CSS</span>
+          </div>
+          <div class="proj-links">
+            <button class="proj-link view-details-link" style="background:none;border:none;padding:0;cursor:pointer;font-family:inherit;">
+              <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              View details
+            </button>
+            <a href="https://github.com/Lamsterla" class="proj-link" target="_blank" onclick="event.stopPropagation();">
+              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px;" class="reveal">
+      <a href="work.html" class="btn btn-primary">View All Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     QUICK HIRE CTA
+     ====================================================== -->
+<section class="section section--alt">
+  <div class="container">
+    <div style="text-align:center;max-width:580px;margin:0 auto;" class="reveal">
+      <span class="label">Freelance</span>
+      <h2 class="section-title">Got a project <span class="em">in mind?</span></h2>
+      <span class="rule rule-center"></span>
+      <p class="section-sub" style="margin:20px auto 30px;">
+        I'm currently available for freelance work. Let's build something together.
+      </p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-hire">Hire me</a>
+        <a href="work.html"    class="btn btn-ghost">See my work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     PROJECT DETAIL MODAL (FLASHCARD VERSION)
+     ====================================================== -->
+<div class="project-modal" id="projectModal" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="flashcard-container">
+    <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+    <div class="flashcard" id="flashcard">
+      
+      <!-- FRONT FACE -->
+      <div class="flashcard-face flashcard-front">
+        <div class="modal-header-banner" id="modalBannerFront">
+          <span id="modalEmojiFront"></span>
+        </div>
+        <div class="modal-body">
+          <span class="modal-cat" id="modalCatFront"></span>
+          <h2 class="modal-title" id="modalTitleFront"></h2>
+          <div class="modal-divider" style="margin: 12px 0 16px;"></div>
+          <p class="flashcard-desc" id="modalDescFront"></p>
+          <div class="modal-tech" id="modalTechFront"></div>
+          
+          <div class="flip-hint">
+            <span>Click card to flip for details ↺</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- BACK FACE -->
+      <div class="flashcard-face flashcard-back">
+        <div class="modal-header-banner" id="modalBannerBack">
+          <span id="modalEmojiBack"></span>
+        </div>
+        <div class="modal-body">
+          <h2 class="modal-title" id="modalTitleBack"></h2>
+          <div class="modal-divider" style="margin: 12px 0 16px;"></div>
+          <div class="modal-readme" id="modalReadmeBack"></div>
+          <div class="modal-actions" id="modalActionsBack"></div>
+          
+          <div class="flip-hint back-hint">
+            <span>Click card to flip front ↺</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================
+     PROJECTS DATA SOURCE
+     ====================================================== -->
+<script id="projects-data" type="application/json">
+{
+  "web": [
+    {
+      "label": "\ud83d\udee1\ufe0f",
+      "cat": "Security",
+      "title": "Antivirus Dashboard",
+      "desc": "Real-time threat monitoring with scan logs, agent management and live status reporting.",
+      "tech": ["PHP", "Python", "MySQL", "JavaScript"],
+      "bg": "linear-gradient(145deg,#1a2840,#243558)",
+      "live": "https://github.com/Lamsterla",
+      "github": "https://github.com/Lamsterla",
+      "readme": "<h3>About the Project<\/h3><p>The Antivirus Dashboard is a security-focused admin panel that aggregates threat intelligence from server agents. It displays critical vulnerabilities, CPU\/RAM usage of server endpoints, and live file scan logs.<\/p><h3>Key Features<\/h3><ul><li><strong>Real-time Logs:<\/strong> Renders active scans dynamically as they occur on the endpoint systems.<\/li><li><strong>Agent Status Mapping:<\/strong> Visual representation of all active and offline local network agents.<\/li><li><strong>Action Center:<\/strong> Quarantine files or trigger immediate scans directly from the browser.<\/li><\/ul><h3>Tech Stack<\/h3><p>Built with PHP for session handling and data management, Python for system-level scanner agents, MySQL for log persistence, and pure CSS for smooth transitions.<\/p>"
+    },
+    {
+      "label": "\ud83d\uded2",
+      "cat": "E-Commerce",
+      "title": "Online Store Platform",
+      "desc": "Full-stack shop with product management, cart, checkout flow and admin control panel.",
+      "tech": ["PHP", "MySQL", "JavaScript", "CSS"],
+      "bg": "linear-gradient(145deg,#1e2840,#2a3555)",
+      "live": "https://github.com/Lamsterla",
+      "github": "https://github.com/Lamsterla",
+      "readme": "<h3>About the Project<\/h3><p>A full-featured e-commerce ecosystem built from scratch. It supports user profiles, responsive catalog browsing, persistent cart storage, check-out simulation, and a dedicated administrator interface.<\/p><h3>Key Features<\/h3><ul><li><strong>Inventory Control:<\/strong> Management panel to add, edit, and delete products, categories, and inventory.<\/li><li><strong>Cart System:<\/strong> Dynamic local storage fallback cart that syncs when the user logs in.<\/li><li><strong>Secure Checkout:<\/strong> Encrypted user authentication and simulated payment integration.<\/li><\/ul><h3>Tech Stack<\/h3><p>Powered by raw PHP and MySQL, styled with modern Vanilla CSS including custom flex layouts and custom variables for the shopping interface.<\/p>"
+    },
+    {
+      "label": "\ud83d\udcca",
+      "cat": "Dashboard",
+      "title": "Analytics Dashboard",
+      "desc": "Interactive data visualisation with real-time charts, filters and CSV export.",
+      "tech": ["JavaScript", "Chart.js", "PHP", "CSS"],
+      "bg": "linear-gradient(145deg,#1c2a3e,#253650)",
+      "live": "https://github.com/Lamsterla",
+      "github": "https://github.com/Lamsterla",
+      "readme": "<h3>About the Project<\/h3><p>A lightweight, interactive client-side dashboard that converts CSV exports and database queries into actionable visual charts.<\/p><h3>Key Features<\/h3><ul><li><strong>Dynamic Charts:<\/strong> Custom bar, line, and doughnut charts showing business telemetry.<\/li><li><strong>Filtering Options:<\/strong> Segment records by custom dates, categories, and region.<\/li><li><strong>Data Exports:<\/strong> Export parsed dashboards back into clean CSV\/PDF files instantly.<\/li><\/ul><h3>Tech Stack<\/h3><p>Developed using Chart.js, HTML5, Vanilla JavaScript, and backend API integration using PHP.<\/p>"
+    },
+    {
+      "label": "\ud83d\udcdd",
+      "cat": "CMS",
+      "title": "Custom Blog CMS",
+      "desc": "Blog management with rich-text editing, categories, tags and basic SEO tooling.",
+      "tech": ["PHP", "MySQL", "TinyMCE", "JavaScript"],
+      "bg": "linear-gradient(145deg,#1e2e28,#283e33)",
+      "live": "https://github.com/Lamsterla",
+      "github": "https://github.com/Lamsterla",
+      "readme": "<h3>About the Project<\/h3><p>An intuitive content management system built to ease technical writing. It features an integrated WYSIWYG editor and instant SEO health analysis.<\/p><h3>Key Features<\/h3><ul><li><strong>Rich Text Editing:<\/strong> Integration with TinyMCE for editing layout blocks, images, and formatting code.<\/li><li><strong>Tag & Category Indexing:<\/strong> Dynamic organization and search indices optimized for search engines.<\/li><li><strong>SEO Checklist:<\/strong> Analyzes keyword density, descriptions, and tag structures before publishing.<\/li><\/ul><h3>Tech Stack<\/h3><p>Written using PHP and MySQL backend, combined with JS dynamic tags styling.<\/p>"
+    },
+    {
+      "label": "\ud83d\udd12",
+      "cat": "Security",
+      "title": "PHP Security Toolkit",
+      "desc": "Reusable library covering SQL injection, XSS, CSRF protection and input sanitisation.",
+      "tech": ["PHP", "MySQL", "Composer"],
+      "bg": "linear-gradient(145deg,#1a2535,#243048)",
+      "live": "https://github.com/Lamsterla",
+      "github": "https://github.com/Lamsterla",
+      "readme": "<h3>About the Project<\/h3><p>A reusable, plug-and-play middleware package for legacy PHP applications that mitigates the top OWASP security vulnerabilities.<\/p><h3>Key Features<\/h3><ul><li><strong>SQL Injection Shield:<\/strong> Automated parameter wrapping for standard queries.<\/li><li><strong>XSS Filter:<\/strong> Strict sanitization of user-submitted forms and output encoders.<\/li><li><strong>CSRF Token Generator:<\/strong> Automatic session validation tokens injected into HTML form tags.<\/li><\/ul><h3>Tech Stack<\/h3><p>Coded in PHP, distributed as a Composer package for simple dependency installation.<\/p>"
+    }
+  ],
+  "software": [
+    {
+      "label": "\ud83e\udd16",
+      "cat": "Automation",
+      "title": "Python Scraper & Bot",
+      "desc": "Automated scraper and notification bot for data collection, scheduling and reporting.",
+      "tech": ["Python", "Selenium", "BeautifulSoup", "API"],
+      "bg": "linear-gradient(145deg,#221830,#2e2040)",
+      "live": "",
+      "github": "https://github.com/Lamsterla",
+      "readme": "<h3>About the Project<\/h3><p>A headless script designed to monitor target websites for specific updates, scrape critical elements, and send instant alerts to Discord or Telegram channels.<\/p><h3>Key Features<\/h3><ul><li><strong>Dynamic Scraping:<\/strong> Selenium drivers handle JavaScript-heavy websites and cloudflare bypasses.<\/li><li><strong>Rate Limiting:<\/strong> Intelligent scheduling to prevent IP bans.<\/li><li><strong>Instant Alerts:<\/strong> Webhook triggers immediately upon detecting target keywords or price drops.<\/li><\/ul><h3>Tech Stack<\/h3><p>Coded in Python using BeautifulSoup, Selenium, and webhook APIs.<\/p>"
+    },
+    {
+      "label": "\ud83d\udd28",
+      "cat": "CLI Tool",
+      "title": "Dev Toolbox CLI",
+      "desc": "Command-line utility for repetitive dev tasks — scaffolding, env setup and deployment helpers.",
+      "tech": ["Python", "Click", "Rich", "Shell"],
+      "bg": "linear-gradient(145deg,#182030,#20283e)",
+      "live": "",
+      "github": "https://github.com/Lamsterla",
+      "readme": "<h3>About the Project<\/h3><p>A lightweight command-line tool built to accelerate local environment bootstrap tasks, git branch cleaners, and static site compiler scripts.<\/p><h3>Key Features<\/h3><ul><li><strong>Quick Scaffolding:<\/strong> Create templates for HTML\/CSS or PHP structures instantly.<\/li><li><strong>Git Helper:<\/strong> Cleans up merged local branches and formats standardized commits.<\/li><li><strong>Rich Output:<\/strong> Console formatting using coloring, progress bars, and custom logs.<\/li><\/ul><h3>Tech Stack<\/h3><p>Built with Python, Click, and Rich libraries, packaged as a globally executable terminal command.<\/p>"
+    },
+    {
+      "label": "\ud83d\udcf1",
+      "cat": "Mobile",
+      "title": "Task Manager App",
+      "desc": "Simple cross-platform task manager with offline support, categories and due-date reminders.",
+      "tech": ["Flutter", "Dart", "SQLite"],
+      "bg": "linear-gradient(145deg,#181c2e,#202538)",
+      "live": "https://github.com/Lamsterla",
+      "github": "https://github.com/Lamsterla",
+      "readme": "<h3>About the Project<\/h3><p>A cross-platform task manager designed to prioritize focus. Offers offline sync with a robust local database and smart grouping.<\/p><h3>Key Features<\/h3><ul><li><strong>Offline Mode:<\/strong> Fully operational without network connection using local database caches.<\/li><li><strong>Reminders:<\/strong> Local system push alerts mapped to custom priority tags.<\/li><li><strong>Statistics:<\/strong> Weekly charts showing finished tasks and productivity peaks.<\/li><\/ul><h3>Tech Stack<\/h3><p>Written in Flutter using Dart, with SQLite for local relational database storing.<\/p>"
+    },
+    {
+      "label": "\ud83d\udcc4",
+      "cat": "API",
+      "title": "REST API Backend",
+      "desc": "Modular REST API with JWT auth, rate limiting, caching and full OpenAPI documentation.",
+      "tech": ["Node.js", "Express", "MongoDB", "JWT"],
+      "bg": "linear-gradient(145deg,#182015,#20281e)",
+      "live": "",
+      "github": "https://github.com/Lamsterla",
+      "readme": "<h3>About the Project<\/h3><p>A production-ready REST API backend designed with enterprise patterns, supporting standard database integrations and OpenAPI descriptors.<\/p><h3>Key Features<\/h3><ul><li><strong>JWT Authentication:<\/strong> Secure token-based access with sliding expiration and refresh tokens.<\/li><li><strong>Rate Limiting:<\/strong> Middleware blocking spam and automated scraping bots.<\/li><li><strong>Self-Documenting:<\/strong> Swagger UI panel generated automatically from controller annotations.<\/li><\/ul><h3>Tech Stack<\/h3><p>Engineered using Node.js, Express, MongoDB, and JSON Web Tokens.<\/p>"
+    }
+  ],
+  "video": [
+    {
+      "title": "YouTube Channel Reel",
+      "cat": "YouTube",
+      "desc": "Long-form and short-form edits for a tech education channel — 50k+ views.",
+      "tools": ["Premiere Pro", "After Effects"],
+      "bg": "linear-gradient(160deg,#281840,#382050)",
+      "label": "\u25b6",
+      "readme": "<h3>YouTube Channel Reel<\/h3><p>Detailed editing work showing motion tracking, sound design, color correction, and pacing tailored to modern tech education.<\/p>"
+    },
+    {
+      "title": "Brand Promo Ad",
+      "cat": "Commercial",
+      "desc": "30-second product promo with motion graphics, colour grade and VO mixing.",
+      "tools": ["Premiere Pro", "Audacity"],
+      "bg": "linear-gradient(160deg,#1e2800,#2a3800)",
+      "label": "\u25b6",
+      "readme": "<h3>Brand Promo Ad<\/h3><p>Commercial marketing campaign video. Key tasks: audio mastering, dynamic range mixing, text animation overlays, and color grading.<\/p>"
+    },
+    {
+      "title": "Travel Highlights",
+      "cat": "Cinematic",
+      "desc": "Cinematic travel reel with J-cuts, LUT colour grading and ambient sound design.",
+      "tools": ["DaVinci Resolve", "Audacity"],
+      "bg": "linear-gradient(160deg,#002028,#002c38)",
+      "label": "\u25b6",
+      "readme": "<h3>Travel Highlights<\/h3><p>A highly stylized cinematic piece utilizing advanced LUTs, jump cuts, visual sound effects mapping, and slow-motion frame interpolation.<\/p>"
+    },
+    {
+      "title": "Social Media Reels",
+      "cat": "Short Form",
+      "desc": "Batch-edited vertical reels with captions, transitions and platform-native feel.",
+      "tools": ["CapCut", "Premiere Pro"],
+      "bg": "linear-gradient(160deg,#280010,#380018)",
+      "label": "\u25b6",
+      "readme": "<h3>Social Media Reels<\/h3><p>Vertical formatted content optimization, automated subtitle synchronization, high retention editing hooks, and trendy motion transitions.<\/p>"
+    },
+    {
+      "title": "Event Coverage",
+      "cat": "Event",
+      "desc": "Multi-camera corporate event highlights edited to a 3-minute deliverable.",
+      "tools": ["Premiere Pro", "After Effects"],
+      "bg": "linear-gradient(160deg,#201800,#302200)",
+      "label": "\u25b6",
+      "readme": "<h3>Event Coverage<\/h3><p>Three-camera synchronization, multicam audio nesting, sound cleaning, color matching, and client feedback integration cycles.<\/p>"
+    }
+  ]
+}
+</script>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">Dev<span class="dot">.</span>Portfolio</div>
+        <p>Building thoughtful digital experiences with clean code and real attention to detail. Open to freelance projects.</p>
+        <div class="footer-socials">
+          <a class="social-link" href="https://github.com/Lamsterla" target="_blank" rel="noopener noreferrer" title="GitHub">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+          </a>
+          <a class="social-link" href="https://www.linkedin.com/in/arun-sah-7b7246313" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3z"/>
+            </svg>
+          </a>
+          <a class="social-link" href="#" target="_blank" rel="noopener noreferrer" title="Twitter">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a class="social-link" href="#" target="_blank" rel="noopener noreferrer" title="YouTube">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+          <a class="social-link" href="https://www.instagram.com/sah_arun_kumar" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 0.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Pages</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="blogs.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="contact.html">Web Development</a></li>
+          <li><a href="contact.html">Software Dev</a></li>
+          <li><a href="contact.html">Video Editing</a></li>
+          <li><a href="contact.html">Content Writing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:arunkumar90853@gmail.com">arunkumar90853@gmail.com</a></li>
+          <li><a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><a href="https://www.linkedin.com/in/arun-sah-7b7246313" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="#">Navi Mumbai, India</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 <strong>Dev.Portfolio</strong> — All rights reserved.</p>
+      <p>HTML &middot; CSS &middot; JavaScript</p>
+    </div>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Back to top">&#8593;</button>
+<script src="script.js?v=1.2"></script>
+</body>
+</html>
