@@ -4,7 +4,14 @@
       "icon": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"16 18 22 12 16 6\"/><polyline points=\"8 6 2 12 8 18\"/></svg>",
       "title": "Web Development",
       "desc": "Building responsive, performant websites and web apps — from pixel-perfect front-ends to robust PHP back-ends.",
-      "tags": ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "React"],
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP",
+        "MySQL",
+        "React"
+      ],
       "line": "var(--sky)",
       "ico_bg": "rgba(75,159,214,0.1)",
       "ico_bd": "rgba(75,159,214,0.2)"
@@ -13,7 +20,14 @@
       "icon": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"4 17 10 11 4 5\"/><line x1=\"12\" y1=\"19\" x2=\"20\" y2=\"19\"/></svg>",
       "title": "Software Development",
       "desc": "Writing clean, efficient code for desktop tools, CLI utilities, bots and automation — solving real problems.",
-      "tags": ["Python", "C++", "Node.js", "APIs", "Git", "Linux"],
+      "tags": [
+        "Python",
+        "C++",
+        "Node.js",
+        "APIs",
+        "Git",
+        "Linux"
+      ],
       "line": "var(--amber)",
       "ico_bg": "rgba(244,169,53,0.1)",
       "ico_bd": "rgba(244,169,53,0.2)"
@@ -22,7 +36,13 @@
       "icon": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"23 7 16 12 23 17 23 7\"/><rect x=\"1\" y=\"5\" width=\"15\" height=\"14\" rx=\"2\" ry=\"2\"/></svg>",
       "title": "Video Editing",
       "desc": "Crafting cinematic cuts, branded YouTube content, short-form reels and polished promo videos.",
-      "tags": ["Premiere Pro", "After Effects", "DaVinci", "CapCut", "Color Grading"],
+      "tags": [
+        "Premiere Pro",
+        "After Effects",
+        "DaVinci",
+        "CapCut",
+        "Color Grading"
+      ],
       "line": "var(--coral)",
       "ico_bg": "rgba(232,87,59,0.1)",
       "ico_bd": "rgba(232,87,59,0.2)"
@@ -31,7 +51,13 @@
       "icon": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z\"/></svg>",
       "title": "Content Writing",
       "desc": "Clear, well-researched technical blogs, tutorials and SEO articles that help developers.",
-      "tags": ["Technical Writing", "SEO", "Tutorials", "Reviews", "Dev Guides"],
+      "tags": [
+        "Technical Writing",
+        "SEO",
+        "Tutorials",
+        "Reviews",
+        "Dev Guides"
+      ],
       "line": "var(--amber)",
       "ico_bg": "rgba(244,169,53,0.08)",
       "ico_bd": "rgba(244,169,53,0.18)"
@@ -40,7 +66,12 @@
       "icon": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"/><line x1=\"3\" y1=\"9\" x2=\"21\" y2=\"9\"/><line x1=\"9\" y1=\"21\" x2=\"9\" y2=\"9\"/></svg>",
       "title": "UI / UX Design",
       "desc": "Designing clean, purposeful interfaces. I care about how it looks and how it feels to use.",
-      "tags": ["Figma", "Wireframes", "Prototypes", "Design Systems"],
+      "tags": [
+        "Figma",
+        "Wireframes",
+        "Prototypes",
+        "Design Systems"
+      ],
       "line": "var(--sky)",
       "ico_bg": "rgba(75,159,214,0.08)",
       "ico_bd": "rgba(75,159,214,0.18)"
@@ -49,7 +80,13 @@
       "icon": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"/><path d=\"M21 12c0 1.66-4 3-9 3s-9-1.34-9-3\"/><path d=\"M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5\"/></svg>",
       "title": "Database & Backend",
       "desc": "Designing schemas, writing optimised queries and building APIs that are fast, secure and maintainable.",
-      "tags": ["MySQL", "MongoDB", "REST APIs", "PHP", "Laravel basics"],
+      "tags": [
+        "MySQL",
+        "MongoDB",
+        "REST APIs",
+        "PHP",
+        "Laravel basics"
+      ],
       "line": "var(--sage)",
       "ico_bg": "rgba(90,138,111,0.1)",
       "ico_bd": "rgba(90,138,111,0.2)"
@@ -79,10 +116,26 @@
     }
   ],
   "services": [
-    ["<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"16 18 22 12 16 6\"/><polyline points=\"8 6 2 12 8 18\"/></svg>", "Web Development", "Custom sites, web apps, dashboards"],
-    ["<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"4 17 10 11 4 5\"/><line x1=\"12\" y1=\"19\" x2=\"20\" y2=\"19\"/></svg>", "Software Dev", "Desktop tools, bots, automation"],
-    ["<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"23 7 16 12 23 17 23 7\"/><rect x=\"1\" y=\"5\" width=\"15\" height=\"14\" rx=\"2\" ry=\"2\"/></svg>", "Video Editing", "YouTube, reels, brand promos"],
-    ["<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z\"/></svg>", "Content Writing", "SEO articles & technical posts"]
+    [
+      "<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"16 18 22 12 16 6\"/><polyline points=\"8 6 2 12 8 18\"/></svg>",
+      "Web Development",
+      "Custom sites, web apps, dashboards"
+    ],
+    [
+      "<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"4 17 10 11 4 5\"/><line x1=\"12\" y1=\"19\" x2=\"20\" y2=\"19\"/></svg>",
+      "Software Dev",
+      "Desktop tools, bots, automation"
+    ],
+    [
+      "<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"23 7 16 12 23 17 23 7\"/><rect x=\"1\" y=\"5\" width=\"15\" height=\"14\" rx=\"2\" ry=\"2\"/></svg>",
+      "Video Editing",
+      "YouTube, reels, brand promos"
+    ],
+    [
+      "<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z\"/></svg>",
+      "Content Writing",
+      "SEO articles & technical posts"
+    ]
   ],
   "hobbies": [
     {
@@ -132,7 +185,12 @@
       "cat": "Security",
       "title": "Antivirus Dashboard",
       "desc": "Real-time threat monitoring with scan logs, agent management and live status reporting.",
-      "tech": ["PHP", "Python", "MySQL", "JavaScript"],
+      "tech": [
+        "PHP",
+        "Python",
+        "MySQL",
+        "JavaScript"
+      ],
       "bg": "linear-gradient(145deg,#1a2840,#243558)",
       "image": "photo/antivirus.png",
       "live": "https://github.com/Lamsterla",
@@ -142,20 +200,30 @@
     {
       "label": "&#128722;",
       "cat": "E-Commerce",
-      "title": "Online Store Platform",
-      "desc": "Full-stack shop with product management, cart, checkout flow and admin control panel.",
-      "tech": ["PHP", "MySQL", "JavaScript", "CSS"],
+      "title": "OrderPay",
+      "desc": "A Restaurant Management System through which customers can order food via QR code and owners can manage orders and tables.",
+      "tech": [
+        "PHP",
+        "MySQL",
+        "JavaScript",
+        "CSS"
+      ],
       "bg": "linear-gradient(145deg,#1e2840,#2a3555)",
       "live": "https://github.com/Lamsterla",
       "github": "https://github.com/Lamsterla",
-      "readme": "<h3>About the Project</h3><p>A full-featured e-commerce ecosystem built from scratch. It supports user profiles, responsive catalog browsing, persistent cart storage, check-out simulation, and a dedicated administrator interface.</p><h3>Key Features</h3><ul><li><strong>Inventory Control:</strong> Management panel to add, edit, and delete products, categories, and inventory.</li><li><strong>Cart System:</strong> Dynamic local storage fallback cart that syncs when the user logs in.</li><li><strong>Secure Checkout:</strong> Encrypted user authentication and simulated payment integration.</li></ul><h3>Tech Stack</h3><p>Powered by raw PHP and MySQL, styled with modern Vanilla CSS including custom flex layouts and custom variables for the shopping interface.</p>"
+      "readme": "<h3>About the Project</h3><p>OrderPay is an intelligent restaurant management and self-ordering platform. Diners scan a dynamic QR code on their table to browse the digital menu, customize items, and place orders directly from their phones. Restaurant owners and staff get a real-time admin dashboard to manage table occupancy, live kitchen tickets, and billing seamlessly.</p><h3>Key Features</h3><ul><li><strong>QR Code Ordering:</strong> Table-specific QR codes that allow customers to view menus and order instantly without waiting.</li><li><strong>Table & Floor Management:</strong> Live visual status of occupied, vacant, and reserved tables.</li><li><strong>Live Kitchen Display:</strong> Orders sync instantly to kitchen workstations with real-time status updates.</li><li><strong>Admin Control Panel:</strong> Manage menu categories, daily pricing, taxes, and generate end-of-day sales reports.</li></ul><h3>Tech Stack</h3><p>Developed using PHP backend architecture, MySQL relational database for fast order tracking, Vanilla JavaScript for real-time DOM updates, and custom CSS for a mobile-first responsive dining experience.</p>"
     },
     {
       "label": "&#128202;",
       "cat": "Dashboard",
       "title": "Analytics Dashboard",
       "desc": "Interactive data visualisation with real-time charts, filters and CSV export.",
-      "tech": ["JavaScript", "Chart.js", "PHP", "CSS"],
+      "tech": [
+        "JavaScript",
+        "Chart.js",
+        "PHP",
+        "CSS"
+      ],
       "bg": "linear-gradient(145deg,#1c2a3e,#253650)",
       "live": "https://github.com/Lamsterla",
       "github": "https://github.com/Lamsterla",
@@ -166,7 +234,12 @@
       "cat": "CMS",
       "title": "Custom Blog CMS",
       "desc": "Blog management with rich-text editing, categories, tags and basic SEO tooling.",
-      "tech": ["PHP", "MySQL", "TinyMCE", "JavaScript"],
+      "tech": [
+        "PHP",
+        "MySQL",
+        "TinyMCE",
+        "JavaScript"
+      ],
       "bg": "linear-gradient(145deg,#1e2e28,#283e33)",
       "live": "https://github.com/Lamsterla",
       "github": "https://github.com/Lamsterla",
@@ -177,7 +250,11 @@
       "cat": "Security",
       "title": "PHP Security Toolkit",
       "desc": "Reusable library covering SQL injection, XSS, CSRF protection and input sanitisation.",
-      "tech": ["PHP", "MySQL", "Composer"],
+      "tech": [
+        "PHP",
+        "MySQL",
+        "Composer"
+      ],
       "bg": "linear-gradient(145deg,#1a2535,#243048)",
       "live": "https://github.com/Lamsterla",
       "github": "https://github.com/Lamsterla",
@@ -190,7 +267,12 @@
       "cat": "Automation",
       "title": "Python Scraper & Bot",
       "desc": "Automated scraper and notification bot for data collection, scheduling and reporting.",
-      "tech": ["Python", "Selenium", "BeautifulSoup", "API"],
+      "tech": [
+        "Python",
+        "Selenium",
+        "BeautifulSoup",
+        "API"
+      ],
       "bg": "linear-gradient(145deg,#221830,#2e2040)",
       "live": "",
       "github": "https://github.com/Lamsterla",
@@ -201,7 +283,12 @@
       "cat": "CLI Tool",
       "title": "Dev Toolbox CLI",
       "desc": "Command-line utility for repetitive dev tasks — scaffolding, env setup and deployment helpers.",
-      "tech": ["Python", "Click", "Rich", "Shell"],
+      "tech": [
+        "Python",
+        "Click",
+        "Rich",
+        "Shell"
+      ],
       "bg": "linear-gradient(145deg,#182030,#20283e)",
       "live": "",
       "github": "https://github.com/Lamsterla",
@@ -212,7 +299,11 @@
       "cat": "Mobile",
       "title": "Task Manager App",
       "desc": "Simple cross-platform task manager with offline support, categories and due-date reminders.",
-      "tech": ["Flutter", "Dart", "SQLite"],
+      "tech": [
+        "Flutter",
+        "Dart",
+        "SQLite"
+      ],
       "bg": "linear-gradient(145deg,#181c2e,#202538)",
       "live": "https://github.com/Lamsterla",
       "github": "https://github.com/Lamsterla",
@@ -223,7 +314,12 @@
       "cat": "API",
       "title": "REST API Backend",
       "desc": "Modular REST API with JWT auth, rate limiting, caching and full OpenAPI documentation.",
-      "tech": ["Node.js", "Express", "MongoDB", "JWT"],
+      "tech": [
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "JWT"
+      ],
       "bg": "linear-gradient(145deg,#182015,#20281e)",
       "live": "",
       "github": "https://github.com/Lamsterla",
@@ -235,7 +331,10 @@
       "title": "YouTube Channel Reel",
       "cat": "YouTube",
       "desc": "Long-form and short-form edits for a tech education channel — 50k+ views.",
-      "tools": ["Premiere Pro", "After Effects"],
+      "tools": [
+        "Premiere Pro",
+        "After Effects"
+      ],
       "bg": "linear-gradient(160deg,#281840,#382050)",
       "label": "&#9654;",
       "readme": "<h3>YouTube Channel Reel</h3><p>Detailed editing work showing motion tracking, sound design, color correction, and pacing tailored to modern tech education.</p>"
@@ -244,7 +343,10 @@
       "title": "Brand Promo Ad",
       "cat": "Commercial",
       "desc": "30-second product promo with motion graphics, colour grade and VO mixing.",
-      "tools": ["Premiere Pro", "Audacity"],
+      "tools": [
+        "Premiere Pro",
+        "Audacity"
+      ],
       "bg": "linear-gradient(160deg,#1e2800,#2a3800)",
       "label": "&#9654;",
       "readme": "<h3>Brand Promo Ad</h3><p>Commercial marketing campaign video. Key tasks: audio mastering, dynamic range mixing, text animation overlays, and color grading.</p>"
@@ -253,7 +355,10 @@
       "title": "Travel Highlights",
       "cat": "Cinematic",
       "desc": "Cinematic travel reel with J-cuts, LUT colour grading and ambient sound design.",
-      "tools": ["DaVinci Resolve", "Audacity"],
+      "tools": [
+        "DaVinci Resolve",
+        "Audacity"
+      ],
       "bg": "linear-gradient(160deg,#002028,#002c38)",
       "label": "&#9654;",
       "readme": "<h3>Travel Highlights</h3><p>A highly stylized cinematic piece utilizing advanced LUTs, jump cuts, visual sound effects mapping, and slow-motion frame interpolation.</p>"
@@ -262,7 +367,10 @@
       "title": "Social Media Reels",
       "cat": "Short Form",
       "desc": "Batch-edited vertical reels with captions, transitions and platform-native feel.",
-      "tools": ["CapCut", "Premiere Pro"],
+      "tools": [
+        "CapCut",
+        "Premiere Pro"
+      ],
       "bg": "linear-gradient(160deg,#280010,#380018)",
       "label": "&#9654;",
       "readme": "<h3>Social Media Reels</h3><p>Vertical formatted content optimization, automated subtitle synchronization, high retention editing hooks, and trendy motion transitions.</p>"
@@ -271,7 +379,10 @@
       "title": "Event Coverage",
       "cat": "Event",
       "desc": "Multi-camera corporate event highlights edited to a 3-minute deliverable.",
-      "tools": ["Premiere Pro", "After Effects"],
+      "tools": [
+        "Premiere Pro",
+        "After Effects"
+      ],
       "bg": "linear-gradient(160deg,#201800,#302200)",
       "label": "&#9654;",
       "readme": "<h3>Event Coverage</h3><p>Three-camera synchronization, multicam audio nesting, sound cleaning, color matching, and client feedback integration cycles.</p>"

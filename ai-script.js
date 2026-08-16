@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       keywords: /(web|website|front|back|fullstack|react|php|mysql)/i,
       reply: "<h4>Featured Web Projects:</h4>" +
              "<div class='msg-bubble-card'><strong>Antivirus Dashboard</strong><p>Real-time threat monitoring using PHP, Python, and MySQL.</p><a href='work.html'>View Project</a></div>" +
-             "<div class='msg-bubble-card'><strong>E-Commerce Platform</strong><p>Full-stack online shop with cart, checkout, and admin panel.</p><a href='work.html'>View Project</a></div>" +
+             "<div class='msg-bubble-card'><strong>OrderPay (Restaurant System)</strong><p>QR code ordering, table management, and live kitchen tickets.</p><a href='work.html'>View Project</a></div>" +
              "<div class='msg-bubble-card'><strong>Analytics Dashboard</strong><p>Interactive data visualization with Chart.js.</p><a href='work.html'>View Project</a></div>"
     },
     {
