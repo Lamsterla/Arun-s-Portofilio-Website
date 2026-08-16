@@ -24,13 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
       reply: "Arun is <strong>currently available</strong> and accepting new freelance projects! He is looking for web development, software automation, and video editing work. You can submit a project brief directly via the <a href='contact.html' class='ai-accent-link'>Contact Page</a>."
     },
     {
-      keywords: /(price|pricing|rate|cost|fees|charge|how much)/i,
-      reply: "<h4>Services & Starting Rates:</h4><ul>" +
-             "<li><strong>Web Development:</strong> Custom sites, React apps, PHP backends — From ₹5,000</li>" +
-             "<li><strong>Software Development:</strong> Custom automation, Python bots, CLI tools — From ₹8,000</li>" +
-             "<li><strong>Video Editing:</strong> YouTube videos, cinematic reels, promotional ads — From ₹2,000</li>" +
-             "<li><strong>Content Writing:</strong> SEO-optimized technical tutorials & articles — From ₹500/post</li>" +
-             "</ul><p style='margin-top:8px;'>Have a specific project? Drop a message on the <a href='contact.html'>Contact Page</a> for a custom quote!</p>"
+      keywords: /(price|pricing|rate|cost|fees|charge|how much|quote)/i,
+      reply: "<h4>Services & Project Inquiries:</h4><p>Arun quotes projects based on specific scope, deliverables, and timeline. Services offered include:</p><ul>" +
+             "<li><strong>Web Development:</strong> Custom websites, React applications, and full-stack solutions</li>" +
+             "<li><strong>Software Development:</strong> Custom automation, Python bots, and CLI tools</li>" +
+             "<li><strong>Video Editing:</strong> High-impact YouTube reels, promos, and long-form edits</li>" +
+             "<li><strong>Content Writing:</strong> SEO-optimized technical guides and articles</li>" +
+             "</ul><p style='margin-top:8px;'>Have a project in mind? Submit your brief on the <a href='contact.html' class='ai-accent-link'>Contact Page</a> for a tailored estimate!</p>"
     },
     {
       keywords: /(web|website|front|back|fullstack|react|php|mysql)/i,

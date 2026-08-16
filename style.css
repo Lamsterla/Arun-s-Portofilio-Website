@@ -1346,6 +1346,18 @@ body:not(:hover) #cursor-ring { opacity: 0; }
   display: flex; align-items: center; justify-content: center;
   font-size: 2.5rem;
   overflow: hidden;
+  background: var(--surface3);
+}
+.proj-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.4s var(--ease);
+}
+.project-card:hover .proj-thumb-img {
+  transform: scale(1.08);
 }
 .proj-thumb-overlay {
   position: absolute; inset: 0;
@@ -1354,6 +1366,7 @@ body:not(:hover) #cursor-ring { opacity: 0; }
   gap: 10px;
   opacity: 0;
   transition: var(--transition);
+  z-index: 2;
 }
 .project-card:hover .proj-thumb-overlay { opacity: 1; }
 
@@ -1541,31 +1554,131 @@ body:not(:hover) #cursor-ring { opacity: 0; }
 .hobbies-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  gap: 20px;
   margin-top: 48px;
 }
 .hobby-card {
   background: var(--surface2);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
-  padding: 22px 18px;
+  padding: 30px 20px 24px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
   transition: var(--transition);
 }
-.hobby-card:hover {
-  transform: translateY(-4px) rotate(0.5deg);
-  border-color: var(--border2);
-  box-shadow: var(--shadow-sm);
+.hobby-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-accent, var(--coral));
+  opacity: 0;
+  transform: scaleX(0.4);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+  border-radius: 3px 3px 0 0;
 }
-.hobby-icon { font-size: 2rem; display: block; margin-bottom: 10px; }
+.hobby-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border2);
+  box-shadow: var(--shadow-md);
+}
+.hobby-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.hobby-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--ico-bg, rgba(232,87,59,0.1));
+  border: 1px solid var(--ico-border, rgba(232,87,59,0.2));
+  color: var(--card-accent, var(--coral));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: transform 0.35s var(--ease-back), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, border-radius 0.4s var(--ease);
+}
+.hobby-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  display: block;
+  transition: transform 0.3s var(--ease);
+}
+.hobby-card:hover .hobby-icon {
+  transform: scale(1.1) rotate(4deg);
+  border-radius: 50%;
+  border-color: var(--card-accent, var(--coral));
+  box-shadow: 0 8px 20px -4px var(--ico-bg, rgba(232,87,59,0.25));
+}
+.hobby-card:hover .hobby-icon svg {
+  transform: scale(1.05);
+}
+
 .hobby-card h4 {
   font-family: var(--font-display);
-  font-size: 0.92rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--heading);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
-.hobby-card p { font-size: 0.79rem; color: var(--muted); line-height: 1.65; }
+.hobby-card p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.66;
+  margin: 0;
+}
+
+/* Individual Color Accents per Hobby */
+.hobby-card.hobby--gaming {
+  --card-accent: var(--plum);
+  --ico-bg: rgba(139, 92, 246, 0.1);
+  --ico-border: rgba(139, 92, 246, 0.22);
+}
+.hobby-card.hobby--photo {
+  --card-accent: var(--coral);
+  --ico-bg: rgba(232, 87, 59, 0.1);
+  --ico-border: rgba(232, 87, 59, 0.22);
+}
+.hobby-card.hobby--music {
+  --card-accent: var(--sky);
+  --ico-bg: rgba(74, 158, 207, 0.1);
+  --ico-border: rgba(74, 158, 207, 0.22);
+}
+.hobby-card.hobby--reading {
+  --card-accent: var(--sage);
+  --ico-bg: rgba(77, 139, 111, 0.1);
+  --ico-border: rgba(77, 139, 111, 0.22);
+}
+.hobby-card.hobby--cycling {
+  --card-accent: var(--amber);
+  --ico-bg: rgba(240, 180, 41, 0.1);
+  --ico-border: rgba(240, 180, 41, 0.22);
+}
+.hobby-card.hobby--travel {
+  --card-accent: var(--sky);
+  --ico-bg: rgba(74, 158, 207, 0.1);
+  --ico-border: rgba(74, 158, 207, 0.22);
+}
+.hobby-card.hobby--cooking {
+  --card-accent: var(--coral);
+  --ico-bg: rgba(232, 87, 59, 0.1);
+  --ico-border: rgba(232, 87, 59, 0.22);
+}
+.hobby-card.hobby--problem {
+  --card-accent: var(--amber);
+  --ico-bg: rgba(240, 180, 41, 0.1);
+  --ico-border: rgba(240, 180, 41, 0.22);
+}
 
 /* ============================================================
    TESTIMONIALS
@@ -1645,8 +1758,8 @@ body:not(:hover) #cursor-ring { opacity: 0; }
 
 .services-list { display: flex; flex-direction: column; gap: 14px; }
 .service-row {
-  display: flex; align-items: center; gap: 14px;
-  padding: 14px 18px;
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 20px;
   background: var(--surface2);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
@@ -1654,36 +1767,44 @@ body:not(:hover) #cursor-ring { opacity: 0; }
 }
 .service-row:hover {
   border-color: var(--border2);
-  transform: translateX(5px);
+  transform: translateX(6px);
+  box-shadow: var(--shadow-sm);
 }
 .svc-ico {
-  font-size: 1.5rem;
-  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(232,87,59,0.08);
+  border: 1px solid rgba(232,87,59,0.18);
+  color: var(--coral);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--coral);
+  flex-shrink: 0;
+  transition: var(--transition);
 }
 .svc-ico svg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   stroke: currentColor;
   display: block;
+  transition: var(--transition);
+}
+.service-row:hover .svc-ico {
+  background: var(--coral);
+  color: #fff;
+  border-color: var(--coral);
+  transform: scale(1.06);
 }
 .svc-info { flex-grow: 1; }
 .svc-info h4 {
   font-family: var(--font-display);
-  font-size: 0.92rem;
+  font-size: 0.96rem;
   font-weight: 700;
   color: var(--heading);
+  margin-bottom: 2px;
 }
-.svc-info p { font-size: 0.79rem; color: var(--muted); margin-top: 1px; }
-.svc-price {
-  font-family: var(--font-hand);
-  font-size: 1rem;
-  color: var(--coral);
-  white-space: nowrap;
-}
+.svc-info p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; margin: 0; }
 
 /* Forms */
 .hire-form-box,
@@ -2584,13 +2705,8 @@ footer {
   .hobby-card { padding: 18px 16px; }
 
   .service-row {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .service-row .svc-price {
-    width: 100%;
-    text-align: left;
-    margin-top: 4px;
+    gap: 14px;
+    padding: 14px 16px;
   }
 
   .contact-item {

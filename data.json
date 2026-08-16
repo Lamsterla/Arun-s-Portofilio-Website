@@ -79,49 +79,49 @@
     }
   ],
   "services": [
-    ["<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"16 18 22 12 16 6\"/><polyline points=\"8 6 2 12 8 18\"/></svg>", "Web Development", "Custom sites, web apps, dashboards", "From &#8377;5,000"],
-    ["<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"4 17 10 11 4 5\"/><line x1=\"12\" y1=\"19\" x2=\"20\" y2=\"19\"/></svg>", "Software Dev", "Desktop tools, bots, automation", "From &#8377;8,000"],
-    ["<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"23 7 16 12 23 17 23 7\"/><rect x=\"1\" y=\"5\" width=\"15\" height=\"14\" rx=\"2\" ry=\"2\"/></svg>", "Video Editing", "YouTube, reels, brand promos", "From &#8377;2,000"],
-    ["<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z\"/></svg>", "Content Writing", "SEO articles & technical posts", "From &#8377;500/post"]
+    ["<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"16 18 22 12 16 6\"/><polyline points=\"8 6 2 12 8 18\"/></svg>", "Web Development", "Custom sites, web apps, dashboards"],
+    ["<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"4 17 10 11 4 5\"/><line x1=\"12\" y1=\"19\" x2=\"20\" y2=\"19\"/></svg>", "Software Dev", "Desktop tools, bots, automation"],
+    ["<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"23 7 16 12 23 17 23 7\"/><rect x=\"1\" y=\"5\" width=\"15\" height=\"14\" rx=\"2\" ry=\"2\"/></svg>", "Video Editing", "YouTube, reels, brand promos"],
+    ["<svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z\"/></svg>", "Content Writing", "SEO articles & technical posts"]
   ],
   "hobbies": [
     {
-      "icon": "&#127918;",
+      "icon": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"6\" y1=\"12\" x2=\"10\" y2=\"12\"/><line x1=\"8\" y1=\"10\" x2=\"8\" y2=\"14\"/><line x1=\"15\" y1=\"13\" x2=\"15.01\" y2=\"13\"/><line x1=\"18\" y1=\"11\" x2=\"18.01\" y2=\"11\"/><rect x=\"2\" y=\"6\" width=\"20\" height=\"12\" rx=\"6\"/></svg>",
       "title": "Gaming",
       "desc": "Strategy and open-world games when I need to decompress."
     },
     {
-      "icon": "&#128247;",
+      "icon": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z\"/><circle cx=\"12\" cy=\"13\" r=\"3\"/></svg>",
       "title": "Photography",
       "desc": "Landscapes, candid shots and experimenting with lighting."
     },
     {
-      "icon": "&#127925;",
+      "icon": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18V5l12-2v13\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><circle cx=\"18\" cy=\"16\" r=\"3\"/></svg>",
       "title": "Music",
       "desc": "Lo-fi while I code. Occasionally learn guitar chords."
     },
     {
-      "icon": "&#128218;",
+      "icon": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z\"/><path d=\"M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z\"/></svg>",
       "title": "Reading",
       "desc": "Tech books, sci-fi novels and the occasional self-help read."
     },
     {
-      "icon": "&#128692;",
+      "icon": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"5.5\" cy=\"17.5\" r=\"3.5\"/><circle cx=\"18.5\" cy=\"17.5\" r=\"3.5\"/><circle cx=\"15\" cy=\"5\" r=\"1\"/><path d=\"M12 17.5V14l-3-3 4-3 2 3h2\"/></svg>",
       "title": "Cycling",
       "desc": "Morning rides to clear the head and stay active."
     },
     {
-      "icon": "&#9992;",
+      "icon": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m17.8 19.2-1.8-8.2 3.5-3.5c1.5-1.5 2-3.5 1.5-4s-2.5 0-4 1.5L13 8.5 4.8 6.7c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12.5l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z\"/></svg>",
       "title": "Travelling",
       "desc": "Exploring cities, trying local food and collecting experiences."
     },
     {
-      "icon": "&#127859;",
+      "icon": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 2v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V2\"/><path d=\"M15 11v11\"/><path d=\"M5 2v10a3 3 0 0 0 3 3h0a3 3 0 0 0 3-3V2\"/><path d=\"M8 15v7\"/></svg>",
       "title": "Cooking",
       "desc": "Weekend experiments — mostly succeeds, occasionally fails."
     },
     {
-      "icon": "&#129513;",
+      "icon": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M19.439 7.85c0 0 .05-.322.05-.85a3 3 0 0 0-6 0c0 .528.05.85.05.85H10a2 2 0 0 0-2 2v3.561c0 0-.322-.05-.85-.05a3 3 0 0 0 0 6c.528 0 .85-.05.85-.05V20a2 2 0 0 0 2 2h3.561c0 0-.05-.322-.05-.85a3 3 0 0 0 6 0c0 .528-.05.85-.05.85H20a2 2 0 0 0 2-2v-3.561c0 0 .322.05.85.05a3 3 0 0 0 0-6c-.528 0-.85.05-.85.05V10a2 2 0 0 0-2-2h-2.561z\"/></svg>",
       "title": "Problem Solving",
       "desc": "Competitive coding and algorithm puzzles for fun."
     }
@@ -134,9 +134,10 @@
       "desc": "Real-time threat monitoring with scan logs, agent management and live status reporting.",
       "tech": ["PHP", "Python", "MySQL", "JavaScript"],
       "bg": "linear-gradient(145deg,#1a2840,#243558)",
+      "image": "photo/antivirus.png",
       "live": "https://github.com/Lamsterla",
       "github": "https://github.com/Lamsterla",
-      "readme": "<h3>About the Project</h3><p>The Antivirus Dashboard is a security-focused admin panel that aggregates threat intelligence from server agents. It displays critical vulnerabilities, CPU/RAM usage of server endpoints, and live file scan logs.</p><h3>Key Features</h3><ul><li><strong>Real-time Logs:</strong> Renders active scans dynamically as they occur on the endpoint systems.</li><li><strong>Agent Status Mapping:</strong> Visual representation of all active and offline local network agents.</li><li><strong>Action Center:</strong> Quarantine files or trigger immediate scans directly from the browser.</li></ul><h3>Tech Stack</h3><p>Built with PHP for session handling and data management, Python for system-level scanner agents, MySQL for log persistence, and pure CSS for smooth transitions.</p>"
+      "readme": "<h3>About the Project</h3><p>The Safeguard Antivirus Dashboard is a security-focused admin panel that aggregates threat intelligence from server agents. It displays critical vulnerabilities, CPU/RAM usage of server endpoints, and live file scan logs.</p><div style=\"margin:14px 0;border-radius:8px;overflow:hidden;border:1px solid var(--border);\"><img src=\"photo/antivirus.png\" alt=\"Safeguard Antivirus Interface\" style=\"width:100%;display:block;border-radius:8px;\"></div><h3>Key Features</h3><ul><li><strong>Real-time Logs:</strong> Renders active scans dynamically as they occur on the endpoint systems.</li><li><strong>Agent Status Mapping:</strong> Visual representation of all active and offline local network agents.</li><li><strong>Action Center:</strong> Quarantine files or trigger immediate scans directly from the browser.</li></ul><h3>Tech Stack</h3><p>Built with PHP for session handling and data management, Python for system-level scanner agents, MySQL for log persistence, and pure CSS for smooth transitions.</p>"
     },
     {
       "label": "&#128722;",

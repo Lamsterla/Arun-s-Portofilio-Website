@@ -475,8 +475,18 @@ function initProjectModal() {
     const actionsBack = document.getElementById('modalActionsBack');
 
     // Populate Front Face
-    if (bannerFront) bannerFront.style.background = project.bg || 'var(--surface2)';
-    if (emojiFront) emojiFront.innerHTML = project.label || '&#128187;';
+    if (bannerFront) {
+      if (project.image) {
+        bannerFront.style.background = `url('${project.image}') center top / cover no-repeat`;
+        if (emojiFront) emojiFront.style.display = 'none';
+      } else {
+        bannerFront.style.background = project.bg || 'var(--surface2)';
+        if (emojiFront) {
+          emojiFront.style.display = '';
+          emojiFront.innerHTML = project.label || '&#128187;';
+        }
+      }
+    }
     if (catFront) catFront.textContent = project.cat || '';
     if (titleFront) titleFront.textContent = project.title || '';
     if (descFront) descFront.textContent = project.desc || '';
@@ -493,8 +503,18 @@ function initProjectModal() {
     }
 
     // Populate Back Face
-    if (bannerBack) bannerBack.style.background = project.bg || 'var(--surface2)';
-    if (emojiBack) emojiBack.innerHTML = project.label || '&#128187;';
+    if (bannerBack) {
+      if (project.image) {
+        bannerBack.style.background = `url('${project.image}') center top / cover no-repeat`;
+        if (emojiBack) emojiBack.style.display = 'none';
+      } else {
+        bannerBack.style.background = project.bg || 'var(--surface2)';
+        if (emojiBack) {
+          emojiBack.style.display = '';
+          emojiBack.innerHTML = project.label || '&#128187;';
+        }
+      }
+    }
     if (titleBack) titleBack.textContent = project.title || '';
     if (readmeBack) readmeBack.innerHTML = project.readme || `<p>${project.desc}</p>`;
 

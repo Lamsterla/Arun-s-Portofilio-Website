@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Web projects, software tools and video editing work." />
   <title>My Work — Arun Sah</title>
-  <link rel="stylesheet" href="style.css?v=1.7" />
+  <link rel="stylesheet" href="style.css?v=1.8" />
   <script>
     (function(){
       var t = localStorage.getItem('portfolio-theme') || 'dark';
@@ -118,8 +118,8 @@
     <div class="portfolio-grid">
       <!-- Web Project 0 -->
       <div class="project-card reveal" data-type="web" data-index="0" style="cursor: pointer;">
-        <div class="proj-thumb" style="background:linear-gradient(145deg,#1a2840,#243558)">
-          <span>&#128737;</span>
+        <div class="proj-thumb">
+          <img src="photo/antivirus.png" alt="Safeguard Antivirus Dashboard" class="proj-thumb-img">
           <div class="proj-thumb-overlay">
             <button class="btn btn-primary btn-sm view-details-btn">Details</button>
             <a href="https://github.com/Lamsterla" target="_blank" class="btn btn-ghost btn-sm" onclick="event.stopPropagation();">Live</a>
@@ -560,9 +560,10 @@
       "desc": "Real-time threat monitoring with scan logs, agent management and live status reporting.",
       "tech": ["PHP", "Python", "MySQL", "JavaScript"],
       "bg": "linear-gradient(145deg,#1a2840,#243558)",
+      "image": "photo/antivirus.png",
       "live": "https://github.com/Lamsterla",
       "github": "https://github.com/Lamsterla",
-      "readme": "<h3>About the Project<\/h3><p>The Antivirus Dashboard is a security-focused admin panel that aggregates threat intelligence from server agents. It displays critical vulnerabilities, CPU\/RAM usage of server endpoints, and live file scan logs.<\/p><h3>Key Features<\/h3><ul><li><strong>Real-time Logs:<\/strong> Renders active scans dynamically as they occur on the endpoint systems.<\/li><li><strong>Agent Status Mapping:<\/strong> Visual representation of all active and offline local network agents.<\/li><li><strong>Action Center:<\/strong> Quarantine files or trigger immediate scans directly from the browser.<\/li><\/ul><h3>Tech Stack<\/h3><p>Built with PHP for session handling and data management, Python for system-level scanner agents, MySQL for log persistence, and pure CSS for smooth transitions.<\/p>"
+      "readme": "<h3>About the Project<\/h3><p>The Safeguard Antivirus Dashboard is a security-focused admin panel that aggregates threat intelligence from server agents. It displays critical vulnerabilities, CPU\/RAM usage of server endpoints, and live file scan logs.<\/p><div style=\"margin:14px 0;border-radius:8px;overflow:hidden;border:1px solid var(--border);\"><img src=\"photo/antivirus.png\" alt=\"Safeguard Antivirus Interface\" style=\"width:100%;display:block;border-radius:8px;\"><\/div><h3>Key Features<\/h3><ul><li><strong>Real-time Logs:<\/strong> Renders active scans dynamically as they occur on the endpoint systems.<\/li><li><strong>Agent Status Mapping:<\/strong> Visual representation of all active and offline local network agents.<\/li><li><strong>Action Center:<\/strong> Quarantine files or trigger immediate scans directly from the browser.<\/li><\/ul><h3>Tech Stack<\/h3><p>Built with PHP for session handling and data management, Python for system-level scanner agents, MySQL for log persistence, and pure CSS for smooth transitions.<\/p>"
     },
     {
       "label": "\ud83d\uded2",
@@ -782,6 +783,6 @@
 </footer>
 
 <button id="scroll-top" aria-label="Back to top">&#8593;</button>
-<script src="script.js?v=1.2"></script>
+<script src="script.js?v=1.3"></script>
 </body>
 </html>
