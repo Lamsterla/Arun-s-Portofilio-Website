@@ -33,26 +33,25 @@ document.addEventListener('DOMContentLoaded', () => {
              "</ul><p style='margin-top:8px;'>Have a project in mind? Submit your brief on the <a href='contact.html' class='ai-accent-link'>Contact Page</a> for a tailored estimate!</p>"
     },
     {
-      keywords: /(web|website|front|back|fullstack|react|php|mysql)/i,
+      keywords: /(web|website|document|converter|3d|ferrari|car|front|back|fullstack|three|js|php|mysql)/i,
       reply: "<h4>Featured Web Projects:</h4>" +
-             "<div class='msg-bubble-card'><strong>Antivirus Dashboard</strong><p>Real-time threat monitoring using PHP, Python, and MySQL.</p><a href='work.html'>View Project</a></div>" +
-             "<div class='msg-bubble-card'><strong>OrderPay (Restaurant System)</strong><p>QR code ordering, table management, and live kitchen tickets.</p><a href='work.html'>View Project</a></div>" +
-             "<div class='msg-bubble-card'><strong>Analytics Dashboard</strong><p>Interactive data visualization with Chart.js.</p><a href='work.html'>View Project</a></div>"
+             "<div class='msg-bubble-card'><strong>AllIn1</strong><p>Convertible web application to convert, compress, and edit any document format.</p><a href='work.html'>View Project</a></div>" +
+             "<div class='msg-bubble-card'><strong>3D Ferrari Showcase</strong><p>Interactive 3D car website for Ferrari with 360° visualizer and customizer.</p><a href='work.html'>View Project</a></div>"
     },
     {
-      keywords: /(software|python|bot|ai|assistant|scrap|automation|cli)/i,
+      keywords: /(software|python|bot|ai|assistant|root|doctor|appointment|image|viewer|orderpay|data|entry|automation|cli)/i,
       reply: "<h4>Software & Automation Projects:</h4>" +
              "<div class='msg-bubble-card'><strong>Personal AI Laptop Assistant</strong><p>Intelligent desktop assistant for laptop with voice control and system automation.</p><a href='work.html'>View Details</a></div>" +
-             "<div class='msg-bubble-card'><strong>Dev Toolbox CLI</strong><p>A Command Line interface tool in Python to automate developer workflows.</p><a href='work.html'>View Details</a></div>" +
-             "<div class='msg-bubble-card'><strong>REST API Backend</strong><p>Modular Node.js/Express API with JWT authentication.</p><a href='work.html'>View Details</a></div>"
+             "<div class='msg-bubble-card'><strong>Root (Doctor's Appointment App)</strong><p>Healthcare appointment scheduling and patient management app.</p><a href='work.html'>View Details</a></div>" +
+             "<div class='msg-bubble-card'><strong>Image Viewer App</strong><p>Lightweight desktop image viewing and editing tool built with PyQt.</p><a href='work.html'>View Details</a></div>" +
+             "<div class='msg-bubble-card'><strong>OrderPay</strong><p>Restaurant QR code ordering & table management platform.</p><a href='work.html'>View Details</a></div>" +
+             "<div class='msg-bubble-card'><strong>Data Entry Application</strong><p>Automated batch data entry and Excel form processor.</p><a href='work.html'>View Details</a></div>"
     },
     {
-      keywords: /(video|edit|premiere|effects|youtube|reel|short|clip)/i,
-      reply: "Arun has over 3 years of experience editing high-production videos. He specializes in:<ul>" +
-             "<li><strong>YouTube Channel Reels</strong> — pacing, retention, motion graphics (50k+ views)</li>" +
-             "<li><strong>Brand Promo Ads</strong> — high-impact 30s product promos</li>" +
-             "<li><strong>Cinematic Travel Reels</strong> — sound design, J-cuts, color grading</li>" +
-             "</ul><p>Primary tools: <em>Adobe Premiere Pro, After Effects, DaVinci Resolve</em>. See samples on the <a href='work.html'>Work Page</a>.</p>"
+      keywords: /(video|edit|color|grading|davinci|resolve|premiere|effects|reel|cinematic)/i,
+      reply: "Arun specializes in professional video editing & color grading. Featured work includes:<ul>" +
+             "<li><strong>Color Grading Showcase</strong> — shot matching, skin tone preservation, LUT development & cinematic look design</li>" +
+             "</ul><p>Primary tools: <em>DaVinci Resolve, Adobe Premiere Pro, After Effects</em>. See samples on the <a href='work.html'>Work Page</a>.</p>"
     },
     {
       keywords: /(blog|write|article|seo|tutorial|guide)/i,
