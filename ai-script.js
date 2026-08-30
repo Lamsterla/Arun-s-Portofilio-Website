@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
              "<div class='msg-bubble-card'><strong>Analytics Dashboard</strong><p>Interactive data visualization with Chart.js.</p><a href='work.html'>View Project</a></div>"
     },
     {
-      keywords: /(software|python|bot|scrap|automation|cli)/i,
+      keywords: /(software|python|bot|ai|assistant|scrap|automation|cli)/i,
       reply: "<h4>Software & Automation Projects:</h4>" +
-             "<div class='msg-bubble-card'><strong>Python Scraper & Bot</strong><p>Automated web scraping and notification system built with Selenium.</p><a href='work.html'>View Details</a></div>" +
+             "<div class='msg-bubble-card'><strong>Personal AI Laptop Assistant</strong><p>Intelligent desktop assistant for laptop with voice control and system automation.</p><a href='work.html'>View Details</a></div>" +
              "<div class='msg-bubble-card'><strong>Dev Toolbox CLI</strong><p>A Command Line interface tool in Python to automate developer workflows.</p><a href='work.html'>View Details</a></div>" +
              "<div class='msg-bubble-card'><strong>REST API Backend</strong><p>Modular Node.js/Express API with JWT authentication.</p><a href='work.html'>View Details</a></div>"
     },
