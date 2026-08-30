@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPortfolioTabs();
   initPortfolioSliders();
   initProjectModal();
+  initBlogModal();
   initScrollTop();
   initFormValidation();
   initStatCounters();
@@ -581,6 +582,118 @@ function initProjectModal() {
   backdrop.addEventListener('click', closeModal);
   
   // Close with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+}
+
+// =============================================
+// BLOG DETAIL MODAL (blogs.html)
+// =============================================
+function initBlogModal() {
+  const modal = document.getElementById('blogModal');
+  const backdrop = document.getElementById('blogModalBackdrop');
+  const closeBtn = document.getElementById('blogModalClose');
+  const flashcard = document.getElementById('blogFlashcard');
+  if (!modal || !backdrop || !closeBtn || !flashcard) return;
+
+  const dataEl = document.getElementById('blogs-data');
+  if (!dataEl) return;
+
+  let blogsData;
+  try {
+    blogsData = JSON.parse(dataEl.textContent);
+  } catch (err) {
+    console.error("Failed to parse blogs data:", err);
+    return;
+  }
+
+  const cards = document.querySelectorAll('.blog-card[data-index]');
+
+  const openModal = (blog) => {
+    flashcard.classList.remove('flipped');
+
+    const bannerFront = document.getElementById('blogBannerFront');
+    const catFront = document.getElementById('blogCatFront');
+    const dateFront = document.getElementById('blogDateFront');
+    const titleFront = document.getElementById('blogTitleFront');
+    const descFront = document.getElementById('blogDescFront');
+
+    const bannerBack = document.getElementById('blogBannerBack');
+    const titleBack = document.getElementById('blogTitleBack');
+    const contentBack = document.getElementById('blogContentBack');
+    const actionsBack = document.getElementById('blogActionsBack');
+
+    // Populate Front Face
+    if (bannerFront) {
+      if (blog.image) {
+        bannerFront.style.background = `url('${blog.image}') center top / cover no-repeat`;
+      } else {
+        bannerFront.style.background = blog.bg || 'var(--surface2)';
+      }
+    }
+    if (catFront) catFront.textContent = blog.cat || '';
+    if (dateFront) dateFront.textContent = blog.date || '';
+    if (titleFront) titleFront.textContent = blog.title || '';
+    if (descFront) descFront.textContent = blog.desc || '';
+
+    // Populate Back Face
+    if (bannerBack) {
+      if (blog.image) {
+        bannerBack.style.background = `url('${blog.image}') center top / cover no-repeat`;
+      } else {
+        bannerBack.style.background = blog.bg || 'var(--surface2)';
+      }
+    }
+    if (titleBack) titleBack.textContent = blog.title || '';
+    if (contentBack) contentBack.innerHTML = blog.content || `<p>${blog.desc}</p>`;
+
+    if (actionsBack) {
+      actionsBack.innerHTML = '';
+      if (blog.wiki) {
+        const a = document.createElement('a');
+        a.href = blog.wiki;
+        a.className = 'btn btn-primary';
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = 'Read on Wikipedia ↗';
+        actionsBack.appendChild(a);
+      }
+    }
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      flashcard.classList.remove('flipped');
+    }, 300);
+  };
+
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      const index = parseInt(card.dataset.index);
+      if (blogsData && blogsData[index]) {
+        openModal(blogsData[index]);
+      }
+    });
+  });
+
+  flashcard.addEventListener('click', (e) => {
+    if (e.target.closest('a') || e.target.closest('button') || e.target.closest('code') || e.target.closest('pre')) {
+      return;
+    }
+    flashcard.classList.toggle('flipped');
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
       closeModal();
