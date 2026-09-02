@@ -459,8 +459,8 @@ function initProjectModal() {
   const cards = document.querySelectorAll('.project-card[data-type]');
 
   const openModal = (project) => {
-    // Reset flip state when opening
-    flashcard.classList.remove('flipped');
+    // Open directly showing details face
+    flashcard.classList.add('flipped');
 
     const bannerFront = document.getElementById('modalBannerFront');
     const emojiFront = document.getElementById('modalEmojiFront');
@@ -549,10 +549,6 @@ function initProjectModal() {
   const closeModal = () => {
     modal.classList.remove('active');
     document.body.style.overflow = '';
-    // reset flip state after modal closes completely
-    setTimeout(() => {
-      flashcard.classList.remove('flipped');
-    }, 300);
   };
 
   cards.forEach(card => {
@@ -596,8 +592,7 @@ function initBlogModal() {
   const modal = document.getElementById('blogModal');
   const backdrop = document.getElementById('blogModalBackdrop');
   const closeBtn = document.getElementById('blogModalClose');
-  const flashcard = document.getElementById('blogFlashcard');
-  if (!modal || !backdrop || !closeBtn || !flashcard) return;
+  if (!modal || !backdrop || !closeBtn) return;
 
   const dataEl = document.getElementById('blogs-data');
   if (!dataEl) return;
@@ -610,48 +605,24 @@ function initBlogModal() {
     return;
   }
 
-  const cards = document.querySelectorAll('.blog-card[data-index]');
-
   const openModal = (blog) => {
-    flashcard.classList.remove('flipped');
+    const banner = document.getElementById('blogBanner');
+    const title = document.getElementById('blogTitle');
+    const content = document.getElementById('blogContent');
+    const actions = document.getElementById('blogActions');
 
-    const bannerFront = document.getElementById('blogBannerFront');
-    const catFront = document.getElementById('blogCatFront');
-    const dateFront = document.getElementById('blogDateFront');
-    const titleFront = document.getElementById('blogTitleFront');
-    const descFront = document.getElementById('blogDescFront');
-
-    const bannerBack = document.getElementById('blogBannerBack');
-    const titleBack = document.getElementById('blogTitleBack');
-    const contentBack = document.getElementById('blogContentBack');
-    const actionsBack = document.getElementById('blogActionsBack');
-
-    // Populate Front Face
-    if (bannerFront) {
+    if (banner) {
       if (blog.image) {
-        bannerFront.style.background = `url('${blog.image}') center top / cover no-repeat`;
+        banner.style.background = `url('${blog.image}') center top / cover no-repeat`;
       } else {
-        bannerFront.style.background = blog.bg || 'var(--surface2)';
+        banner.style.background = blog.bg || 'var(--surface2)';
       }
     }
-    if (catFront) catFront.textContent = blog.cat || '';
-    if (dateFront) dateFront.textContent = blog.date || '';
-    if (titleFront) titleFront.textContent = blog.title || '';
-    if (descFront) descFront.textContent = blog.desc || '';
+    if (title) title.textContent = blog.title || '';
+    if (content) content.innerHTML = blog.content || `<p>${blog.desc}</p>`;
 
-    // Populate Back Face
-    if (bannerBack) {
-      if (blog.image) {
-        bannerBack.style.background = `url('${blog.image}') center top / cover no-repeat`;
-      } else {
-        bannerBack.style.background = blog.bg || 'var(--surface2)';
-      }
-    }
-    if (titleBack) titleBack.textContent = blog.title || '';
-    if (contentBack) contentBack.innerHTML = blog.content || `<p>${blog.desc}</p>`;
-
-    if (actionsBack) {
-      actionsBack.innerHTML = '';
+    if (actions) {
+      actions.innerHTML = '';
       if (blog.wiki) {
         const a = document.createElement('a');
         a.href = blog.wiki;
@@ -659,7 +630,7 @@ function initBlogModal() {
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
         a.textContent = 'Read on Wikipedia ↗';
-        actionsBack.appendChild(a);
+        actions.appendChild(a);
       }
     }
 
@@ -670,25 +641,17 @@ function initBlogModal() {
   const closeModal = () => {
     modal.classList.remove('active');
     document.body.style.overflow = '';
-    setTimeout(() => {
-      flashcard.classList.remove('flipped');
-    }, 300);
   };
 
+  const cards = document.querySelectorAll('.blog-card[data-index]');
   cards.forEach(card => {
     card.addEventListener('click', (e) => {
+      e.preventDefault();
       const index = parseInt(card.dataset.index);
-      if (blogsData && blogsData[index]) {
+      if (blogsData && blogsData[index] !== undefined) {
         openModal(blogsData[index]);
       }
     });
-  });
-
-  flashcard.addEventListener('click', (e) => {
-    if (e.target.closest('a') || e.target.closest('button') || e.target.closest('code') || e.target.closest('pre')) {
-      return;
-    }
-    flashcard.classList.toggle('flipped');
   });
 
   closeBtn.addEventListener('click', closeModal);

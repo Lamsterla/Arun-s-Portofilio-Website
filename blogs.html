@@ -199,47 +199,19 @@
 </section>
 
 <!-- ======================================================
-     BLOG DETAIL FLASHCARD MODAL
+     BLOG DETAIL MODAL
      ====================================================== -->
 <div class="project-modal" id="blogModal" role="dialog" aria-modal="true">
   <div class="modal-backdrop" id="blogModalBackdrop"></div>
   <div class="flashcard-container">
     <button class="modal-close" id="blogModalClose" aria-label="Close modal">&times;</button>
-    <div class="flashcard" id="blogFlashcard">
-      
-      <!-- FRONT FACE -->
-      <div class="flashcard-face flashcard-front">
-        <div class="modal-header-banner" id="blogBannerFront"></div>
-        <div class="modal-body">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-            <span class="modal-cat" id="blogCatFront"></span>
-            <span style="font-size:0.78rem;color:var(--muted);" id="blogDateFront"></span>
-          </div>
-          <h2 class="modal-title" id="blogTitleFront"></h2>
-          <div class="modal-divider" style="margin: 12px 0 16px;"></div>
-          <p class="flashcard-desc" id="blogDescFront"></p>
-          
-          <div class="flip-hint">
-            <span>Click card to flip for full Wikipedia article ↺</span>
-          </div>
-        </div>
+    <div class="flashcard-face flashcard-front" style="position:relative;height:100%;display:flex;flex-direction:column;overflow-y:auto;transform:none;-webkit-backface-visibility:visible;backface-visibility:visible;">
+      <div class="modal-header-banner" id="blogBanner"></div>
+      <div class="modal-body">
+        <h2 class="modal-title" id="blogTitle" style="margin-bottom:16px;"></h2>
+        <div class="modal-readme" id="blogContent"></div>
+        <div class="modal-actions" id="blogActions"></div>
       </div>
-
-      <!-- BACK FACE -->
-      <div class="flashcard-face flashcard-back">
-        <div class="modal-header-banner" id="blogBannerBack"></div>
-        <div class="modal-body">
-          <h2 class="modal-title" id="blogTitleBack"></h2>
-          <div class="modal-divider"></div>
-          <div class="modal-readme" id="blogContentBack"></div>
-          <div class="modal-actions" id="blogActionsBack"></div>
-
-          <div class="flip-hint" style="margin-top:20px;">
-            <span>Click card to flip back ↺</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>
@@ -366,7 +338,7 @@
         <h5>Contact</h5>
         <ul>
           <li><a href="mailto:arunkumar90853@gmail.com">arunkumar90853@gmail.com</a></li>
-          <li><a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><a href="https://wa.me/919324400382" target="_blank" rel="noopener noreferrer">WhatsApp (+91 93244 00382)</a></li>
           <li><a href="https://www.linkedin.com/in/arun-sah-7b7246313" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="#">Navi Mumbai, India</a></li>
         </ul>
