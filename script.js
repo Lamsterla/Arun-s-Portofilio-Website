@@ -717,7 +717,7 @@ function initFormValidation() {
   initContactForm();
 }
 
-// ─── PROJECT BRIEF FORM — submits to MySQL via fetch ─────────────────────────
+// ─── PROJECT BRIEF FORM — front-end only, NO database ─────────────────────────
 function initProjectBriefForm() {
   const form = document.getElementById('projectBriefForm');
   if (!form) return;
@@ -730,9 +730,7 @@ function initProjectBriefForm() {
   });
 
   form.addEventListener('submit', function (e) {
-    // MUST be first — stops all browser navigation
     e.preventDefault();
-    e.stopImmediatePropagation();
 
     // Client-side validation
     let isValid = true;
@@ -745,65 +743,20 @@ function initProjectBriefForm() {
     });
     if (!isValid) return;
 
-    const submitBtn = form.querySelector('button[type="submit"]');
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending…';
-    }
+    const nameField = form.querySelector('input[name="full_name"]');
+    const senderName = nameField ? nameField.value.trim() : 'Friend';
+    const msg = 'Thank you, ' + senderName + '. Your brief has been received. I\'ll respond within 24 hours.';
 
-    // Snapshot the form values RIGHT NOW at click time
-    const formData = new FormData(form);
-
-    console.log('PROJECT BRIEF DATA BEING SENT:');
-    for (const [key, value] of formData.entries()) {
-      console.log(' ', key, '→', value);
-    }
-
-    // Clear previous notices
     form.parentNode.querySelector('.form-notice')?.remove();
     form.parentNode.querySelector('.form-error-msg')?.remove();
 
-    fetch('submit.php', { method: 'POST', body: formData })
-      .then(function (res) {
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        return res.json();
-      })
-      .then(function (result) {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send brief';
-        }
+    const notice = document.createElement('div');
+    notice.className = 'form-notice';
+    notice.innerHTML = '&#10003; ' + msg;
+    form.parentNode.insertBefore(notice, form);
 
-        if (result.status === 'success') {
-          // ✅ Show success ONLY after DB confirms insert
-          const notice = document.createElement('div');
-          notice.className = 'form-notice';
-          notice.innerHTML = '&#10003; ' + result.message;
-          form.parentNode.insertBefore(notice, form);
-          showToast(result.message);
-          form.reset();
-        } else {
-          // ❌ Show the real error from PHP
-          const errNotice = document.createElement('div');
-          errNotice.className = 'form-error-msg';
-          errNotice.innerHTML = '&#9888; ' + (result.message || 'Submission failed. Please try again.');
-          form.parentNode.insertBefore(errNotice, form);
-          showToast(result.message || 'Submission failed.');
-          console.error('Server error:', result);
-        }
-      })
-      .catch(function (err) {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send brief';
-        }
-        const errNotice = document.createElement('div');
-        errNotice.className = 'form-error-msg';
-        errNotice.innerHTML = '&#9888; Could not reach server. Make sure XAMPP is running and try again.';
-        form.parentNode.insertBefore(errNotice, form);
-        showToast('Submission error.');
-        console.error('Fetch error:', err);
-      });
+    showToast(msg);
+    form.reset();
   });
 }
 
