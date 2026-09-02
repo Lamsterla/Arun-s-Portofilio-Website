@@ -713,46 +713,137 @@ function initStatCounters() {
 // FORM VALIDATION
 // =============================================
 function initFormValidation() {
-  ['hireForm', 'contactForm'].forEach(id => {
-    const form = document.getElementById(id);
-    if (!form) return;
+  initProjectBriefForm();
+  initContactForm();
+}
 
-    form.querySelectorAll('input, textarea, select').forEach(field => {
-      field.addEventListener('blur',  () => validateField(field));
-      field.addEventListener('input', () => clearFieldErr(field));
-    });
+// ─── PROJECT BRIEF FORM — submits to MySQL via fetch ─────────────────────────
+function initProjectBriefForm() {
+  const form = document.getElementById('projectBriefForm');
+  if (!form) return;
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      let isValid = true;
-      form.querySelectorAll('input[required], textarea[required], select[required]').forEach(field => {
-        if (!field.value.trim() || (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim()))) {
-          validateField(field);
-          isValid = false;
-        }
-      });
+  // Per-field blur validation + clear on change
+  form.querySelectorAll('input, textarea, select').forEach(field => {
+    field.addEventListener('blur',   () => validateField(field));
+    field.addEventListener('input',  () => clearFieldErr(field));
+    field.addEventListener('change', () => clearFieldErr(field));
+  });
 
-      if (isValid) {
-        const nameField = form.querySelector('input[name="name"], input[name="cname"]');
-        const senderName = nameField ? nameField.value.trim() : 'Friend';
-        const msg = id === 'hireForm' 
-          ? `Thank you, ${senderName}. Your brief has been received. I'll respond within 24 hours.`
-          : `Message received, ${senderName}. I'll get back to you soon!`;
+  form.addEventListener('submit', function (e) {
+    // MUST be first — stops all browser navigation
+    e.preventDefault();
+    e.stopImmediatePropagation();
 
-        // Check if notice already exists, else insert
-        let notice = form.parentNode.querySelector('.form-notice');
-        if (!notice) {
-          notice = document.createElement('div');
-          notice.className = 'form-notice';
-          form.parentNode.insertBefore(notice, form);
-        }
-        notice.innerHTML = '&#10003; ' + msg;
-        notice.style.display = 'block';
-
-        showToast(msg);
-        form.reset();
+    // Client-side validation
+    let isValid = true;
+    form.querySelectorAll('input[required], textarea[required], select[required]').forEach(field => {
+      const v = field.value.trim();
+      if (!v || (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v))) {
+        validateField(field);
+        isValid = false;
       }
     });
+    if (!isValid) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+    }
+
+    // Snapshot the form values RIGHT NOW at click time
+    const formData = new FormData(form);
+
+    console.log('PROJECT BRIEF DATA BEING SENT:');
+    for (const [key, value] of formData.entries()) {
+      console.log(' ', key, '→', value);
+    }
+
+    // Clear previous notices
+    form.parentNode.querySelector('.form-notice')?.remove();
+    form.parentNode.querySelector('.form-error-msg')?.remove();
+
+    fetch('submit.php', { method: 'POST', body: formData })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (result) {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send brief';
+        }
+
+        if (result.status === 'success') {
+          // ✅ Show success ONLY after DB confirms insert
+          const notice = document.createElement('div');
+          notice.className = 'form-notice';
+          notice.innerHTML = '&#10003; ' + result.message;
+          form.parentNode.insertBefore(notice, form);
+          showToast(result.message);
+          form.reset();
+        } else {
+          // ❌ Show the real error from PHP
+          const errNotice = document.createElement('div');
+          errNotice.className = 'form-error-msg';
+          errNotice.innerHTML = '&#9888; ' + (result.message || 'Submission failed. Please try again.');
+          form.parentNode.insertBefore(errNotice, form);
+          showToast(result.message || 'Submission failed.');
+          console.error('Server error:', result);
+        }
+      })
+      .catch(function (err) {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send brief';
+        }
+        const errNotice = document.createElement('div');
+        errNotice.className = 'form-error-msg';
+        errNotice.innerHTML = '&#9888; Could not reach server. Make sure XAMPP is running and try again.';
+        form.parentNode.insertBefore(errNotice, form);
+        showToast('Submission error.');
+        console.error('Fetch error:', err);
+      });
+  });
+}
+
+// ─── CONTACT / SEND A MESSAGE FORM — front-end only, NO database ─────────────
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+
+  form.querySelectorAll('input, textarea, select').forEach(field => {
+    field.addEventListener('blur',  () => validateField(field));
+    field.addEventListener('input', () => clearFieldErr(field));
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    let isValid = true;
+    form.querySelectorAll('input[required], textarea[required], select[required]').forEach(field => {
+      const v = field.value.trim();
+      if (!v || (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v))) {
+        validateField(field);
+        isValid = false;
+      }
+    });
+    if (!isValid) return;
+
+    const nameField = form.querySelector('input[name="cname"]');
+    const senderName = nameField ? nameField.value.trim() : 'Friend';
+    const msg = 'Message received, ' + senderName + '. I\'ll get back to you soon!';
+
+    form.parentNode.querySelector('.form-notice')?.remove();
+    form.parentNode.querySelector('.form-error-msg')?.remove();
+
+    const notice = document.createElement('div');
+    notice.className = 'form-notice';
+    notice.innerHTML = '&#10003; ' + msg;
+    form.parentNode.insertBefore(notice, form);
+
+    showToast(msg);
+    form.reset();
   });
 }
 

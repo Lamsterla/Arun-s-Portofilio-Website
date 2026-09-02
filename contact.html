@@ -166,11 +166,11 @@
             <h3>Send a project brief</h3>
             <p class="form-sub">Fill in the details and I'll get back to you within 24 hours.</p>
 
-            <form id="hireForm">
+            <form id="projectBriefForm" action="submit.php" method="POST">
               <div class="form-row">
                 <div class="form-group">
                   <label for="hire-name">Full name *</label>
-                  <input id="hire-name" type="text" name="name" placeholder="Your Good Name" required>
+                  <input id="hire-name" type="text" name="full_name" placeholder="Your Good Name" required>
                 </div>
                 <div class="form-group">
                   <label for="hire-email">Email *</label>
@@ -180,11 +180,11 @@
               <div class="form-row">
                 <div class="form-group">
                   <label for="hire-phone">Phone number</label>
-                  <input id="hire-phone" type="tel" name="phone" placeholder="XXXXXX-XXXX" required>
+                  <input id="hire-phone" type="tel" name="phone_no" placeholder="XXXXXX-XXXX">
                 </div>
                 <div class="form-group">
                   <label for="hire-service">Service needed *</label>
-                  <select id="hire-service" name="service" required>
+                  <select id="hire-service" name="service_model" required>
                     <option value="">Select a service</option>
                     <option value="web">Web Development</option>
                     <option value="software">Software Development</option>
@@ -195,8 +195,8 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="hire-budget">Budget</label>
-                <select id="hire-budget" name="budget">
+                <label for="hire-budget">Budget *</label>
+                <select id="hire-budget" name="budget" required>
                   <option value="">Select range</option>
                   <option value="under5k">Under &#8377;5,000</option>
                   <option value="5k-15k">&#8377;5,000 – &#8377;15,000</option>
@@ -206,8 +206,8 @@
               </div>
               <div class="form-group">
                 <label for="hire-message">Project details *</label>
-                <textarea id="hire-message" name="message" placeholder="Describe the project, goals, timeline..."
-                  required></textarea>
+                <textarea id="hire-message" name="project_details"
+                  placeholder="Describe the project, goals, timeline..." required></textarea>
               </div>
               <button type="submit" class="btn btn-hire submit-full">Send brief</button>
             </form>
@@ -434,7 +434,7 @@
   </footer>
 
   <button id="scroll-top" aria-label="Back to top">&#8593;</button>
-  <script src="script.js?v=1.3"></script>
+  <script src="script.js?v=1.4"></script>
 </body>
 
 </html>
