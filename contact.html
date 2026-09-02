@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,169 +8,191 @@
   <title>Contact — Arun Sah</title>
   <link rel="stylesheet" href="style.css?v=1.8" />
   <script>
-    (function(){
+    (function () {
       var t = localStorage.getItem('portfolio-theme') || 'dark';
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
 </head>
+
 <body>
-<script>
-  (function() {
-    var isReload = false;
-    if (window.performance && window.performance.getEntriesByType) {
-      var navs = window.performance.getEntriesByType('navigation');
-      if (navs.length > 0 && navs[0].type === 'reload') {
-        isReload = true;
+  <script>
+    (function () {
+      var isReload = false;
+      if (window.performance && window.performance.getEntriesByType) {
+        var navs = window.performance.getEntriesByType('navigation');
+        if (navs.length > 0 && navs[0].type === 'reload') {
+          isReload = true;
+        }
+      } else if (window.performance && window.performance.navigation) {
+        if (window.performance.navigation.type === 1) { // 1 = TYPE_RELOAD
+          isReload = true;
+        }
       }
-    } else if (window.performance && window.performance.navigation) {
-      if (window.performance.navigation.type === 1) { // 1 = TYPE_RELOAD
-        isReload = true;
+      if (isReload) {
+        sessionStorage.removeItem('portfolio-loaded');
       }
-    }
-    if (isReload) {
-      sessionStorage.removeItem('portfolio-loaded');
-    }
-    if (sessionStorage.getItem('portfolio-loaded')) {
-      document.write('<style>#preloader { display: none !important; }</style>');
-    }
-  })();
-</script>
-<!-- Preloader -->
-<div id="preloader" class="loading">
-  <div class="wheel-and-hamster">
-    <div class="wheel"></div>
-    <div class="hamster">
-      <div class="hamster__body">
-        <div class="hamster__head">
-          <div class="hamster__ear"></div>
-          <div class="hamster__eye"></div>
-          <div class="hamster__nose"></div>
+      if (sessionStorage.getItem('portfolio-loaded')) {
+        document.write('<style>#preloader { display: none !important; }</style>');
+      }
+    })();
+  </script>
+  <!-- Preloader -->
+  <div id="preloader" class="loading">
+    <div class="wheel-and-hamster">
+      <div class="wheel"></div>
+      <div class="hamster">
+        <div class="hamster__body">
+          <div class="hamster__head">
+            <div class="hamster__ear"></div>
+            <div class="hamster__eye"></div>
+            <div class="hamster__nose"></div>
+          </div>
+          <div class="hamster__limb hamster__limb--fr"></div>
+          <div class="hamster__limb hamster__limb--fl"></div>
+          <div class="hamster__limb hamster__limb--br"></div>
+          <div class="hamster__limb hamster__limb--bl"></div>
+          <div class="hamster__tail"></div>
         </div>
-        <div class="hamster__limb hamster__limb--fr"></div>
-        <div class="hamster__limb hamster__limb--fl"></div>
-        <div class="hamster__limb hamster__limb--br"></div>
-        <div class="hamster__limb hamster__limb--bl"></div>
-        <div class="hamster__tail"></div>
       </div>
-    </div>
-    <div class="spoke"></div>
-  </div>
-</div>
-
-<div id="cursor-dot"></div>
-<div id="cursor-ring"></div>
-
-<nav id="navbar">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Arun<span class="dot">.</span>Sah</a>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html"   class="nav-link">Home</a></li>
-        <li><a href="about.html"   class="nav-link">About</a></li>
-        <li><a href="work.html"    class="nav-link">Work</a></li>
-        <li><a href="blogs.html"   class="nav-link">Blog</a></li>
-        <li><a href="contact.html" class="nav-link active">Contact</a></li>
-      </ul>
-
-      <div class="nav-cta">
-        <a href="contact.html" class="btn btn-hire btn-sm">Hire Me</a>
-        <button id="theme-toggle" aria-label="Toggle theme">
-          <span class="icon-sun">&#9728;</span>
-          <span class="icon-moon">&#9790;</span>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Open menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      <div class="spoke"></div>
     </div>
   </div>
-</nav>
 
-<!-- ======================================================
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">Arun<span class="dot">.</span>Sah</a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="work.html" class="nav-link">Work</a></li>
+          <li><a href="blogs.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="contact.html" class="btn btn-hire btn-sm">Hire Me</a>
+          <button id="theme-toggle" aria-label="Toggle theme">
+            <span class="icon-sun">&#9728;</span>
+            <span class="icon-moon">&#9790;</span>
+          </button>
+          <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================================================
      HIRE ME
      ====================================================== -->
-<section class="section section--alt" id="hire" style="padding-top:110px;">
-  <div class="container">
-    <div class="hire-inner">
+  <section class="section section--alt" id="hire" style="padding-top:110px;">
+    <div class="container">
+      <div class="hire-inner">
 
-      <div class="reveal from-left">
-        <span class="label">Freelance</span>
-        <h1 class="section-title">Let's build<br>something <span class="em">together</span></h1>
-        <span class="rule"></span>
-        <p style="color:var(--muted);font-size:0.95rem;line-height:1.84;margin:20px 0 24px;">
-          I'm available for freelance work — websites, software tools, video editing or blog content.
-          Straightforward to work with, deadline-focused and clear communicator.
-        </p>
+        <div class="reveal from-left">
+          <span class="label">Freelance</span>
+          <h1 class="section-title">Let's build<br>something <span class="em">together</span></h1>
+          <span class="rule"></span>
+          <p style="color:var(--muted);font-size:0.95rem;line-height:1.84;margin:20px 0 24px;">
+            I'm available for freelance work — websites, software tools, video editing or blog content.
+            Straightforward to work with, deadline-focused and clear communicator.
+          </p>
 
-        <div class="avail-banner">
-          <span class="avail-pulse"></span>
-          <p><strong>Currently available</strong> — taking on new projects for July 2025.</p>
-        </div>
+          <!-- <div class="avail-banner">
+            <span class="avail-pulse"></span>
+            <p><strong>Currently available</strong> — taking on new projects for July 2025.</p>
+          </div> -->
 
-        <div class="services-list">
-          <div class="service-row">
-            <div class="svc-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-            <div class="svc-info">
-              <h4>Web Development</h4>
-              <p>Custom sites, web apps, dashboards</p>
-            </div>
-          </div>
-
-          <div class="service-row">
-            <div class="svc-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
-            <div class="svc-info">
-              <h4>Software Dev</h4>
-              <p>Desktop tools, bots, automation</p>
-            </div>
-          </div>
-
-          <div class="service-row">
-            <div class="svc-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
-            <div class="svc-info">
-              <h4>Video Editing</h4>
-              <p>YouTube, reels, brand promos</p>
-            </div>
-          </div>
-
-          <div class="service-row">
-            <div class="svc-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-            <div class="svc-info">
-              <h4>Content Writing</h4>
-              <p>SEO articles &amp; technical posts</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal from-right">
-        <div class="hire-form-box">
-          <h3>Send a project brief</h3>
-          <p class="form-sub">Fill in the details and I'll get back to you within 24 hours.</p>
-
-          <form id="hireForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="hire-name">Full name *</label>
-                <input id="hire-name" type="text" name="name" placeholder="John Doe" required>
-              </div>
-              <div class="form-group">
-                <label for="hire-email">Email *</label>
-                <input id="hire-email" type="email" name="email" placeholder="john@example.com" required>
+          <div class="services-list">
+            <div class="service-row">
+              <div class="svc-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg></div>
+              <div class="svc-info">
+                <h4>Web Development</h4>
+                <p>Custom sites, web apps, dashboards</p>
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="hire-service">Service needed *</label>
-                <select id="hire-service" name="service" required>
-                  <option value="">Select a service</option>
-                  <option value="web">Web Development</option>
-                  <option value="software">Software Development</option>
-                  <option value="video">Video Editing</option>
-                  <option value="content">Content Writing</option>
-                  <option value="other">Other</option>
-                </select>
+
+            <div class="service-row">
+              <div class="svc-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="4 17 10 11 4 5" />
+                  <line x1="12" y1="19" x2="20" y2="19" />
+                </svg></div>
+              <div class="svc-info">
+                <h4>Software Dev</h4>
+                <p>Desktop tools, bots, automation</p>
+              </div>
+            </div>
+
+            <div class="service-row">
+              <div class="svc-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="23 7 16 12 23 17 23 7" />
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                </svg></div>
+              <div class="svc-info">
+                <h4>Video Editing</h4>
+                <p>YouTube, reels, brand promos</p>
+              </div>
+            </div>
+
+            <div class="service-row">
+              <div class="svc-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg></div>
+              <div class="svc-info">
+                <h4>Content Writing</h4>
+                <p>SEO articles &amp; technical posts</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal from-right">
+          <div class="hire-form-box">
+            <h3>Send a project brief</h3>
+            <p class="form-sub">Fill in the details and I'll get back to you within 24 hours.</p>
+
+            <form id="hireForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="hire-name">Full name *</label>
+                  <input id="hire-name" type="text" name="name" placeholder="Your Good Name" required>
+                </div>
+                <div class="form-group">
+                  <label for="hire-email">Email *</label>
+                  <input id="hire-email" type="email" name="email" placeholder="Email ID" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="hire-phone">Phone number</label>
+                  <input id="hire-phone" type="tel" name="phone" placeholder="XXXXXX-XXXX" required>
+                </div>
+                <div class="form-group">
+                  <label for="hire-service">Service needed *</label>
+                  <select id="hire-service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="web">Web Development</option>
+                    <option value="software">Software Development</option>
+                    <option value="video">Video Editing</option>
+                    <option value="content">Content Writing</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
               </div>
               <div class="form-group">
                 <label for="hire-budget">Budget</label>
@@ -181,196 +204,237 @@
                   <option value="50k+">&#8377;50,000+</option>
                 </select>
               </div>
-            </div>
-            <div class="form-group">
-              <label for="hire-message">Project details *</label>
-              <textarea id="hire-message" name="message" placeholder="Describe the project, goals, timeline..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-hire submit-full">Send brief</button>
-          </form>
+              <div class="form-group">
+                <label for="hire-message">Project details *</label>
+                <textarea id="hire-message" name="message" placeholder="Describe the project, goals, timeline..."
+                  required></textarea>
+              </div>
+              <button type="submit" class="btn btn-hire submit-full">Send brief</button>
+            </form>
+          </div>
         </div>
+
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ======================================================
+  <!-- ======================================================
      CONTACT / GET IN TOUCH
      ====================================================== -->
-<section class="section" id="contact">
-  <div class="container">
-    <div class="contact-inner">
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-inner">
 
-      <div class="reveal from-left">
-        <span class="label">Get In Touch</span>
-        <h2 class="section-title">Drop me a <span class="em">message</span></h2>
-        <span class="rule"></span>
-        <p style="color:var(--muted);font-size:0.95rem;line-height:1.84;margin:20px 0 0;">
-          For questions, project ideas or just a hello — I'm reachable across all the usual channels.
-          I reply within a day, usually faster.
-        </p>
-        <div class="contact-links">
-          <a href="mailto:arunkumar90853@gmail.com" target="_blank" rel="noopener" class="contact-item">
-            <span class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-            <div class="ci-txt">
-              <strong>Email</strong>
-              <span>arunkumar90853@gmail.com</span>
-            </div>
-            <span class="ci-arrow">&#8594;</span>
-          </a>
+        <div class="reveal from-left">
+          <span class="label">Get In Touch</span>
+          <h2 class="section-title">Drop me a <span class="em">message</span></h2>
+          <span class="rule"></span>
+          <p style="color:var(--muted);font-size:0.95rem;line-height:1.84;margin:20px 0 0;">
+            For questions, project ideas or just a hello — I'm reachable across all the usual channels.
+            I reply within a day, usually faster.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:arunkumar90853@gmail.com" target="_blank" rel="noopener" class="contact-item">
+              <span class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg></span>
+              <div class="ci-txt">
+                <strong>Email</strong>
+                <span>arunkumar90853@gmail.com</span>
+              </div>
+              <span class="ci-arrow">&#8594;</span>
+            </a>
 
-          <a href="tel:+919324400382" class="contact-item">
-            <span class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-            <div class="ci-txt">
-              <strong>Phone Call</strong>
-              <span>+91 93244 00382</span>
-            </div>
-            <span class="ci-arrow">&#8594;</span>
-          </a>
+            <a href="tel:+919324400382" class="contact-item">
+              <span class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg></span>
+              <div class="ci-txt">
+                <strong>Phone Call</strong>
+                <span>+91 93244 00382</span>
+              </div>
+              <span class="ci-arrow">&#8594;</span>
+            </a>
 
-          <a href="https://wa.me/919324400382" target="_blank" rel="noopener" class="contact-item">
-            <span class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
-            <div class="ci-txt">
-              <strong>WhatsApp</strong>
-              <span>+91 93244 00382</span>
-            </div>
-            <span class="ci-arrow">&#8594;</span>
-          </a>
+            <a href="https://wa.me/919324400382" target="_blank" rel="noopener" class="contact-item">
+              <span class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg></span>
+              <div class="ci-txt">
+                <strong>WhatsApp</strong>
+                <span>+91 93244 00382</span>
+              </div>
+              <span class="ci-arrow">&#8594;</span>
+            </a>
 
-          <a href="https://www.linkedin.com/in/arun-sah-7b7246313" target="_blank" rel="noopener" class="contact-item">
-            <span class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
-            <div class="ci-txt">
-              <strong>LinkedIn</strong>
-              <span>linkedin.com/in/arun-sah-7b7246313</span>
-            </div>
-            <span class="ci-arrow">&#8594;</span>
-          </a>
+            <a href="https://www.linkedin.com/in/arun-sah-7b7246313" target="_blank" rel="noopener"
+              class="contact-item">
+              <span class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg></span>
+              <div class="ci-txt">
+                <strong>LinkedIn</strong>
+                <span>linkedin.com/in/arun-sah-7b7246313</span>
+              </div>
+              <span class="ci-arrow">&#8594;</span>
+            </a>
 
-          <a href="https://github.com/Lamsterla" target="_blank" rel="noopener" class="contact-item">
-            <span class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span>
-            <div class="ci-txt">
-              <strong>GitHub</strong>
-              <span>github.com/Lamsterla</span>
-            </div>
-            <span class="ci-arrow">&#8594;</span>
-          </a>
+            <a href="https://github.com/Lamsterla" target="_blank" rel="noopener" class="contact-item">
+              <span class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg></span>
+              <div class="ci-txt">
+                <strong>GitHub</strong>
+                <span>github.com/Lamsterla</span>
+              </div>
+              <span class="ci-arrow">&#8594;</span>
+            </a>
 
-          <a href="#" target="_blank" rel="noopener" class="contact-item">
-            <span class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <div class="ci-txt">
-              <strong>Location</strong>
-              <span>Navi Mumbai, India</span>
-            </div>
-            <span class="ci-arrow">&#8594;</span>
-          </a>
+            <a href="#" target="_blank" rel="noopener" class="contact-item">
+              <span class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg></span>
+              <div class="ci-txt">
+                <strong>Location</strong>
+                <span>Navi Mumbai, India</span>
+              </div>
+              <span class="ci-arrow">&#8594;</span>
+            </a>
+          </div>
         </div>
-      </div>
 
-      <div class="reveal from-right">
-        <div class="contact-form-box">
-          <h3>Send a message</h3>
-          <p class="form-sub">I'll get back to you as soon as I can.</p>
+        <div class="reveal from-right">
+          <div class="contact-form-box">
+            <h3>Send a message</h3>
+            <p class="form-sub">I'll get back to you as soon as I can.</p>
 
-          <form id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="c-name">Your name</label>
-                <input id="c-name" type="text" name="cname" placeholder="John Doe" required>
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="c-name">Your name</label>
+                  <input id="c-name" type="text" name="cname" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                  <label for="c-email">Email</label>
+                  <input id="c-email" type="email" name="cemail" placeholder="Email ID" required>
+                </div>
               </div>
               <div class="form-group">
-                <label for="c-email">Email</label>
-                <input id="c-email" type="email" name="cemail" placeholder="john@example.com" required>
+                <label for="c-phone">Phone number</label>
+                <input id="c-phone" type="tel" name="cphone" placeholder="Your Phone no">
               </div>
-            </div>
-            <div class="form-group">
-              <label for="c-msg">Message</label>
-              <textarea id="c-msg" name="cmsg" placeholder="What's on your mind..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary submit-full">Send message</button>
-          </form>
+              <div class="form-group">
+                <label for="c-msg">Message</label>
+                <textarea id="c-msg" name="cmsg" placeholder="What's on your mind..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary submit-full">Send message</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">Arun<span class="dot">.</span>Sah</div>
+          <p>Building thoughtful digital experiences with clean code and real attention to detail. Open to freelance
+            projects.</p>
+          <div class="footer-socials">
+            <a class="social-link" href="https://github.com/Lamsterla" target="_blank" rel="noopener noreferrer"
+              title="GitHub">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </a>
+            <a class="social-link" href="https://www.linkedin.com/in/arun-sah-7b7246313" target="_blank"
+              rel="noopener noreferrer" title="LinkedIn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3z" />
+              </svg>
+            </a>
+            <a class="social-link" href="#" target="_blank" rel="noopener noreferrer" title="Twitter">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a class="social-link" href="#" target="_blank" rel="noopener noreferrer" title="YouTube">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a class="social-link" href="https://www.instagram.com/sah_arun_kumar" target="_blank"
+              rel="noopener noreferrer" title="Instagram">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 0.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Pages</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="blogs.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="contact.html">Web Development</a></li>
+            <li><a href="contact.html">Software Dev</a></li>
+            <li><a href="contact.html">Video Editing</a></li>
+            <li><a href="contact.html">Content Writing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:arunkumar90853@gmail.com">arunkumar90853@gmail.com</a></li>
+            <li><a href="https://wa.me/919324400382" target="_blank" rel="noopener noreferrer">WhatsApp (+91 93244
+                00382)</a></li>
+            <li><a href="https://www.linkedin.com/in/arun-sah-7b7246313" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="#">Navi Mumbai, India</a></li>
+          </ul>
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="nav-logo">Arun<span class="dot">.</span>Sah</div>
-        <p>Building thoughtful digital experiences with clean code and real attention to detail. Open to freelance projects.</p>
-        <div class="footer-socials">
-          <a class="social-link" href="https://github.com/Lamsterla" target="_blank" rel="noopener noreferrer" title="GitHub">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-            </svg>
-          </a>
-          <a class="social-link" href="https://www.linkedin.com/in/arun-sah-7b7246313" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3z"/>
-            </svg>
-          </a>
-          <a class="social-link" href="#" target="_blank" rel="noopener noreferrer" title="Twitter">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </a>
-          <a class="social-link" href="#" target="_blank" rel="noopener noreferrer" title="YouTube">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-            </svg>
-          </a>
-          <a class="social-link" href="https://www.instagram.com/sah_arun_kumar" target="_blank" rel="noopener noreferrer" title="Instagram">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 0.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h5>Pages</h5>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="work.html">Work</a></li>
-          <li><a href="blogs.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h5>Services</h5>
-        <ul>
-          <li><a href="contact.html">Web Development</a></li>
-          <li><a href="contact.html">Software Dev</a></li>
-          <li><a href="contact.html">Video Editing</a></li>
-          <li><a href="contact.html">Content Writing</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h5>Contact</h5>
-        <ul>
-          <li><a href="mailto:arunkumar90853@gmail.com">arunkumar90853@gmail.com</a></li>
-          <li><a href="https://wa.me/919324400382" target="_blank" rel="noopener noreferrer">WhatsApp (+91 93244 00382)</a></li>
-          <li><a href="https://www.linkedin.com/in/arun-sah-7b7246313" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="#">Navi Mumbai, India</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <p>&copy; 2026 <strong>Arun Sah</strong> — All rights reserved.</p>
+        <p>HTML &middot; CSS &middot; JavaScript</p>
       </div>
     </div>
+  </footer>
 
-    <div class="footer-bottom">
-      <p>&copy; 2026 <strong>Arun Sah</strong> — All rights reserved.</p>
-      <p>HTML &middot; CSS &middot; JavaScript</p>
-    </div>
-  </div>
-</footer>
-
-<button id="scroll-top" aria-label="Back to top">&#8593;</button>
-<script src="script.js?v=1.3"></script>
+  <button id="scroll-top" aria-label="Back to top">&#8593;</button>
+  <script src="script.js?v=1.3"></script>
 </body>
+
 </html>

@@ -717,7 +717,7 @@ function initFormValidation() {
     const form = document.getElementById(id);
     if (!form) return;
 
-    form.querySelectorAll('input[required], textarea[required], select[required]').forEach(field => {
+    form.querySelectorAll('input, textarea, select').forEach(field => {
       field.addEventListener('blur',  () => validateField(field));
       field.addEventListener('input', () => clearFieldErr(field));
     });
@@ -759,9 +759,11 @@ function initFormValidation() {
 function validateField(f) {
   clearFieldErr(f);
   const v = f.value.trim();
-  if (!v) return showFieldErr(f, 'This field is required.');
-  if (f.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v))
+  if (f.hasAttribute('required') && !v) return showFieldErr(f, 'This field is required.');
+  if (f.type === 'email' && v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v))
     return showFieldErr(f, 'Enter a valid email address.');
+  if (f.type === 'tel' && v && !/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/.test(v))
+    return showFieldErr(f, 'Enter a valid phone number.');
 }
 
 function showFieldErr(f, msg) {
