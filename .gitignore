@@ -4,8 +4,6 @@
 config
 config\database.php
 submit.php
-google-sheet-form.js
-google-apps-script.gs
 
 
 
