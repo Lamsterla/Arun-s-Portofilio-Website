@@ -62,22 +62,22 @@ function initPreloader() {
 // CUSTOM CURSOR
 // =============================================
 function initCustomCursor() {
-  const dot  = document.getElementById('cursor-dot');
+  const dot = document.getElementById('cursor-dot');
   const ring = document.getElementById('cursor-ring');
   if (!dot || !ring) return;
 
   let rx = 0, ry = 0;
 
   document.addEventListener('mousemove', e => {
-    dot.style.left  = e.clientX + 'px';
-    dot.style.top   = e.clientY + 'px';
+    dot.style.left = e.clientX + 'px';
+    dot.style.top = e.clientY + 'px';
 
     // Ring follows with slight lag (rAF)
     requestAnimationFrame(() => {
       rx += (e.clientX - rx) * 0.12;
       ry += (e.clientY - ry) * 0.12;
       ring.style.left = rx + 'px';
-      ring.style.top  = ry + 'px';
+      ring.style.top = ry + 'px';
     });
   });
 
@@ -98,8 +98,8 @@ function initMagneticButtons() {
   document.querySelectorAll('.btn').forEach(btn => {
     btn.addEventListener('mousemove', e => {
       const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width  / 2;
-      const y = e.clientY - rect.top  - rect.height / 2;
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
       btn.style.transform = `translate(${x * 0.18}px, ${y * 0.28}px)`;
     });
     btn.addEventListener('mouseleave', () => {
@@ -112,7 +112,7 @@ function initMagneticButtons() {
 // THEME TOGGLE
 // =============================================
 function initThemeToggle() {
-  const btn  = document.getElementById('theme-toggle');
+  const btn = document.getElementById('theme-toggle');
   const html = document.documentElement;
   if (!btn) return;
 
@@ -148,7 +148,7 @@ function initNavbar() {
 // HAMBURGER
 // =============================================
 function initHamburger() {
-  const btn   = document.getElementById('hamburger');
+  const btn = document.getElementById('hamburger');
   const links = document.getElementById('navLinks');
   if (!btn || !links) return;
 
@@ -180,8 +180,8 @@ function initTyping() {
     el.textContent = deleting ? word.slice(0, --ci) : word.slice(0, ++ci);
 
     let delay = deleting ? 55 : 100;
-    if (!deleting && ci === word.length)  { delay = 1800; deleting = true; }
-    if (deleting  && ci === 0)            { deleting = false; wi = (wi + 1) % words.length; delay = 360; }
+    if (!deleting && ci === word.length) { delay = 1800; deleting = true; }
+    if (deleting && ci === 0) { deleting = false; wi = (wi + 1) % words.length; delay = 360; }
 
     setTimeout(tick, delay);
   }
@@ -261,7 +261,7 @@ function initScrollParallax() {
 
   const updateParallax = () => {
     currentY += (targetY - currentY) * 0.08; // LERP smoothing factor
-    
+
     if (Math.abs(targetY - currentY) > 0.05) {
       if (currentY < 1800) {
         parallaxTargets.forEach((el, i) => {
@@ -314,7 +314,7 @@ function initProficiencyBars() {
 // PORTFOLIO TABS (work.html)
 // =============================================
 function initPortfolioTabs() {
-  const tabs   = document.querySelectorAll('.ptab');
+  const tabs = document.querySelectorAll('.ptab');
   const panels = document.querySelectorAll('.portfolio-panel');
   if (!tabs.length || !panels.length) return;
 
@@ -394,7 +394,7 @@ function setupSlider(panel) {
       return (cards[0]?.offsetWidth || 360) + gap;
     };
     prevBtn.addEventListener('click', () => track.scrollBy({ left: -scrollAmt(), behavior: 'smooth' }));
-    nextBtn.addEventListener('click', () => track.scrollBy({ left:  scrollAmt(), behavior: 'smooth' }));
+    nextBtn.addEventListener('click', () => track.scrollBy({ left: scrollAmt(), behavior: 'smooth' }));
   }
 
   // Drag to scroll
@@ -408,7 +408,7 @@ function setupSlider(panel) {
   });
 
   track.addEventListener('mouseleave', () => { if (!isDown) return; isDown = false; track.style.cursor = ''; });
-  track.addEventListener('mouseup',    () => { if (!isDown) return; isDown = false; track.style.cursor = ''; });
+  track.addEventListener('mouseup', () => { if (!isDown) return; isDown = false; track.style.cursor = ''; });
 
   track.addEventListener('mousemove', e => {
     if (!isDown) return;
@@ -576,7 +576,7 @@ function initProjectModal() {
 
   closeBtn.addEventListener('click', closeModal);
   backdrop.addEventListener('click', closeModal);
-  
+
   // Close with Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
@@ -717,47 +717,11 @@ function initFormValidation() {
   initContactForm();
 }
 
-// ─── PROJECT BRIEF FORM — front-end only, NO database ─────────────────────────
+// ─── PROJECT BRIEF FORM — handled in google-sheet-form.js ──────────
 function initProjectBriefForm() {
-  const form = document.getElementById('projectBriefForm');
-  if (!form) return;
-
-  // Per-field blur validation + clear on change
-  form.querySelectorAll('input, textarea, select').forEach(field => {
-    field.addEventListener('blur',   () => validateField(field));
-    field.addEventListener('input',  () => clearFieldErr(field));
-    field.addEventListener('change', () => clearFieldErr(field));
-  });
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    // Client-side validation
-    let isValid = true;
-    form.querySelectorAll('input[required], textarea[required], select[required]').forEach(field => {
-      const v = field.value.trim();
-      if (!v || (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v))) {
-        validateField(field);
-        isValid = false;
-      }
-    });
-    if (!isValid) return;
-
-    const nameField = form.querySelector('input[name="full_name"]');
-    const senderName = nameField ? nameField.value.trim() : 'Friend';
-    const msg = 'Thank you, ' + senderName + '. Your brief has been received. I\'ll respond within 24 hours.';
-
-    form.parentNode.querySelector('.form-notice')?.remove();
-    form.parentNode.querySelector('.form-error-msg')?.remove();
-
-    const notice = document.createElement('div');
-    notice.className = 'form-notice';
-    notice.innerHTML = '&#10003; ' + msg;
-    form.parentNode.insertBefore(notice, form);
-
-    showToast(msg);
-    form.reset();
-  });
+  if (typeof initProjectBriefGoogleSheetForm === 'function') {
+    initProjectBriefGoogleSheetForm();
+  }
 }
 
 // ─── CONTACT / SEND A MESSAGE FORM — front-end only, NO database ─────────────
@@ -766,7 +730,7 @@ function initContactForm() {
   if (!form) return;
 
   form.querySelectorAll('input, textarea, select').forEach(field => {
-    field.addEventListener('blur',  () => validateField(field));
+    field.addEventListener('blur', () => validateField(field));
     field.addEventListener('input', () => clearFieldErr(field));
   });
 
