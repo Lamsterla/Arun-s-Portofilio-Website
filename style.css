@@ -1857,7 +1857,16 @@ body:not(:hover) #cursor-ring { opacity: 0; }
   box-shadow: 0 0 0 3px rgba(232,87,59,0.1);
 }
 .form-group textarea { min-height: 110px; resize: vertical; }
-.form-group select { appearance: none; cursor: pointer; }
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237a7570' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 38px;
+}
 .form-group select option { background: var(--surface2); }
 
 .submit-full { width: 100%; justify-content: center; }
@@ -1883,12 +1892,24 @@ body:not(:hover) #cursor-ring { opacity: 0; }
   margin-bottom: 16px;
 }
 
+/* Contact Hero Section */
+.contact-hero-section {
+  padding-top: 110px;
+}
+
 /* Contact */
 .contact-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 72px;
-  align-items: start;
+  align-items: center;
+}
+
+.contact-photo-col {
+  max-width: 440px;
+  width: 100%;
+  justify-self: center;
+  align-self: center;
 }
 .contact-links { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; }
 .contact-item {
@@ -2494,10 +2515,17 @@ footer {
   }
 
   /* Contact & Hire Section */
+  .contact-hero-section {
+    padding-top: 96px;
+  }
   .hire-inner,
   .contact-inner {
     grid-template-columns: 1fr;
     gap: 48px;
+  }
+  .contact-photo-col {
+    max-width: 360px;
+    margin: 8px auto 0;
   }
 
   /* Footer */
@@ -2614,6 +2642,20 @@ footer {
   }
 
   /* Form Fields */
+  .contact-hero-section {
+    padding-top: 88px;
+  }
+  .hire-form-box {
+    padding: 26px 20px;
+    border-radius: var(--r-md);
+  }
+  .contact-photo-col {
+    max-width: 320px;
+    margin: 8px auto 0;
+  }
+  .contact-photo-col .about-photo-frame {
+    min-height: 380px;
+  }
   .form-row { grid-template-columns: 1fr; gap: 14px; }
   .form-group input,
   .form-group select,
@@ -2682,7 +2724,15 @@ footer {
     justify-content: center;
   }
 
+  .contact-hero-section { padding-top: 80px; }
+  .hire-form-box { padding: 20px 15px; }
+  .hire-form-box h3 { font-size: 1.1rem; }
+  .hire-inner,
+  .contact-inner { gap: 36px; }
+
   .about-photo-col { max-width: 280px; }
+  .contact-photo-col { max-width: 270px; margin: 6px auto 0; }
+  .contact-photo-col .about-photo-frame { min-height: 330px; }
   .about-grid { grid-template-columns: 1fr; gap: 8px; }
   .about-actions {
     flex-direction: column;
@@ -2709,6 +2759,7 @@ footer {
     padding: 14px 16px;
   }
 
+  .contact-links { gap: 8px; margin-top: 18px; }
   .contact-item {
     padding: 14px 16px;
   }
@@ -2724,4 +2775,22 @@ footer {
     text-align: center;
     gap: 8px;
   }
+}
+
+/* ---------- 5. Ultra-Small Devices (max-width: 360px) ---------- */
+@media (max-width: 360px) {
+  .container { padding: 0 12px; }
+  .hire-form-box { padding: 18px 12px; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea { padding: 10px 12px; }
+  .contact-photo-col { max-width: 235px; }
+  .contact-photo-col .about-photo-frame { min-height: 290px; }
+  .contact-photo-col .about-exp-box {
+    right: 0;
+    bottom: -6px;
+    padding: 9px 12px;
+  }
+  .contact-photo-col .about-exp-box .exp-num { font-size: 1.4rem; }
+  .contact-photo-col .about-exp-box .exp-lbl { font-size: 0.72rem; }
 }
