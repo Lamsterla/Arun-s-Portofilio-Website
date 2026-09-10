@@ -4,25 +4,27 @@
  * ============================================================================
  */
 
-const GOOGLE_SHEET_APPS_SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbz4WBX9u5mFjo4cqHclWsETBdPKiMBfjSpFYEEu80GSIBwLtFwPUrYjkybxZjMYdSYI/exec';
-
 
 /**
  * Send project brief to Google Apps Script
  */
 async function sendFormToGoogleSheet(payload) {
 
-  console.log('Sending project brief to Google Sheets:', payload);
+  console.log('Sending project brief to Vercel API:', payload);
 
-  await fetch(GOOGLE_SHEET_APPS_SCRIPT_URL, {
+  const response = await fetch('/api/project-brief', {
     method: 'POST',
-    mode: 'no-cors',
     headers: {
-      'Content-Type': 'text/plain;charset=utf-8'
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify(payload)
   });
+
+  if (!response.ok) {
+    throw new Error('Project brief submission failed');
+  }
+
+  return await response.json();
 
 }
 

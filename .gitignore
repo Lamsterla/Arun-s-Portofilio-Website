@@ -1,5 +1,7 @@
 # Environment Variables (Contains sensitive information)
 .env
+.env.local
+.env.*.local
 .env.example
 config
 config\database.php
