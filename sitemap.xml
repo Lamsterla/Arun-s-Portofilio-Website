@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://arunsah.vercel.app/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/arun.jpeg</image:loc>
+      <image:title>Arun Sah - Web Developer and Software Developer</image:title>
+      <image:caption>Arun Sah developer portrait in Navi Mumbai, India</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://arunsah.vercel.app/about.html</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/arun.jpeg</image:loc>
+      <image:title>About Arun Sah</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://arunsah.vercel.app/work.html</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/allin1.png</image:loc>
+      <image:title>AllIn1 Document Converter</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/ferrari_3d.png</image:loc>
+      <image:title>3D Ferrari Showcase</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/personal_ai.png</image:loc>
+      <image:title>Personal AI Assistant</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/orderpay.png</image:loc>
+      <image:title>OrderPay Restaurant System</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/antivirus.png</image:loc>
+      <image:title>Antivirus Pro Utility</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/root_doctor.png</image:loc>
+      <image:title>Root Doctor Platform</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/data_entry.png</image:loc>
+      <image:title>Data Entry Application</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/color_grading.png</image:loc>
+      <image:title>Color Grading Showcase Reel</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://arunsah.vercel.app/blogs.html</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/blog_ai.png</image:loc>
+      <image:title>Artificial Intelligence: From Turing Test to LLMs</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/blog_web.png</image:loc>
+      <image:title>The World Wide Web and Modern Architecture</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/blog_python.png</image:loc>
+      <image:title>Python: From Scripting to Machine Learning</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/blog_security.png</image:loc>
+      <image:title>Cybersecurity and Web Application Security</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://arunsah.vercel.app/photo/blog_color.png</image:loc>
+      <image:title>The Science and Art of Color Grading in Video</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://arunsah.vercel.app/contact.html</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://arunsah.vercel.app/ai.html</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

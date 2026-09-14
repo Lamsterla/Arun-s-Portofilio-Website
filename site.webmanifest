@@ -1,0 +1,22 @@
+{
+  "name": "Arun Sah | Web Developer & Software Developer",
+  "short_name": "Arun Sah",
+  "description": "Portfolio of Arun Sah, Web Developer & Software Developer specializing in PHP, JavaScript, Python, and AI applications.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e131f",
+  "theme_color": "#0e131f",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/photo/arun.jpeg",
+      "sizes": "400x480",
+      "type": "image/jpeg"
+    }
+  ]
+}

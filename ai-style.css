@@ -157,6 +157,7 @@
   100% { transform: rotate(360deg); }
 }
 
+.ai-profile-info h1,
 .ai-profile-info h2 {
   font-family: var(--font-display);
   font-size: 1.25rem;

@@ -3,9 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chat with the AI version of me to learn about my skills, projects, rates, and availability." />
-  <title>AI Twin — Arun Sah</title>
-  <link rel="stylesheet" href="style.css?v=1.8" />
+  <title>AI Portfolio Assistant | Arun Sah — Web &amp; Software Developer</title>
+  <meta name="description" content="Chat with Arun Sah's AI assistant to explore projects, technical skills in PHP, Python, JavaScript, pricing, and project availability in real time." />
+  <meta name="author" content="Arun Sah" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="canonical" href="https://arunsah.vercel.app/ai.html" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="photo/arun.jpeg" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://arunsah.vercel.app/ai.html" />
+  <meta property="og:title" content="AI Portfolio Assistant | Arun Sah" />
+  <meta property="og:description" content="Chat with Arun Sah's AI assistant to explore projects, technical skills in PHP, Python, JavaScript, pricing, and project availability in real time." />
+  <meta property="og:image" content="https://arunsah.vercel.app/photo/arun.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Arun Sah AI Assistant" />
+  <meta property="og:site_name" content="Arun Sah Portfolio" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://arunsah.vercel.app/ai.html" />
+  <meta name="twitter:title" content="AI Portfolio Assistant | Arun Sah" />
+  <meta name="twitter:description" content="Chat with Arun Sah's AI assistant to explore projects, technical skills in PHP, Python, JavaScript, pricing, and project availability in real time." />
+  <meta name="twitter:image" content="https://arunsah.vercel.app/photo/arun.jpeg" />
+  <meta name="twitter:creator" content="@Lamsterla" />
+
+  <!-- Structured Data: JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://arunsah.vercel.app/ai.html#app",
+        "url": "https://arunsah.vercel.app/ai.html",
+        "name": "Arun's AI Twin - Portfolio Assistant",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All modern browsers",
+        "description": "Chat with Arun Sah's AI assistant to explore projects, technical skills in PHP, Python, JavaScript, pricing, and project availability in real time.",
+        "creator": {
+          "@type": "Person",
+          "@id": "https://arunsah.vercel.app/#person",
+          "name": "Arun Sah"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://arunsah.vercel.app/#website"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css?v=1.9" />
   <link rel="stylesheet" href="ai-style.css?v=1.3" />
   <script>
     (function(){
@@ -15,6 +70,7 @@
   </script>
 </head>
 <body>
+<a href="#chatInput" class="skip-link">Skip to chat assistant</a>
 <script>
   (function() {
     var isReload = false;
@@ -61,7 +117,7 @@
 <div id="cursor-dot"></div>
 <div id="cursor-ring"></div>
 
-<nav id="navbar">
+<nav id="navbar" aria-label="Main Navigation">
   <div class="container">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Arun<span class="dot">.</span>Sah</a>
@@ -107,7 +163,7 @@
             <span class="ai-status-dot online"></span>
           </div>
           <div class="ai-profile-info">
-            <h2>Arun's AI Twin</h2>
+            <h1>Arun's AI Twin</h1>
             <p class="ai-subtitle">Portfolio Assistant v2.5</p>
             <div class="ai-badge">Elite Model</div>
           </div>
@@ -298,27 +354,27 @@
         <div class="nav-logo">Arun<span class="dot">.</span>Sah</div>
         <p>Building thoughtful digital experiences with clean code and real attention to detail. Open to freelance projects.</p>
         <div class="footer-socials">
-          <a class="social-link" href="https://github.com/Lamsterla" target="_blank" rel="noopener noreferrer" title="GitHub">
+          <a class="social-link" href="https://github.com/Lamsterla" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub Profile">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
               <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
             </svg>
           </a>
-          <a class="social-link" href="https://www.linkedin.com/in/arun-sah-7b7246313" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+          <a class="social-link" href="https://www.linkedin.com/in/arun-sah-7b7246313" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn Profile">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
               <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3z"/>
             </svg>
           </a>
-          <a class="social-link" href="#" target="_blank" rel="noopener noreferrer" title="Twitter">
+          <a class="social-link" href="#" target="_blank" rel="noopener noreferrer" title="Twitter" aria-label="Twitter Profile">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
           </a>
-          <a class="social-link" href="#" target="_blank" rel="noopener noreferrer" title="YouTube">
+          <a class="social-link" href="#" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube Channel">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
             </svg>
           </a>
-          <a class="social-link" href="https://www.instagram.com/sah_arun_kumar" target="_blank" rel="noopener noreferrer" title="Instagram">
+          <a class="social-link" href="https://www.instagram.com/sah_arun_kumar" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram Profile">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 0.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
             </svg>

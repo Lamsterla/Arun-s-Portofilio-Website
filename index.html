@@ -4,9 +4,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of a web developer, video editor and blog writer." />
-  <title>Portfolio — Web Developer &amp; Freelancer</title>
-  <link rel="stylesheet" href="style.css?v=1.8" />
+  <title>Arun Sah | Web Developer &amp; Software Developer</title>
+  <meta name="description" content="Arun Sah is a web developer and software developer specializing in PHP, JavaScript, Python, AI applications, web development and innovative software projects." />
+  <meta name="author" content="Arun Sah" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0e131f" />
+  <link rel="canonical" href="https://arunsah.vercel.app/" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="photo/arun.jpeg" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://arunsah.vercel.app/" />
+  <meta property="og:title" content="Arun Sah | Web Developer &amp; Software Developer" />
+  <meta property="og:description" content="Arun Sah is a web developer and software developer specializing in PHP, JavaScript, Python, AI applications, web development and innovative software projects." />
+  <meta property="og:image" content="https://arunsah.vercel.app/photo/arun.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Arun Sah - Web Developer &amp; Software Developer" />
+  <meta property="og:site_name" content="Arun Sah Portfolio" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://arunsah.vercel.app/" />
+  <meta name="twitter:title" content="Arun Sah | Web Developer &amp; Software Developer" />
+  <meta name="twitter:description" content="Arun Sah is a web developer and software developer specializing in PHP, JavaScript, Python, AI applications, web development and innovative software projects." />
+  <meta name="twitter:image" content="https://arunsah.vercel.app/photo/arun.jpeg" />
+  <meta name="twitter:creator" content="@Lamsterla" />
+
+  <!-- Structured Data: JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://arunsah.vercel.app/#website",
+        "url": "https://arunsah.vercel.app/",
+        "name": "Arun Sah | Web Developer & Software Developer",
+        "description": "Arun Sah is a web developer and software developer specializing in PHP, JavaScript, Python, AI applications, web development and innovative software projects.",
+        "publisher": {
+          "@id": "https://arunsah.vercel.app/#person"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://arunsah.vercel.app/#person",
+        "name": "Arun Sah",
+        "jobTitle": "Web Developer & Software Developer",
+        "url": "https://arunsah.vercel.app/",
+        "image": "https://arunsah.vercel.app/photo/arun.jpeg",
+        "email": "mailto:arunkumar90853@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Navi Mumbai",
+          "addressRegion": "Maharashtra",
+          "addressCountry": "India"
+        },
+        "sameAs": [
+          "https://github.com/Lamsterla",
+          "https://www.linkedin.com/in/arun-sah-7b7246313",
+          "https://www.instagram.com/sah_arun_kumar"
+        ],
+        "knowsAbout": [
+          "Web Development",
+          "Software Development",
+          "PHP",
+          "JavaScript",
+          "Python",
+          "AI Applications",
+          "Frontend Development",
+          "Backend Development",
+          "MySQL",
+          "Three.js",
+          "DaVinci Resolve"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css?v=1.9" />
   <script>
     (function () {
       var t = localStorage.getItem('portfolio-theme') || 'dark';
@@ -16,6 +96,7 @@
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <script>
     (function () {
       var isReload = false;
@@ -62,7 +143,7 @@
   <div id="cursor-dot"></div>
   <div id="cursor-ring"></div>
 
-  <nav id="navbar">
+  <nav id="navbar" aria-label="Main Navigation">
     <div class="container">
       <div class="nav-inner">
         <a href="index.html" class="nav-logo">Arun<span class="dot">.</span>Sah</a>
@@ -89,6 +170,7 @@
     </div>
   </nav>
 
+  <main id="main-content">
   <!-- ======================================================
      HERO
      ====================================================== -->
@@ -109,7 +191,7 @@
           <span class="hero-eyebrow">Hello, I'm</span>
           <h1 class="hero-name">
             Arun Sah<br>
-            <span class="name-accent">Here</span>
+            <span class="name-accent">Web Developer &amp; Software Developer</span>
           </h1>
 
           <p class="hero-tagline">
@@ -117,8 +199,7 @@
           </p>
 
           <p class="hero-bio">
-            A developer, editor and writer based in <strong>Navi Mumbai, India</strong> — I take projects
-            from idea to execution and care about the details that make the difference.
+            A passionate <strong>Web Developer &amp; Software Developer</strong> based in <strong>Navi Mumbai, India</strong> — specializing in PHP, JavaScript, Python, full-stack web development, software development, and AI applications to build impactful solutions.
           </p>
 
           <div class="hero-actions">
@@ -131,27 +212,27 @@
             <h3 class="connect-title">📫 Connect With Me</h3>
             <div class="connect-links">
               <a href="https://github.com/Lamsterla" class="connect-btn github" target="_blank"
-                rel="noopener noreferrer" title="GitHub">
+                rel="noopener noreferrer" title="GitHub" aria-label="GitHub Profile">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
                 </svg>
               </a>
               <a href="https://www.linkedin.com/in/arun-sah-7b7246313" class="connect-btn linkedin" target="_blank"
-                rel="noopener noreferrer" title="LinkedIn">
+                rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn Profile">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
               </a>
-              <a href="mailto:arunkumar90853@gmail.com" class="connect-btn gmail" title="Gmail">
+              <a href="mailto:arunkumar90853@gmail.com" class="connect-btn gmail" title="Gmail" aria-label="Send Email to Arun Sah">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M24 5.457v13.909c0 .904-.732 1.634-1.634 1.634h-2.23V9.431L12 14.771 3.864 9.43v11.57H1.634A1.637 1.637 0 010 19.366V5.457c0-1.124 1.25-1.787 2.179-1.155L12 11.196l9.821-6.894A1.378 1.378 0 0124 5.457z" />
                 </svg>
               </a>
               <a href="https://www.instagram.com/sah_arun_kumar" class="connect-btn instagram" target="_blank"
-                rel="noopener noreferrer" title="Instagram">
+                rel="noopener noreferrer" title="Instagram" aria-label="Instagram Profile">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 0.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
@@ -163,7 +244,7 @@
 
         <div class="hero-visual reveal from-right">
           <div class="hero-photo-frame">
-            <img src="photo/2.jpeg" alt="Arun Sah">
+            <img src="photo/2.jpeg" alt="Arun Sah — Web Developer &amp; Software Developer" width="380" height="460" fetchpriority="high" decoding="async">
           </div>
           <div class="photo-corner">3+<br>Years</div>
         </div>
@@ -365,11 +446,11 @@
         <!-- Web Project -->
         <div class="project-card reveal d1" data-type="web" data-index="0" style="cursor: pointer;">
           <div class="proj-thumb">
-            <img src="photo/allin1.png" alt="AllIn1 Document Converter" class="proj-thumb-img">
+            <img src="photo/allin1.png" alt="AllIn1 Document Converter web application interface" class="proj-thumb-img" loading="lazy" decoding="async" width="600" height="340">
             <div class="proj-thumb-overlay">
-              <button class="btn btn-primary btn-sm view-details-btn">Details</button>
+              <button class="btn btn-primary btn-sm view-details-btn" aria-label="View AllIn1 project details">Details</button>
               <a href="https://github.com/Lamsterla" target="_blank" class="btn btn-ghost btn-sm"
-                onclick="event.stopPropagation();">Live</a>
+                onclick="event.stopPropagation();" aria-label="Visit AllIn1 live demo">Live</a>
             </div>
           </div>
           <div class="proj-body">
@@ -381,7 +462,7 @@
                 class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span>
             </div>
             <div class="proj-links">
-              <button class="proj-link view-details-link"
+              <button class="proj-link view-details-link" aria-label="View AllIn1 project details"
                 style="background:none;border:none;padding:0;cursor:pointer;font-family:inherit;">
                 <svg viewBox="0 0 24 24">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
@@ -389,7 +470,7 @@
                 </svg>
                 View details
               </button>
-              <a href="https://github.com/Lamsterla" class="proj-link" target="_blank"
+              <a href="https://github.com/Lamsterla" class="proj-link" target="_blank" aria-label="View AllIn1 on GitHub"
                 onclick="event.stopPropagation();">
                 <svg viewBox="0 0 24 24">
                   <path
@@ -404,11 +485,11 @@
         <!-- Software Project -->
         <div class="project-card reveal d2" data-type="software" data-index="0" style="cursor: pointer;">
           <div class="proj-thumb">
-            <img src="photo/personal_ai.png" alt="Personal AI Laptop Assistant" class="proj-thumb-img">
+            <img src="photo/personal_ai.png" alt="Personal AI Laptop Assistant desktop automation tool interface" class="proj-thumb-img" loading="lazy" decoding="async" width="600" height="340">
             <div class="proj-thumb-overlay">
-              <button class="btn btn-primary btn-sm view-details-btn">Details</button>
+              <button class="btn btn-primary btn-sm view-details-btn" aria-label="View Personal AI Assistant project details">Details</button>
               <a href="https://github.com/Lamsterla" target="_blank" class="btn btn-ghost btn-sm"
-                onclick="event.stopPropagation();">Code</a>
+                onclick="event.stopPropagation();" aria-label="View Personal AI Assistant source code">Code</a>
             </div>
           </div>
           <div class="proj-body">
@@ -420,7 +501,7 @@
                 class="tech-tag">OpenAI API</span><span class="tech-tag">OS Automation</span>
             </div>
             <div class="proj-links">
-              <button class="proj-link view-details-link"
+              <button class="proj-link view-details-link" aria-label="View Personal AI Laptop Assistant details"
                 style="background:none;border:none;padding:0;cursor:pointer;font-family:inherit;">
                 <svg viewBox="0 0 24 24">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
@@ -428,7 +509,7 @@
                 </svg>
                 View details
               </button>
-              <a href="https://github.com/Lamsterla" class="proj-link" target="_blank"
+              <a href="https://github.com/Lamsterla" class="proj-link" target="_blank" aria-label="View Personal AI Assistant on GitHub"
                 onclick="event.stopPropagation();">
                 <svg viewBox="0 0 24 24">
                   <path
@@ -443,7 +524,7 @@
         <!-- Video Project -->
         <div class="video-slide-card project-card reveal d3" data-type="video" data-index="0" style="cursor: pointer;">
           <div class="vslide-thumb" style="position:relative;overflow:hidden;">
-            <img src="photo/color_grading.png" alt="Color Grading Showcase" class="proj-thumb-img" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;opacity:0.85;">
+            <img src="photo/color_grading.png" alt="Cinematic color grading video showcase reel" class="proj-thumb-img" loading="lazy" decoding="async" width="600" height="340" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;opacity:0.85;">
             <div class="play-ring" style="position:relative;z-index:2;">
               <svg viewBox="0 0 24 24">
                 <polygon points="5,3 19,12 5,21" />
@@ -463,11 +544,11 @@
         <!-- Web Project 2 -->
         <div class="project-card reveal d4" data-type="web" data-index="1" style="cursor: pointer;">
           <div class="proj-thumb">
-            <img src="photo/ferrari_3d.png" alt="3D Ferrari Showcase" class="proj-thumb-img">
+            <img src="photo/ferrari_3d.png" alt="3D Ferrari vehicle interactive showcase" class="proj-thumb-img" loading="lazy" decoding="async" width="600" height="340">
             <div class="proj-thumb-overlay">
-              <button class="btn btn-primary btn-sm view-details-btn">Details</button>
+              <button class="btn btn-primary btn-sm view-details-btn" aria-label="View 3D Ferrari Showcase project details">Details</button>
               <a href="https://github.com/Lamsterla" target="_blank" class="btn btn-ghost btn-sm"
-                onclick="event.stopPropagation();">Live</a>
+                onclick="event.stopPropagation();" aria-label="Visit 3D Ferrari Showcase live demo">Live</a>
             </div>
           </div>
           <div class="proj-body">
@@ -479,7 +560,7 @@
                 class="tech-tag">JavaScript</span><span class="tech-tag">CSS3</span>
             </div>
             <div class="proj-links">
-              <button class="proj-link view-details-link"
+              <button class="proj-link view-details-link" aria-label="View 3D Ferrari Showcase details"
                 style="background:none;border:none;padding:0;cursor:pointer;font-family:inherit;">
                 <svg viewBox="0 0 24 24">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
@@ -487,7 +568,7 @@
                 </svg>
                 View details
               </button>
-              <a href="https://github.com/Lamsterla" class="proj-link" target="_blank"
+              <a href="https://github.com/Lamsterla" class="proj-link" target="_blank" aria-label="View 3D Ferrari Showcase on GitHub"
                 onclick="event.stopPropagation();">
                 <svg viewBox="0 0 24 24">
                   <path
@@ -525,6 +606,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- ======================================================
      PROJECT DETAIL MODAL (FLASHCARD VERSION)
@@ -691,33 +773,33 @@
             projects.</p>
           <div class="footer-socials">
             <a class="social-link" href="https://github.com/Lamsterla" target="_blank" rel="noopener noreferrer"
-              title="GitHub">
+              title="GitHub" aria-label="Arun Sah GitHub Profile">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
                 <path
                   d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
               </svg>
             </a>
             <a class="social-link" href="https://www.linkedin.com/in/arun-sah-7b7246313" target="_blank"
-              rel="noopener noreferrer" title="LinkedIn">
+              rel="noopener noreferrer" title="LinkedIn" aria-label="Arun Sah LinkedIn Profile">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
                 <path
                   d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3z" />
               </svg>
             </a>
-            <a class="social-link" href="#" target="_blank" rel="noopener noreferrer" title="Twitter">
+            <a class="social-link" href="#" target="_blank" rel="noopener noreferrer" title="Twitter" aria-label="Arun Sah Twitter Profile">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
                 <path
                   d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
             </a>
-            <a class="social-link" href="#" target="_blank" rel="noopener noreferrer" title="YouTube">
+            <a class="social-link" href="#" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="Arun Sah YouTube Channel">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
                 <path
                   d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
               </svg>
             </a>
             <a class="social-link" href="https://www.instagram.com/sah_arun_kumar" target="_blank"
-              rel="noopener noreferrer" title="Instagram">
+              rel="noopener noreferrer" title="Instagram" aria-label="Arun Sah Instagram Profile">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
                 <path
                   d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 0.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
