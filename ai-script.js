@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       keywords: /(experience|background|cv|resume|who are you|about)/i,
-      reply: "Arun is a self-driven developer and creator with <strong>3+ years of experience</strong>. He bridges the gap between clean code and high-quality digital content, taking projects from idea to execution. You can download his full resume on the <a href='about.html'>About Page</a>."
+      reply: "Arun is a self-driven developer and creator with <strong>3+ years of experience</strong>. He bridges the gap between clean code and high-quality digital content, taking projects from idea to execution. You can download his resume on the <a href='about.html'>About Page</a> or directly <a href='assets/Arun_Kumar_ATS_Resume.pdf' download='Arun_Kumar_ATS_Resume.pdf'>Download Resume (PDF)</a>."
     }
   ];
 
